@@ -1,0 +1,2936 @@
+{
+  "sections": {
+    "ContactInsights": {
+      "kind": "page",
+      "source": "src/components/ContactInsights.jsx",
+      "fields": {
+        "f1": {
+          "label": "insights · videoId: hwM3ahuLfx0",
+          "type": "videoId",
+          "value": "hwM3ahuLfx0"
+        },
+        "f2": {
+          "label": "insights · title: How to Build Your Career?",
+          "type": "text",
+          "value": "How to Build Your Career?"
+        },
+        "f3": {
+          "label": "insights · videoId: bbCzJ1iaXiw",
+          "type": "videoId",
+          "value": "bbCzJ1iaXiw"
+        },
+        "f4": {
+          "label": "insights · title: How to Build Your Career?",
+          "type": "text",
+          "value": "How to Build Your Career?"
+        },
+        "f5": {
+          "label": "Heading: Have a Question? Ask Me Directly",
+          "type": "text",
+          "value": "Have a Question? Ask Me Directly"
+        },
+        "f6": {
+          "label": "Field label: Name *",
+          "type": "text",
+          "value": "Name *"
+        },
+        "f7": {
+          "label": "Input hint: Full Name",
+          "type": "text",
+          "value": "Full Name"
+        },
+        "f8": {
+          "label": "Field label: Age Range *",
+          "type": "text",
+          "value": "Age Range *"
+        },
+        "f9": {
+          "label": "option: Please Select",
+          "type": "text",
+          "value": "Please Select"
+        },
+        "f10": {
+          "label": "option: Under 18",
+          "type": "text",
+          "value": "Under 18"
+        },
+        "f11": {
+          "label": "option: 18–25",
+          "type": "text",
+          "value": "18–25"
+        },
+        "f12": {
+          "label": "option: 26–40",
+          "type": "text",
+          "value": "26–40"
+        },
+        "f13": {
+          "label": "option: 40+",
+          "type": "text",
+          "value": "40+"
+        },
+        "f14": {
+          "label": "Field label: City *",
+          "type": "text",
+          "value": "City *"
+        },
+        "f15": {
+          "label": "Input hint: Delhi",
+          "type": "text",
+          "value": "Delhi"
+        },
+        "f16": {
+          "label": "Field label: Category *",
+          "type": "text",
+          "value": "Category *"
+        },
+        "f17": {
+          "label": "option: Please Select",
+          "type": "text",
+          "value": "Please Select"
+        },
+        "f18": {
+          "label": "option: Education",
+          "type": "text",
+          "value": "Education"
+        },
+        "f19": {
+          "label": "option: Sports",
+          "type": "text",
+          "value": "Sports"
+        },
+        "f20": {
+          "label": "option: Public Service",
+          "type": "text",
+          "value": "Public Service"
+        },
+        "f21": {
+          "label": "option: Other",
+          "type": "text",
+          "value": "Other"
+        },
+        "f22": {
+          "label": "Field label: Your Question *",
+          "type": "text",
+          "value": "Your Question *"
+        },
+        "f23": {
+          "label": "Input hint: What’s the biggest mistake you see ambitious young people make?",
+          "type": "text",
+          "value": "What’s the biggest mistake you see ambitious young people make?"
+        },
+        "f24": {
+          "label": "button: Submit",
+          "type": "text",
+          "value": "Submit"
+        },
+        "f25": {
+          "label": "Heading: Latest Insights",
+          "type": "text",
+          "value": "Latest Insights"
+        },
+        "f26": {
+          "label": "Text: Thoughts on policy, education and the road to Viksit Bharat.",
+          "type": "text",
+          "value": "Thoughts on policy, education and the road to Viksit Bharat."
+        },
+        "f27": {
+          "label": "Link: https://www.youtube.com/@officialsbhadauria",
+          "type": "link",
+          "value": "https://www.youtube.com/@officialsbhadauria"
+        },
+        "f28": {
+          "label": "a: Visit channel",
+          "type": "text",
+          "value": "Visit channel"
+        }
+      }
+    },
+    "Features": {
+      "kind": "page",
+      "source": "src/components/Features.jsx",
+      "fields": {
+        "f1": {
+          "label": "Image: ZeeNewsLogo",
+          "type": "image",
+          "value": "src/assets/Home-Images/zee-news.png"
+        },
+        "f2": {
+          "label": "Image: NdtvLogo",
+          "type": "image",
+          "value": "src/assets/Home-Images/ndtv.jpg"
+        },
+        "f3": {
+          "label": "Image: IndiaTodayLogo",
+          "type": "image",
+          "value": "src/assets/Home-Images/india-today.png"
+        },
+        "f4": {
+          "label": "Image: AajTakLogo",
+          "type": "image",
+          "value": "src/assets/Home-Images/aaj-tak.png"
+        },
+        "f5": {
+          "label": "Image: TimesNowLogo",
+          "type": "image",
+          "value": "src/assets/Home-Images/times-now.png"
+        },
+        "f6": {
+          "label": "Image: VisionYouthImg",
+          "type": "image",
+          "value": "src/assets/Home-Images/vision-youth.png"
+        },
+        "f7": {
+          "label": "Image: PublicPolicyImg",
+          "type": "image",
+          "value": "src/assets/Home-Images/public-policy.png"
+        },
+        "f8": {
+          "label": "media · name: ZEE News",
+          "type": "text",
+          "value": "ZEE News"
+        },
+        "f9": {
+          "label": "media · name: NDTV",
+          "type": "text",
+          "value": "NDTV"
+        },
+        "f10": {
+          "label": "media · name: India Today",
+          "type": "text",
+          "value": "India Today"
+        },
+        "f11": {
+          "label": "media · name: Aaj Tak",
+          "type": "text",
+          "value": "Aaj Tak"
+        },
+        "f12": {
+          "label": "media · name: Times Now",
+          "type": "text",
+          "value": "Times Now"
+        },
+        "f13": {
+          "label": "features · title: My Vision For Youth",
+          "type": "text",
+          "value": "My Vision For Youth"
+        },
+        "f14": {
+          "label": "features: The real responsibility of parents is not to choose the path, but",
+          "type": "text",
+          "value": "The real responsibility of parents is not to choose the path, but to recognise the talent, encourage it and give it room to grow."
+        },
+        "f15": {
+          "label": "features: Don't just prepare students for jobs. Prepare them to create jobs",
+          "type": "text",
+          "value": "Don't just prepare students for jobs. Prepare them to create jobs."
+        },
+        "f16": {
+          "label": "features: Because when we empower young minds, we help build a stronger Ind",
+          "type": "text",
+          "value": "Because when we empower young minds, we help build a stronger India."
+        },
+        "f17": {
+          "label": "features · title: Public Service & Policy Engagement",
+          "type": "text",
+          "value": "Public Service & Policy Engagement"
+        },
+        "f18": {
+          "label": "features: Building institutions has meant working closely with policymakers",
+          "type": "text",
+          "value": "Building institutions has meant working closely with policymakers, administrators and government at every level, understanding not just what good education policy should say, but what it actually takes to implement it on the ground."
+        },
+        "f19": {
+          "label": "Heading: Latest Features",
+          "type": "text",
+          "value": "Latest Features"
+        }
+      }
+    },
+    "Footer": {
+      "kind": "settings",
+      "source": "src/components/Footer.jsx",
+      "fields": {
+        "f1": {
+          "label": "navItems · name: About Me",
+          "type": "text",
+          "value": "About Me"
+        },
+        "f2": {
+          "label": "navItems · path: /",
+          "type": "link",
+          "value": "/"
+        },
+        "f3": {
+          "label": "navItems · name: My Journey",
+          "type": "text",
+          "value": "My Journey"
+        },
+        "f4": {
+          "label": "navItems · path: /journey",
+          "type": "link",
+          "value": "/journey"
+        },
+        "f5": {
+          "label": "navItems · name: Thought Leadership",
+          "type": "text",
+          "value": "Thought Leadership"
+        },
+        "f6": {
+          "label": "navItems · path: /thought-leadership",
+          "type": "link",
+          "value": "/thought-leadership"
+        },
+        "f7": {
+          "label": "navItems · name: Sewa",
+          "type": "text",
+          "value": "Sewa"
+        },
+        "f8": {
+          "label": "navItems · path: /sewa",
+          "type": "link",
+          "value": "/sewa"
+        },
+        "f9": {
+          "label": "navItems · name: Youth Connect",
+          "type": "text",
+          "value": "Youth Connect"
+        },
+        "f10": {
+          "label": "navItems · path: /#youth-connect",
+          "type": "link",
+          "value": "/#youth-connect"
+        },
+        "f11": {
+          "label": "navItems · name: Contact",
+          "type": "text",
+          "value": "Contact"
+        },
+        "f12": {
+          "label": "navItems · path: /connect",
+          "type": "link",
+          "value": "/connect"
+        },
+        "f13": {
+          "label": "navItems · name: Media",
+          "type": "text",
+          "value": "Media"
+        },
+        "f14": {
+          "label": "navItems · path: /media",
+          "type": "link",
+          "value": "/media"
+        },
+        "f15": {
+          "label": "socialLinks · name: Instagram",
+          "type": "text",
+          "value": "Instagram"
+        },
+        "f16": {
+          "label": "socialLinks · href: https://www.instagram.com/officialsbhadauria/",
+          "type": "link",
+          "value": "https://www.instagram.com/officialsbhadauria/"
+        },
+        "f17": {
+          "label": "socialLinks · name: Facebook",
+          "type": "text",
+          "value": "Facebook"
+        },
+        "f18": {
+          "label": "socialLinks · href: https://www.facebook.com/officialsbhadauria",
+          "type": "link",
+          "value": "https://www.facebook.com/officialsbhadauria"
+        },
+        "f19": {
+          "label": "socialLinks · name: YouTube",
+          "type": "text",
+          "value": "YouTube"
+        },
+        "f20": {
+          "label": "socialLinks · href: https://www.youtube.com/@officialsbhadauria",
+          "type": "link",
+          "value": "https://www.youtube.com/@officialsbhadauria"
+        },
+        "f21": {
+          "label": "socialLinks · name: X",
+          "type": "text",
+          "value": "X"
+        },
+        "f22": {
+          "label": "socialLinks · href: https://x.com/sbhadauria_off",
+          "type": "link",
+          "value": "https://x.com/sbhadauria_off"
+        },
+        "f23": {
+          "label": "Heading: Subscribe to Our Newsletter",
+          "type": "text",
+          "value": "Subscribe to Our Newsletter"
+        },
+        "f24": {
+          "label": "Input hint: Email address",
+          "type": "text",
+          "value": "Email address"
+        },
+        "f25": {
+          "label": "button: Subscribe Now",
+          "type": "text",
+          "value": "Subscribe Now"
+        },
+        "f26": {
+          "label": "Text: Copyright ©",
+          "type": "text",
+          "value": "Copyright ©"
+        },
+        "f27": {
+          "label": "Text: Shailendra Bhadauria. All rights reserved.",
+          "type": "text",
+          "value": "Shailendra Bhadauria. All rights reserved."
+        },
+        "f28": {
+          "label": "Heading: Learning. Leading. Giving Back.",
+          "type": "text",
+          "value": "Learning. Leading. Giving Back.",
+          "hiValue": ""
+        },
+        "f29": {
+          "label": "Text: Learning. Leading. Giving Back introduction",
+          "type": "text",
+          "value": "I believe that life is about more than what we achieve for ourselves. It is about the opportunities we create, the people we empower, and the difference we leave behind. My journey continues to be guided by a simple purpose: to keep learning, keep contributing, and do my part in building a better tomorrow.",
+          "hiValue": ""
+        },
+        "f30": {
+          "label": "Heading: Let's Stay Connected",
+          "type": "text",
+          "value": "Let's Stay Connected",
+          "hiValue": ""
+        },
+        "f31": {
+          "label": "Text: Let's Stay Connected introduction",
+          "type": "text",
+          "value": "I believe good conversations can lead to great ideas. I'd love to hear your thoughts, perspectives, and aspirations.",
+          "hiValue": ""
+        },
+        "f32": {
+          "label": "Button: Connect With Me",
+          "type": "text",
+          "value": "Connect With Me",
+          "hiValue": ""
+        },
+        "f33": {
+          "label": "Link: /connect",
+          "type": "link",
+          "value": "/connect",
+          "hiValue": "#"
+        }
+      }
+    },
+    "Hero": {
+      "kind": "page",
+      "source": "src/components/Hero.jsx",
+      "fields": {
+        "f1": {
+          "label": "Image: HeroBg",
+          "type": "image",
+          "value": "src/assets/Home-Images/herobg.png"
+        },
+        "f2": {
+          "label": "Image: ShalinderImg",
+          "type": "image",
+          "value": "src/assets/Home-Images/shalinder.png"
+        },
+        "f3": {
+          "label": "roles · label: Educationist",
+          "type": "text",
+          "value": "Educationist"
+        },
+        "f4": {
+          "label": "roles · path: /journey",
+          "type": "link",
+          "value": "/journey"
+        },
+        "f5": {
+          "label": "roles · label: Philanthropist",
+          "type": "text",
+          "value": "Philanthropist"
+        },
+        "f6": {
+          "label": "roles · path: #",
+          "type": "link",
+          "value": "#"
+        },
+        "f7": {
+          "label": "roles · label: Nation Builder",
+          "type": "text",
+          "value": "Nation Builder"
+        },
+        "f8": {
+          "label": "roles · path: #",
+          "type": "link",
+          "value": "#"
+        },
+        "f9": {
+          "label": "Text: हर बच्चे की क्षमता को पहचानना और",
+          "type": "text",
+          "value": "हर बच्चे की क्षमता को पहचानना और"
+        },
+        "f10": {
+          "label": "Text: शिक्षा के माध्यम से एक सशक्त भारत",
+          "type": "text",
+          "value": "शिक्षा के माध्यम से एक सशक्त भारत"
+        },
+        "f11": {
+          "label": "Text: का निर्माण – यही मेरा उद्देश्य है।",
+          "type": "text",
+          "value": "का निर्माण – यही मेरा उद्देश्य है।"
+        },
+        "f12": {
+          "label": "Text: I believe that every experience teaches us something, and every meaningful conve",
+          "type": "text",
+          "value": "I believe that every experience teaches us something, and every meaningful conversation opens the door to a new perspective. Over the years, my journey across education, entrepreneurship, and social development has shaped the way I think, lead, and learn. Through this space, I hope to share my thoughts, experiences, and ideas on issues that matter, encourage meaningful conversations, and inspire fresh ways of looking at the world around us."
+        },
+        "f13": {
+          "label": "Image description: Shailendra Bhadauria",
+          "type": "text",
+          "value": "Shailendra Bhadauria"
+        },
+        "f14": {
+          "label": "Heading: Thought Leadership | Ideas, Perspectives & Experiences",
+          "type": "text",
+          "value": "Thought Leadership | Ideas, Perspectives & Experiences",
+          "hiValue": ""
+        },
+        "f15": {
+          "label": "Button: Explore My Perspectives",
+          "type": "text",
+          "value": "Explore My Perspectives",
+          "hiValue": ""
+        },
+        "f16": {
+          "label": "Link: /thought-leadership",
+          "type": "link",
+          "value": "/thought-leadership",
+          "hiValue": "#"
+        }
+      }
+    },
+    "Journey": {
+      "kind": "page",
+      "source": "src/components/Journey.jsx",
+      "fields": {
+        "f1": {
+          "label": "Image: Img1",
+          "type": "image",
+          "value": "src/assets/Home-Images/image 7.png"
+        },
+        "f2": {
+          "label": "Image: Img2",
+          "type": "image",
+          "value": "src/assets/Home-Images/Container.png"
+        },
+        "f3": {
+          "label": "Image: Img3",
+          "type": "image",
+          "value": "src/assets/Home-Images/Container2.png"
+        },
+        "f4": {
+          "label": "Image: Img4",
+          "type": "image",
+          "value": "src/assets/Home-Images/Frame 79.png"
+        },
+        "f5": {
+          "label": "cards · title: शिक्षा – Education",
+          "type": "text",
+          "value": "शिक्षा – Education"
+        },
+        "f6": {
+          "label": "cards · text: From a single classroom to a network of institutions across Uttar",
+          "type": "text",
+          "value": "From a single classroom to a network of institutions across Uttar Pradesh and Rajasthan, education has been the constant thread of my working life."
+        },
+        "f7": {
+          "label": "cards · title: सेवा – Sewa",
+          "type": "text",
+          "value": "सेवा – Sewa"
+        },
+        "f8": {
+          "label": "cards · text: Philanthropy, to me, has never been a separate activity from inst",
+          "type": "text",
+          "value": "Philanthropy, to me, has never been a separate activity from institution-building. It is the same commitment, extended to those who need it most."
+        },
+        "f9": {
+          "label": "cards · title: विकसित भारत 2047 – Nation Building",
+          "type": "text",
+          "value": "विकसित भारत 2047 – Nation Building"
+        },
+        "f10": {
+          "label": "cards · text: India’s growth story is being written by its youth. My work is ab",
+          "type": "text",
+          "value": "India’s growth story is being written by its youth. My work is about making sure our education system keeps pace with that ambition."
+        },
+        "f11": {
+          "label": "cards · title: खेल – Sports",
+          "type": "text",
+          "value": "खेल – Sports"
+        },
+        "f12": {
+          "label": "cards · text: Through Chetak Sports and the Dehradun Warriors, I’ve extended th",
+          "type": "text",
+          "value": "Through Chetak Sports and the Dehradun Warriors, I’ve extended the same belief in talent and opportunity to the playing field."
+        },
+        "f13": {
+          "label": "Text: For nearly three decades, I have worked at the intersection of education, h",
+          "type": "text",
+          "value": "For nearly three decades, I have worked at the intersection of education, healthcare and public life building institutions, backing first-generation learners, and asking what India’s next chapter of growth should look like for its youth. This is where I share that work, and the thinking behind it."
+        }
+      }
+    },
+    "Navbar": {
+      "kind": "settings",
+      "source": "src/components/Navbar.jsx",
+      "fields": {
+        "f1": {
+          "label": "Image: ShalinderImg",
+          "type": "image",
+          "value": "src/assets/Home-Images/shalinder.png"
+        },
+        "f2": {
+          "label": "links · label: Home",
+          "type": "text",
+          "value": "Home"
+        },
+        "f3": {
+          "label": "links · path: /",
+          "type": "link",
+          "value": "/"
+        },
+        "f4": {
+          "label": "links · label: Journey",
+          "type": "text",
+          "value": "Journey"
+        },
+        "f5": {
+          "label": "links · path: /journey",
+          "type": "link",
+          "value": "/journey"
+        },
+        "f6": {
+          "label": "links · label: Vision 2047",
+          "type": "text",
+          "value": "Vision 2047"
+        },
+        "f7": {
+          "label": "links · path: /vision-2047",
+          "type": "link",
+          "value": "/vision-2047"
+        },
+        "f8": {
+          "label": "links · label: Educationist",
+          "type": "text",
+          "value": "Educationist"
+        },
+        "f9": {
+          "label": "links · path: /education",
+          "type": "link",
+          "value": "/education"
+        },
+        "f10": {
+          "label": "links · label: Thought Leadership",
+          "type": "text",
+          "value": "Thought Leadership"
+        },
+        "f11": {
+          "label": "links · path: /thought-leadership",
+          "type": "link",
+          "value": "/thought-leadership"
+        },
+        "f12": {
+          "label": "links · label: Nation Building",
+          "type": "text",
+          "value": "Nation Building"
+        },
+        "f13": {
+          "label": "links · path: /nation-building",
+          "type": "link",
+          "value": "/nation-building"
+        },
+        "f14": {
+          "label": "moreLinks · label: Media",
+          "type": "text",
+          "value": "Media"
+        },
+        "f15": {
+          "label": "moreLinks · path: /media",
+          "type": "link",
+          "value": "/media"
+        },
+        "f16": {
+          "label": "moreLinks · label: Up Development",
+          "type": "text",
+          "value": "Up Development"
+        },
+        "f17": {
+          "label": "moreLinks · path: /updevelopment",
+          "type": "link",
+          "value": "/updevelopment"
+        },
+        "f18": {
+          "label": "moreLinks · label: चाय पै चर्चा",
+          "type": "text",
+          "value": "चाय पै चर्चा"
+        },
+        "f19": {
+          "label": "moreLinks · path: /चाय-पै-चर्चा",
+          "type": "link",
+          "value": "/चाय-पै-चर्चा"
+        },
+        "f20": {
+          "label": "moreLinks · label: Sports",
+          "type": "text",
+          "value": "Sports"
+        },
+        "f21": {
+          "label": "moreLinks · path: /sports",
+          "type": "link",
+          "value": "/sports"
+        },
+        "f22": {
+          "label": "moreLinks · label: GALLERY",
+          "type": "text",
+          "value": "GALLERY"
+        },
+        "f23": {
+          "label": "moreLinks · path: /sewa",
+          "type": "link",
+          "value": "/sewa"
+        },
+        "f24": {
+          "label": "Link: /",
+          "type": "link",
+          "value": "/"
+        },
+        "f25": {
+          "label": "Image description: Shailendra Bhadauria",
+          "type": "text",
+          "value": "Shailendra Bhadauria"
+        },
+        "f26": {
+          "label": "Text: SHAILENDRA",
+          "type": "text",
+          "value": "SHAILENDRA"
+        },
+        "f27": {
+          "label": "Text: BHADAURIA",
+          "type": "text",
+          "value": "BHADAURIA"
+        },
+        "f28": {
+          "label": "button: More",
+          "type": "text",
+          "value": "More"
+        },
+        "f29": {
+          "label": "Link: /connect",
+          "type": "link",
+          "value": "/connect"
+        },
+        "f30": {
+          "label": "Link: Connect",
+          "type": "text",
+          "value": "Connect"
+        },
+        "f31": {
+          "label": "button: More",
+          "type": "text",
+          "value": "More"
+        },
+        "f32": {
+          "label": "Link: /connect",
+          "type": "link",
+          "value": "/connect"
+        },
+        "f33": {
+          "label": "Link: Connect",
+          "type": "text",
+          "value": "Connect"
+        }
+      }
+    },
+    "Stats": {
+      "kind": "page",
+      "source": "src/components/Stats.jsx",
+      "fields": {
+        "f1": {
+          "label": "stats · mainText: 25+",
+          "type": "text",
+          "value": "25+"
+        },
+        "f2": {
+          "label": "stats · subText: years in education",
+          "type": "text",
+          "value": "years in education"
+        },
+        "f3": {
+          "label": "stats · mainText: 12+",
+          "type": "text",
+          "value": "12+"
+        },
+        "f4": {
+          "label": "stats · subText: institutions built",
+          "type": "text",
+          "value": "institutions built"
+        },
+        "f5": {
+          "label": "stats · mainText: Number\nof states",
+          "type": "text",
+          "value": "Number\nof states"
+        },
+        "f6": {
+          "label": "stats · mainText: Students\nimpacted",
+          "type": "text",
+          "value": "Students\nimpacted"
+        },
+        "f7": {
+          "label": "stats · mainText: Scholarships\nawarded",
+          "type": "text",
+          "value": "Scholarships\nawarded"
+        },
+        "f8": {
+          "label": "Heading: Three Decades, In Numbers",
+          "type": "text",
+          "value": "Three Decades, In Numbers"
+        }
+      }
+    },
+    "YouthConnect": {
+      "kind": "page",
+      "source": "src/components/YouthConnect.jsx",
+      "fields": {
+        "f1": {
+          "label": "Image: YouthImg",
+          "type": "image",
+          "value": "src/assets/Home-Images/YouthImg.jpeg"
+        },
+        "f2": {
+          "label": "questions · q: You've established several educational institutions and ventured into healthcare",
+          "type": "text",
+          "value": "You've established several educational institutions and ventured into healthcare and sports. What has kept you motivated throughout this journey?"
+        },
+        "f3": {
+          "label": "questions · a: For me, it has never been about how many institutions I could establish. It has ",
+          "type": "text",
+          "value": "For me, it has never been about how many institutions I could establish. It has always been about the difference they could make. Over the past three decades, I've been fortunate to work with people who share this vision. I've learned that you cannot build something meaningful alone. You need the right people, a shared purpose, and the patience to see your efforts grow. What keeps me going is knowing that there are still so many lives we can positively impact."
+        },
+        "f4": {
+          "label": "questions · q: What do you think young Indians need today that perhaps wasn't as important a de",
+          "type": "text",
+          "value": "What do you think young Indians need today that perhaps wasn't as important a decade ago?"
+        },
+        "f5": {
+          "label": "questions · a: I think today's young people have tremendous potential, but they are also naviga",
+          "type": "text",
+          "value": "I think today's young people have tremendous potential, but they are also navigating a world that is changing faster than ever. A degree alone is no longer enough. They need practical skills, exposure to new technologies, good mentors, and the confidence to think independently. More importantly, I want young Indians to believe that they don't always have to wait for someone to offer them an opportunity. With the right knowledge and determination, they can create one themselves."
+        },
+        "f6": {
+          "label": "questions · q: You've worked across education, healthcare, and sports. Why did you choose to ex",
+          "type": "text",
+          "value": "You've worked across education, healthcare, and sports. Why did you choose to explore such different fields instead of focusing on just one?"
+        },
+        "f7": {
+          "label": "questions · a: I understand why people ask me this, but I've never looked at these fields as co",
+          "type": "text",
+          "value": "I understand why people ask me this, but I've never looked at these fields as completely separate. To me, they are all connected by one purpose: creating opportunities where they are needed most.\n\nA young student needs access to quality education. A family needs dependable healthcare. A talented sportsperson needs a platform to prove their abilities. The challenges may be different, but the intention behind addressing them remains the same.\n\nI've always believed that if you have the ability to make a difference in more than one area, you shouldn't limit yourself simply for the sake of staying in one field."
+        },
+        "f8": {
+          "label": "questions · q: Do you think young Indians are too focused on government jobs and financial secu",
+          "type": "text",
+          "value": "Do you think young Indians are too focused on government jobs and financial security rather than entrepreneurship?"
+        },
+        "f9": {
+          "label": "questions · a: I don't think there's anything wrong with wanting a secure future. Every young p",
+          "type": "text",
+          "value": "I don't think there's anything wrong with wanting a secure future. Every young person has different responsibilities, circumstances, and aspirations, and we must respect that.\n\nHowever, I do believe we need to encourage more young Indians to look beyond conventional career paths. Entrepreneurship should not feel like an option reserved for people with financial backing or family businesses.\n\nI want our education system to give students the confidence, practical knowledge, and support to explore their own ideas. A secure job is a respectable ambition, but so is creating something that might one day provide jobs to others."
+        },
+        "f10": {
+          "label": "questions · q: What is one mistake you often see young people make when pursuing their ambition",
+          "type": "text",
+          "value": "What is one mistake you often see young people make when pursuing their ambitions?"
+        },
+        "f11": {
+          "label": "questions · a: I think one of the biggest mistakes is expecting success too quickly. We live in",
+          "type": "text",
+          "value": "I think one of the biggest mistakes is expecting success too quickly. We live in a time when we see everyone's achievements, but rarely the years of effort behind them.\n\nI often tell young people not to compare the beginning of their journey with someone else's years of experience. Everyone has a different starting point, and that's perfectly fine.\n\nFocus on learning, improving your skills, and doing your work sincerely. There will be setbacks, and some plans may not work out. But I've learned that patience, consistency, and the willingness to keep learning can take you much further than the pressure to succeed overnight."
+        },
+        "f12": {
+          "label": "Heading: Youth Connect - पूछो बेझिझक",
+          "type": "text",
+          "value": "Youth Connect - पूछो बेझिझक"
+        },
+        "f13": {
+          "label": "Text: Baat karni se baat banti hai",
+          "type": "text",
+          "value": "Baat karni se baat banti hai"
+        },
+        "f14": {
+          "label": "Text: that's something I genuinely believe. Some of my best conversations start e",
+          "type": "text",
+          "value": "that's something I genuinely believe. Some of my best conversations start exactly like this: one honest question leading to another, until you actually get somewhere real."
+        },
+        "f15": {
+          "label": "Text: I love connecting with India's youth this way directly, without a filter, w",
+          "type": "text",
+          "value": "I love connecting with India's youth this way directly, without a filter, without someone else answering on my behalf. So ask me anything. I read these myself, and I answer the ones that make me think the hardest."
+        },
+        "f16": {
+          "label": "Image description: Youth connecting and having a conversation",
+          "type": "text",
+          "value": "Youth connecting and having a conversation"
+        }
+      }
+    },
+    "ChaiPaiCharchaPage": {
+      "kind": "page",
+      "source": "src/pages/ChaiPaiCharchaPage.jsx",
+      "fields": {
+        "f1": {
+          "label": "Image: seasonImage",
+          "type": "image",
+          "value": "src/assets/WebImages/Season 1 has 28 episodes.jpg"
+        },
+        "f8": {
+          "label": "hosts · role: THE SKEPTIC",
+          "type": "text",
+          "value": "THE SKEPTIC"
+        },
+        "f9": {
+          "label": "hosts · name: Vikram",
+          "type": "text",
+          "value": "Vikram"
+        },
+        "f10": {
+          "label": "hosts: Runs a mobile repair stall by the tea stand, and brings that same",
+          "type": "text",
+          "value": "Runs a mobile repair stall by the tea stand, and brings that same instinct to every conversation if it sounds too good, it's getting tested."
+        },
+        "f11": {
+          "label": "hosts: Vikram skims the news rather than reading it end to end, which ma",
+          "type": "text",
+          "value": "Vikram skims the news rather than reading it end to end, which makes him sharp in a specific way: quick to catch when something's being oversold."
+        },
+        "f12": {
+          "label": "hosts · quote: \"ye sab kagaz pe hi accha lagta hai, bhaiya.\"",
+          "type": "text",
+          "value": "\"ye sab kagaz pe hi accha lagta hai, bhaiya.\""
+        },
+        "f13": {
+          "label": "hosts · closing: He's not the expert in the room. He's the audience in the room, a",
+          "type": "text",
+          "value": "He's not the expert in the room. He's the audience in the room, asking exactly what the comments would ask."
+        },
+        "f14": {
+          "label": "hosts · role: THE SKEPTIC",
+          "type": "text",
+          "value": "THE SKEPTIC"
+        },
+        "f15": {
+          "label": "hosts · name: Shekhar",
+          "type": "text",
+          "value": "Shekhar"
+        },
+        "f16": {
+          "label": "hosts: Teaches commerce at a college nearby, and it shows calm, never le",
+          "type": "text",
+          "value": "Teaches commerce at a college nearby, and it shows calm, never lectures, always has one real example ready before he'll accept an argument. Where Vikram doubts"
+        },
+        "f17": {
+          "label": "hosts: Shekhar explains, but never with a speech. His rule for himself: ",
+          "type": "text",
+          "value": "Shekhar explains, but never with a speech. His rule for himself: one data point, one desi example, nothing more. When Vikram pushes back, Shekhar's answer is always the same"
+        },
+        "f18": {
+          "label": "hosts · quote: \"sawaal galat nahi hai, Vikram. Jawab sun.\"",
+          "type": "text",
+          "value": "\"sawaal galat nahi hai, Vikram. Jawab sun.\""
+        },
+        "f19": {
+          "label": "hosts · closing: He's not there to win the argument. He's there to make sure it ac",
+          "type": "text",
+          "value": "He's not there to win the argument. He's there to make sure it actually goes somewhere."
+        },
+        "f32": {
+          "label": "Heading: चाय पे चर्चा 2047",
+          "type": "text",
+          "value": "चाय पे चर्चा 2047"
+        },
+        "f33": {
+          "label": "Text: Some of my best conversations about India's future have happened over chai,",
+          "type": "text",
+          "value": "Some of my best conversations about India's future have happened over chai, not in boardrooms."
+        },
+        "f34": {
+          "label": "Text: Chai Pe Charcha started as an attempt to bring that same informality real c",
+          "type": "text",
+          "value": "Chai Pe Charcha started as an attempt to bring that same informality real conversation, real disagreement, real curiosity to a wider audience."
+        },
+        "f35": {
+          "label": "Text: Season 1 has 28 episodes",
+          "type": "text",
+          "value": "Season 1 has 28 episodes"
+        },
+        "f36": {
+          "label": "Text: New episodes every Friday at 7:30 PM, on",
+          "type": "text",
+          "value": "New episodes every Friday at 7:30 PM, on"
+        },
+        "f37": {
+          "label": "Link: https://www.youtube.com/@officialsbhadauria",
+          "type": "link",
+          "value": "https://www.youtube.com/@officialsbhadauria"
+        },
+        "f38": {
+          "label": "a: YouTube",
+          "type": "text",
+          "value": "YouTube"
+        },
+        "f39": {
+          "label": "Link: https://www.instagram.com/officialsbhadauria/",
+          "type": "link",
+          "value": "https://www.instagram.com/officialsbhadauria/"
+        },
+        "f40": {
+          "label": "a: Instagram",
+          "type": "text",
+          "value": "Instagram"
+        },
+        "f41": {
+          "label": "Image description: Chai Pe Charcha 2047 Season 1",
+          "type": "text",
+          "value": "Chai Pe Charcha 2047 Season 1"
+        },
+        "f42": {
+          "label": "Heading: Meet the Hosts",
+          "type": "text",
+          "value": "Meet the Hosts"
+        },
+        "f43": {
+          "label": "Text: (Gen-Z Mascot Characters)",
+          "type": "text",
+          "value": "(Gen-Z Mascot Characters)"
+        },
+        "f46": {
+          "label": "Heading: Have a question for a future episode?",
+          "type": "text",
+          "value": "Have a question for a future episode?"
+        },
+        "f47": {
+          "label": "Text: Send it in - the best ones shape what we talk about next.",
+          "type": "text",
+          "value": "Send it in - the best ones shape what we talk about next."
+        },
+        "f48": {
+          "label": "Field label: Your Name",
+          "type": "text",
+          "value": "Your Name"
+        },
+        "f49": {
+          "label": "Input hint: Mohan",
+          "type": "text",
+          "value": "Mohan"
+        },
+        "f50": {
+          "label": "Field label: Message",
+          "type": "text",
+          "value": "Message"
+        },
+        "f51": {
+          "label": "Input hint: Write to here...",
+          "type": "text",
+          "value": "Write to here..."
+        },
+        "f52": {
+          "label": "button: Send Message",
+          "type": "text",
+          "value": "Send Message"
+        }
+      }
+    },
+    "ConnectPage": {
+      "kind": "page",
+      "source": "src/pages/ConnectPage.jsx",
+      "fields": {
+        "f1": {
+          "label": "Image: heroBanner",
+          "type": "image",
+          "value": "src/assets/Home-Images/herobg.png"
+        },
+        "f2": {
+          "label": "socials · label: Instagram",
+          "type": "text",
+          "value": "Instagram"
+        },
+        "f3": {
+          "label": "socials · href: https://www.instagram.com/officialsbhadauria/",
+          "type": "link",
+          "value": "https://www.instagram.com/officialsbhadauria/"
+        },
+        "f4": {
+          "label": "socials · label: Facebook",
+          "type": "text",
+          "value": "Facebook"
+        },
+        "f5": {
+          "label": "socials · href: https://www.facebook.com/officialsbhadauria",
+          "type": "link",
+          "value": "https://www.facebook.com/officialsbhadauria"
+        },
+        "f6": {
+          "label": "socials · label: YouTube",
+          "type": "text",
+          "value": "YouTube"
+        },
+        "f7": {
+          "label": "socials · href: https://www.youtube.com/@officialsbhadauria",
+          "type": "link",
+          "value": "https://www.youtube.com/@officialsbhadauria"
+        },
+        "f8": {
+          "label": "socials · label: X",
+          "type": "text",
+          "value": "X"
+        },
+        "f9": {
+          "label": "socials · href: https://x.com/sbhadauria_off",
+          "type": "link",
+          "value": "https://x.com/sbhadauria_off"
+        },
+        "f10": {
+          "label": "Heading: CONNECT",
+          "type": "text",
+          "value": "CONNECT"
+        },
+        "f11": {
+          "label": "Heading: Get in Touch",
+          "type": "text",
+          "value": "Get in Touch"
+        },
+        "f12": {
+          "label": "Text: Whether you're inviting me to speak, working on a story, or simply want to ",
+          "type": "text",
+          "value": "Whether you're inviting me to speak, working on a story, or simply want to stay in touch here's how to reach."
+        },
+        "f13": {
+          "label": "Heading: Stay Connected",
+          "type": "text",
+          "value": "Stay Connected"
+        },
+        "f14": {
+          "label": "Heading: Speaking & Interview Requests",
+          "type": "text",
+          "value": "Speaking & Interview Requests"
+        },
+        "f15": {
+          "label": "Text: Fill out the form with your event details, and our office will respond with",
+          "type": "text",
+          "value": "Fill out the form with your event details, and our office will respond within one to two business days."
+        },
+        "f16": {
+          "label": "Field label: Name *",
+          "type": "text",
+          "value": "Name *"
+        },
+        "f17": {
+          "label": "Input hint: Full Name *",
+          "type": "text",
+          "value": "Full Name *"
+        },
+        "f18": {
+          "label": "Field label: Organisation *",
+          "type": "text",
+          "value": "Organisation *"
+        },
+        "f19": {
+          "label": "Input hint: Delhi",
+          "type": "text",
+          "value": "Delhi"
+        },
+        "f20": {
+          "label": "Field label: Topic of Interest *",
+          "type": "text",
+          "value": "Topic of Interest *"
+        },
+        "f21": {
+          "label": "Input hint: Sports",
+          "type": "text",
+          "value": "Sports"
+        },
+        "f22": {
+          "label": "Field label: Your Message *",
+          "type": "text",
+          "value": "Your Message *"
+        },
+        "f23": {
+          "label": "Input hint: What's the biggest mistake you see ambitious young people make?",
+          "type": "text",
+          "value": "What's the biggest mistake you see ambitious young people make?"
+        },
+        "f24": {
+          "label": "button: Submit",
+          "type": "text",
+          "value": "Submit"
+        }
+      }
+    },
+    "EducationPage": {
+      "kind": "page",
+      "source": "src/pages/EducationPage.jsx",
+      "fields": {
+        "f1": {
+          "label": "Image: heroImage",
+          "type": "image",
+          "value": "src/assets/WebImages/Established Pratap University,.jpg"
+        },
+        "f2": {
+          "label": "Image: policyImage",
+          "type": "image",
+          "value": "src/assets/WebImages/Governance & Institution-Building.jpg"
+        },
+        "f7": {
+          "label": "faqs: You've spent nearly three decades in education. What is the biggest change you'v",
+          "type": "text",
+          "value": "You've spent nearly three decades in education. What is the biggest change you've seen in how students learn and think?"
+        },
+        "f8": {
+          "label": "faqs: Do you think a college degree is still enough to build a successful career?",
+          "type": "text",
+          "value": "Do you think a college degree is still enough to build a successful career?"
+        },
+        "f9": {
+          "label": "faqs: Why do you believe entrepreneurship should be encouraged within educational inst",
+          "type": "text",
+          "value": "Why do you believe entrepreneurship should be encouraged within educational institutions?"
+        },
+        "f14": {
+          "label": "Heading: EDUCATIONIST",
+          "type": "text",
+          "value": "EDUCATIONIST"
+        },
+        "f15": {
+          "label": "Text: I don't think of myself as someone who built one university. I think of mys",
+          "type": "text",
+          "value": "I don't think of myself as someone who built one university. I think of myself as someone who has spent three decades trying to understand what India's education system actually needs - and then building institutions that try to meet that need, one at a time."
+        },
+        "f16": {
+          "label": "Heading: The Institutional Record",
+          "type": "text",
+          "value": "The Institutional Record"
+        },
+        "f17": {
+          "label": "Text: What began with the establishment of the Maharana Pratap Group of Institutions i",
+          "type": "text",
+          "value": "What began with the establishment of the Maharana Pratap Group of Institutions in 1996 has gradually grown into a network of educational institutions across different disciplines. Today, our institutions offer education in engineering, management, pharmacy, dental sciences, and other fields across Kanpur and Lucknow, with a shared commitment to quality education and practical learning.\n\nThis journey also includes five Pratap International Schools across Delhi and Kanpur. I have always believed that a strong educational foundation begins early, when children develop curiosity, confidence, and the values that shape their character."
+        },
+        "f18": {
+          "label": "Text: In 2011, we established Pratap University in Jaipur, spread across a 100-acre ca",
+          "type": "text",
+          "value": "In 2011, we established Pratap University in Jaipur, spread across a 100-acre campus, with the vision of providing multidisciplinary education that prepares students for evolving industry needs and future opportunities.\n\nOur efforts have also extended into healthcare through Maharana Pratap Hospital and Medicity. For me, education and healthcare have always been closely connected. Both play an important role in helping individuals and communities lead healthier, more independent, and fulfilling lives."
+        },
+        "f19": {
+          "label": "Text: Explore more here:",
+          "type": "text",
+          "value": "Explore more here:"
+        },
+        "f20": {
+          "label": "Link: /pratap-university",
+          "type": "link",
+          "value": "/pratap-university"
+        },
+        "f21": {
+          "label": "Link: Pratap University",
+          "type": "text",
+          "value": "Pratap University"
+        },
+        "f22": {
+          "label": "Link: /pratap-school",
+          "type": "link",
+          "value": "/pratap-school"
+        },
+        "f23": {
+          "label": "Link: Pratap International School",
+          "type": "text",
+          "value": "Pratap International School"
+        },
+        "f24": {
+          "label": "Heading: My Education Philosophy",
+          "type": "text",
+          "value": "My Education Philosophy"
+        },
+        "f25": {
+          "label": "Text: Over the years, my understanding of education has evolved, but one belief has re",
+          "type": "text",
+          "value": "Over the years, my understanding of education has evolved, but one belief has remained unchanged: a degree should open doors to opportunities, not mark the end of learning.\n\nI have always wanted our institutions to prepare students for more than just examinations and employment. This is why I strongly believe in encouraging entrepreneurship and creating Startup Cells within educational institutions, where young people can explore ideas, develop practical skills, and gain the confidence to build something of their own."
+        },
+        "f26": {
+          "label": "Text: I also believe that learning should not be limited to a single discipline. The c",
+          "type": "text",
+          "value": "I also believe that learning should not be limited to a single discipline. The challenges our young people will face in the coming decades will require knowledge from different fields, creative thinking, and the ability to adapt. Whether it is technology, management, science, or public policy, students should have the freedom to explore connections between subjects and develop a broader understanding of the world.\n\nFor me, the purpose of education is to nurture individuals who can think independently, take responsibility, and contribute meaningfully to society."
+        },
+        "f27": {
+          "label": "Heading: Understanding the System",
+          "type": "text",
+          "value": "Understanding the System"
+        },
+        "f28": {
+          "label": "Text: Having spent nearly three decades establishing and managing educational institut",
+          "type": "text",
+          "value": "Having spent nearly three decades establishing and managing educational institutions, I have come to understand that good intentions and well-designed policies do not always translate into meaningful results.\n\nI have seen how challenges in implementation, limited resources, and changing regulations can affect institutions, educators, and students. These experiences have taught me that education reform must consider what actually happens inside classrooms and campuses."
+        },
+        "f29": {
+          "label": "Text: My interest in the National Education Policy, vocational education, and improvin",
+          "type": "text",
+          "value": "My interest in the National Education Policy, vocational education, and improving access to quality learning comes from these experiences. I believe policies should be practical, inclusive, and responsive to the needs of students and educators.\n\nFor me, meaningful reform is not simply about introducing new guidelines. It is about ensuring that those changes create better learning environments, stronger institutions, and more opportunities for young people."
+        },
+        "f30": {
+          "label": "Heading: What Changed, For Whom",
+          "type": "text",
+          "value": "What Changed, For Whom"
+        },
+        "f31": {
+          "label": "Text: When I look back at the institutions we have established over the years, I don't",
+          "type": "text",
+          "value": "When I look back at the institutions we have established over the years, I don't measure their success only by the number of campuses, courses, or students enrolled. What matters most to me is how these institutions have influenced the lives of the people associated with them.\n\nI have seen students from smaller cities gain the confidence to pursue careers they once considered beyond their reach. I have seen families place their trust in education as a way to create better opportunities for the next generation. And I have seen how access to learning can gradually change the aspirations of an entire community.\n\nThese experiences have strengthened my belief that education can create an impact far beyond the classroom.\n\nFor me, the true achievement of an institution lies not in how much it grows, but in how many lives it helps move forward."
+        },
+        "f32": {
+          "label": "Image description: Education policy and institutional governance",
+          "type": "text",
+          "value": "Education policy and institutional governance"
+        },
+        "f33": {
+          "label": "Heading: Beyond the Classroom: Questions That Matter",
+          "type": "text",
+          "value": "Beyond the Classroom: Questions That Matter"
+        },
+        "f34": {
+          "label": "Heading: Join the Conversation",
+          "type": "text",
+          "value": "Join the Conversation"
+        },
+        "f35": {
+          "label": "Text: What do you think Viksit Bharat should actually mean by 2047? Leave a thoug",
+          "type": "text",
+          "value": "What do you think Viksit Bharat should actually mean by 2047? Leave a thought below - I read these myself, and the strongest ones sometimes become a Chai Pe Charcha episode."
+        },
+        "f36": {
+          "label": "Field label: Your Name",
+          "type": "text",
+          "value": "Your Name"
+        },
+        "f37": {
+          "label": "Input hint: Mohan",
+          "type": "text",
+          "value": "Mohan"
+        },
+        "f38": {
+          "label": "Field label: Message",
+          "type": "text",
+          "value": "Message"
+        },
+        "f39": {
+          "label": "Input hint: Write to here...",
+          "type": "text",
+          "value": "Write to here..."
+        },
+        "f40": {
+          "label": "button: Send Message",
+          "type": "text",
+          "value": "Send Message"
+        },
+        "f41": {
+          "label": "FAQs · question: Education system challenge",
+          "type": "text",
+          "value": "What do you think is the biggest challenge facing India's education system today?",
+          "hiValue": ""
+        },
+        "f42": {
+          "label": "FAQs · answer: Education system challenge",
+          "type": "text",
+          "value": "In my experience, one of the biggest challenges is bridging the gap between classroom learning and the skills required in the real world. We have talented students and dedicated educators, but access to quality learning opportunities remains uneven. I believe we need stronger industry-academia partnerships, greater emphasis on practical training, and institutions that encourage curiosity rather than focusing entirely on examinations.",
+          "hiValue": ""
+        },
+        "f43": {
+          "label": "FAQs · question: Success in education",
+          "type": "text",
+          "value": "After establishing so many institutions, what does success in education mean to you personally?",
+          "hiValue": ""
+        },
+        "f44": {
+          "label": "FAQs · answer: Success in education",
+          "type": "text",
+          "value": "For me, success has never been about the number of institutions established or degrees awarded. It is about seeing students grow into confident, capable individuals who can make their own decisions and contribute to society. When a student from a smaller town finds an opportunity they once thought was beyond their reach, I feel our efforts have served their purpose. That is what continues to motivate me.",
+          "hiValue": ""
+        },
+        "f45": {
+          "label": "FAQs · answer: How students learn and think",
+          "type": "text",
+          "value": "I think the biggest change is that students today are far more aware of the opportunities available to them. They are curious, ambitious, and willing to explore unconventional careers. However, their expectations from education have also changed. They want practical knowledge, industry exposure, and skills they can actually use. I believe our institutions must recognise this shift and evolve to meet their aspirations.",
+          "hiValue": ""
+        },
+        "f46": {
+          "label": "FAQs · answer: Is a degree enough?",
+          "type": "text",
+          "value": "A degree is important, but I don't believe it guarantees success anymore. The world is changing rapidly, and employers increasingly value practical skills, adaptability, and problem-solving abilities. I always encourage students to look beyond textbooks, explore their interests, and gain real-world experience. Education should give young people the confidence to apply what they know, not just a qualification to display.",
+          "hiValue": ""
+        },
+        "f47": {
+          "label": "FAQs · answer: Encouraging entrepreneurship",
+          "type": "text",
+          "value": "I've always felt that students should have the freedom to explore their own ideas rather than see employment as their only option. Entrepreneurship teaches young people to identify problems, take initiative, and find solutions. That's why I support Startup Cells within institutions, where students can receive guidance and practical exposure. Even if they don't start a business, the ability to think independently will benefit them throughout their careers.",
+          "hiValue": ""
+        }
+      }
+    },
+    "JourneyPage": {
+      "kind": "page",
+      "source": "src/pages/JourneyPage.jsx",
+      "fields": {
+        "f1": {
+          "label": "Image: HeroImg",
+          "type": "image",
+          "value": "public/Journery-Images/image 93.png"
+        },
+        "f2": {
+          "label": "Image: TimelineImg",
+          "type": "image",
+          "value": "public/Journery-Images/image 94.png"
+        },
+        "f3": {
+          "label": "Image: BeliefOne",
+          "type": "image",
+          "value": "public/Journery-Images/image 95.png"
+        },
+        "f4": {
+          "label": "Image: BeliefTwo",
+          "type": "image",
+          "value": "public/Journery-Images/image 96.png"
+        },
+        "f5": {
+          "label": "Image: BeliefThree",
+          "type": "image",
+          "value": "public/Journery-Images/image 97.png"
+        },
+        "f6": {
+          "label": "Image: BeliefFour",
+          "type": "image",
+          "value": "public/Journery-Images/image 98.png"
+        },
+        "f7": {
+          "label": "Image: BeliefFive",
+          "type": "image",
+          "value": "public/Journery-Images/Rectangle 34.png"
+        },
+        "f8": {
+          "label": "beliefs · label: Character before career",
+          "type": "text",
+          "value": "Character before career"
+        },
+        "f9": {
+          "label": "beliefs · label: Job creators, not just job seekers",
+          "type": "text",
+          "value": "Job creators, not just job seekers"
+        },
+        "f10": {
+          "label": "beliefs · label: A child’s direction, not a parent’s destination",
+          "type": "text",
+          "value": "A child’s direction, not a parent’s destination"
+        },
+        "f11": {
+          "label": "beliefs · label: Purpose before profit",
+          "type": "text",
+          "value": "Purpose before profit"
+        },
+        "f12": {
+          "label": "beliefs · label: Nation first",
+          "type": "text",
+          "value": "Nation first"
+        },
+        "f13": {
+          "label": "Heading: JOURNEY",
+          "type": "text",
+          "value": "JOURNEY"
+        },
+        "f14": {
+          "label": "Heading: The Story",
+          "type": "text",
+          "value": "The Story"
+        },
+        "f15": {
+          "label": "Text: When I started my journey, I never imagined that one day I would be associated w",
+          "type": "text",
+          "value": "When I started my journey, I never imagined that one day I would be associated with so many educational institutions. All I knew was that there was a problem I wanted to address. I had seen bright, ambitious students in cities like Kanpur and Lucknow struggle to find the right educational opportunities. They had the talent and determination to succeed, but often lacked the resources and guidance to pursue their dreams.\n\nThat stayed with me."
+        },
+        "f16": {
+          "label": "Text: When I founded the Maharana Pratap Group of Institutions in 1996, my goal was si",
+          "type": "text",
+          "value": "When I founded the Maharana Pratap Group of Institutions in 1996, my goal was simple: to make quality education more accessible to young people, regardless of where they came from. I strongly believed that a student's potential should never be limited by their hometown or circumstances.\n\nOf course, turning that belief into reality required more than good intentions. It meant creating institutions with capable teachers, the right infrastructure, and an environment where students could learn, grow, and prepare for the future with confidence."
+        },
+        "f17": {
+          "label": "Text: Looking back, I realise that I never approached this journey with a fixed roadma",
+          "type": "text",
+          "value": "Looking back, I realise that I never approached this journey with a fixed roadmap of where I wanted to be thirty years later. I focused on what needed to be done at the time and tried to do it to the best of my ability. One step led to another, and each experience taught me something new."
+        },
+        "f18": {
+          "label": "Text: What began with a desire to address an education gap gradually became a lifelong",
+          "type": "text",
+          "value": "What began with a desire to address an education gap gradually became a lifelong commitment to creating opportunities. That belief continues to guide me in everything I do today."
+        },
+        "f19": {
+          "label": "Heading: Why Education",
+          "type": "text",
+          "value": "Why Education"
+        },
+        "f20": {
+          "label": "Text: For me, education has never been just a profession or a field of work. I have al",
+          "type": "text",
+          "value": "For me, education has never been just a profession or a field of work. I have always seen it as one of the most meaningful ways to bring about change in society."
+        },
+        "f21": {
+          "label": "Text: Over the past three decades, I have had the opportunity to establish schools, co",
+          "type": "text",
+          "value": "Over the past three decades, I have had the opportunity to establish schools, colleges, and a university, each with its own journey and challenges. But through it all, one belief has remained constant: every child deserves the freedom and opportunity to discover their potential, regardless of their background, circumstances, or the expectations placed upon them."
+        },
+        "f22": {
+          "label": "Text: I have always felt that education should do more than prepare students for exami",
+          "type": "text",
+          "value": "I have always felt that education should do more than prepare students for examinations or help them secure jobs. It should encourage them to think independently, explore their interests, question what they don't understand, and develop the confidence to make their own decisions."
+        },
+        "f23": {
+          "label": "Text: When our first school was inaugurated by former Prime Minister Atal Bihari Vajpa",
+          "type": "text",
+          "value": "When our first school was inaugurated by former Prime Minister Atal Bihari Vajpayee Ji in 1997, it marked the beginning of a journey that continues to shape my life today. What started with a commitment to making quality education accessible has gradually grown into a larger vision of preparing young people for the opportunities and responsibilities of a changing India.\n\nI believe institutions must evolve with time, but the values they stand for should remain strong. Along with knowledge and skills, we must nurture integrity, compassion, curiosity, and a sense of responsibility towards society."
+        },
+        "f24": {
+          "label": "Text: Even after all these years, I feel there is so much more to be done. And if my e",
+          "type": "text",
+          "value": "Even after all these years, I feel there is so much more to be done. And if my efforts can help even a few more young people believe in themselves and pursue a future they once thought was beyond their reach, I would consider that a journey worth continuing."
+        },
+        "f25": {
+          "label": "Heading: The Timeline",
+          "type": "text",
+          "value": "The Timeline"
+        },
+        "f26": {
+          "label": "Heading: What I Believe",
+          "type": "text",
+          "value": "What I Believe"
+        },
+        "f27": {
+          "label": "Heading: The Maharana Pratap Ethos",
+          "type": "text",
+          "value": "The Maharana Pratap Ethos"
+        },
+        "f28": {
+          "label": "Text: The name Maharana Pratap has always held a special meaning for me. His courage, ",
+          "type": "text",
+          "value": "The name Maharana Pratap has always held a special meaning for me. His courage, self-respect, determination, and commitment to serving others are values I deeply admire. When I chose to name our institutions after him, it was more than a tribute. It was a responsibility to uphold those ideals through our work. Over the years, I have tried to ensure that every institution carrying his name reflects these values, not just in what we teach, but in how we educate, support, and prepare young people for life."
+        },
+        "f29": {
+          "label": "Heading: Family & Roots",
+          "type": "text",
+          "value": "Family & Roots"
+        },
+        "f30": {
+          "label": "Text: My journey has always been closely connected to where I come from. Growing up, I",
+          "type": "text",
+          "value": "My journey has always been closely connected to where I come from. Growing up, I saw how talented and hardworking young people in cities like Kanpur and Lucknow often struggled to find the opportunities they deserved. Many had the ambition to achieve something meaningful but lacked access to quality education and the right guidance.\n\nThose experiences shaped my thinking and eventually inspired me to take my first steps into education. Even today, I believe that where a person comes from should never determine how far they can go."
+        },
+        "f31": {
+          "label": "Heading: Recognitions",
+          "type": "text",
+          "value": "Recognitions"
+        },
+        "f32": {
+          "label": "Text: Over the years, I have been fortunate to receive honours such as the Yuva Udyami",
+          "type": "text",
+          "value": "Over the years, I have been fortunate to receive honours such as the Yuva Udyami Puraskar, Jagran Ratna, and Yuva Sikshavid award. Each recognition has been encouraging, but I have never considered awards the true measure of my work.\n\nFor me, the greatest satisfaction comes from seeing students achieve their dreams, families find new opportunities, and institutions continue to make a difference in people's lives. These recognitions remind me of the responsibility that comes with my work and motivate me to keep contributing with the same dedication and purpose."
+        }
+      }
+    },
+    "Mediapage": {
+      "kind": "page",
+      "source": "src/pages/Mediapage.jsx",
+      "fields": {
+        "f1": {
+          "label": "Image: heroBanner",
+          "type": "image",
+          "value": "src/assets/Home-Images/herobg.png"
+        },
+        "f2": {
+          "label": "Image: factFounded",
+          "type": "image",
+          "value": "src/assets/WebImages/Founded.jpg"
+        },
+        "f3": {
+          "label": "Image: factInstitutions",
+          "type": "image",
+          "value": "src/assets/WebImages/~12 institutions.jpg"
+        },
+        "f4": {
+          "label": "Image: factSchools",
+          "type": "image",
+          "value": "src/assets/WebImages/5 Pratap.jpg"
+        },
+        "f5": {
+          "label": "Image: factUniversity",
+          "type": "image",
+          "value": "src/assets/WebImages/Established Pratap University,.jpg"
+        },
+        "f6": {
+          "label": "Image: factHospital",
+          "type": "image",
+          "value": "src/assets/WebImages/Maharana Pratap Hospital.jpg"
+        },
+        "f7": {
+          "label": "Image: factSports",
+          "type": "image",
+          "value": "src/assets/WebImages/Owner, Chetak Sports Pvt. Ltd..jpg"
+        },
+        "f8": {
+          "label": "Image: factRecognitions",
+          "type": "image",
+          "value": "src/assets/WebImages/Recognitions_.jpg"
+        },
+        "f9": {
+          "label": "Image: quoteBooksImage",
+          "type": "image",
+          "value": "src/assets/WebImages/Letters to Young India.jpg"
+        },
+        "f10": {
+          "label": "Image: bioPhoto",
+          "type": "image",
+          "value": "src/assets/WebImages/Explore Topics.jpg"
+        },
+        "f11": {
+          "label": "Image: galleryImages",
+          "type": "image",
+          "value": "src/assets/WebImages/5 Pratap.jpg"
+        },
+        "f12": {
+          "label": "Image: galleryAddress",
+          "type": "image",
+          "value": "src/assets/WebImages/Address.jpg"
+        },
+        "f13": {
+          "label": "Image: galleryFounded",
+          "type": "image",
+          "value": "src/assets/WebImages/Founded.jpg"
+        },
+        "f14": {
+          "label": "Image: galleryUniversity",
+          "type": "image",
+          "value": "src/assets/WebImages/University.jpg"
+        },
+        "f15": {
+          "label": "Image: gallerySports",
+          "type": "image",
+          "value": "src/assets/WebImages/Sports.jpg"
+        },
+        "f16": {
+          "label": "Image: galleryHospital",
+          "type": "image",
+          "value": "src/assets/WebImages/Maharana Pratap Hospital.jpg"
+        },
+        "f17": {
+          "label": "Image: galleryMentor",
+          "type": "image",
+          "value": "src/assets/WebImages/Mentor.jpg"
+        },
+        "f18": {
+          "label": "Image: galleryClassroom",
+          "type": "image",
+          "value": "src/assets/WebImages/Classroom.jpg"
+        },
+        "f19": {
+          "label": "Image: pressZee",
+          "type": "image",
+          "value": "src/assets/Home-Images/zee-news.png"
+        },
+        "f20": {
+          "label": "Image: pressNdtv",
+          "type": "image",
+          "value": "src/assets/Home-Images/ndtv.jpg"
+        },
+        "f21": {
+          "label": "Image: pressIndiaToday",
+          "type": "image",
+          "value": "src/assets/Home-Images/india-today.png"
+        },
+        "f22": {
+          "label": "Image: pressAajTak",
+          "type": "image",
+          "value": "src/assets/Home-Images/aaj-tak.png"
+        },
+        "f23": {
+          "label": "Image: pressTimesNow",
+          "type": "image",
+          "value": "src/assets/Home-Images/times-now.png"
+        },
+        "f24": {
+          "label": "factSheet · title: Founded",
+          "type": "text",
+          "value": "Founded"
+        },
+        "f25": {
+          "label": "factSheet · text: Maharana Pratap Group of Institutions, 1996",
+          "type": "text",
+          "value": "Maharana Pratap Group of Institutions, 1996"
+        },
+        "f26": {
+          "label": "factSheet · title: ~12 institutions",
+          "type": "text",
+          "value": "~12 institutions"
+        },
+        "f27": {
+          "label": "factSheet · text: across Kanpur & Lucknow engineering, management, pharmacy, dental",
+          "type": "text",
+          "value": "across Kanpur & Lucknow engineering, management, pharmacy, dental"
+        },
+        "f28": {
+          "label": "factSheet · title: 5 Pratap International Schools",
+          "type": "text",
+          "value": "5 Pratap International Schools"
+        },
+        "f29": {
+          "label": "factSheet · text: Delhi and Kanpur",
+          "type": "text",
+          "value": "Delhi and Kanpur"
+        },
+        "f30": {
+          "label": "factSheet · title: Established Pratap University,",
+          "type": "text",
+          "value": "Established Pratap University,"
+        },
+        "f31": {
+          "label": "factSheet · text: Jaipur, 2011 (100-acre campus)",
+          "type": "text",
+          "value": "Jaipur, 2011 (100-acre campus)"
+        },
+        "f32": {
+          "label": "factSheet · title: Maharana Pratap Hospital",
+          "type": "text",
+          "value": "Maharana Pratap Hospital"
+        },
+        "f33": {
+          "label": "factSheet · text: 600-bed facility, Jaipur",
+          "type": "text",
+          "value": "600-bed facility, Jaipur"
+        },
+        "f34": {
+          "label": "factSheet · title: Owner, Chetak Sports Pvt. Ltd.",
+          "type": "text",
+          "value": "Owner, Chetak Sports Pvt. Ltd."
+        },
+        "f35": {
+          "label": "factSheet · text: Dehradun Warriors (Uttarakhand Premier League)",
+          "type": "text",
+          "value": "Dehradun Warriors (Uttarakhand Premier League)"
+        },
+        "f36": {
+          "label": "factSheet · title: Recognitions:",
+          "type": "text",
+          "value": "Recognitions:"
+        },
+        "f37": {
+          "label": "factSheet · text: Yuva Udyami Puraskar, Jagran Ratna, Yuva Sikshavid",
+          "type": "text",
+          "value": "Yuva Udyami Puraskar, Jagran Ratna, Yuva Sikshavid"
+        },
+        "f38": {
+          "label": "topics: Education reform",
+          "type": "text",
+          "value": "Education reform"
+        },
+        "f39": {
+          "label": "topics: Future-ready skills",
+          "type": "text",
+          "value": "Future-ready skills"
+        },
+        "f40": {
+          "label": "topics: Entrepreneurship",
+          "type": "text",
+          "value": "Entrepreneurship"
+        },
+        "f41": {
+          "label": "topics: Technology in education",
+          "type": "text",
+          "value": "Technology in education"
+        },
+        "f42": {
+          "label": "topics: Healthcare accessibility",
+          "type": "text",
+          "value": "Healthcare accessibility"
+        },
+        "f43": {
+          "label": "topics: Youth empowerment",
+          "type": "text",
+          "value": "Youth empowerment"
+        },
+        "f44": {
+          "label": "topics: Sports development",
+          "type": "text",
+          "value": "Sports development"
+        },
+        "f45": {
+          "label": "topics: Institution building",
+          "type": "text",
+          "value": "Institution building"
+        },
+        "f46": {
+          "label": "bio · English: Shailendra Bhadauria is an educationist, philanthropist and insti",
+          "type": "text",
+          "value": "Shailendra Bhadauria is an educationist, philanthropist and institution builder with nearly three decades of experience across education, healthcare and sport. He is a founding figure of the Maharana Pratap Group of Institutions (1996) and established Pratap University in Jaipur in 2011. His work spans nearly a dozen educational institutions, a 600-bed hospital, and Chetak Sports Private Limited, owner of the Dehradun Warriors. He has been recognised with the Yuva Udyami Puraskar, Jagran Ratna and Yuva Sikshavid awards for his contribution to education and social development."
+        },
+        "f47": {
+          "label": "bio · Hindi: यहाँ हिंदी बायो टेक्स्ट जोड़ें।",
+          "type": "text",
+          "value": "यहाँ हिंदी बायो टेक्स्ट जोड़ें।"
+        },
+        "f48": {
+          "label": "pressLogos · name: Zee News",
+          "type": "text",
+          "value": "Zee News"
+        },
+        "f49": {
+          "label": "pressLogos · name: NDTV",
+          "type": "text",
+          "value": "NDTV"
+        },
+        "f50": {
+          "label": "pressLogos · name: India Today",
+          "type": "text",
+          "value": "India Today"
+        },
+        "f51": {
+          "label": "pressLogos · name: Aaj Tak",
+          "type": "text",
+          "value": "Aaj Tak"
+        },
+        "f52": {
+          "label": "pressLogos · name: Times Now",
+          "type": "text",
+          "value": "Times Now"
+        },
+        "f53": {
+          "label": "gallery · alt: Pratap International School",
+          "type": "text",
+          "value": "Pratap International School"
+        },
+        "f54": {
+          "label": "gallery · alt: Institution address",
+          "type": "text",
+          "value": "Institution address"
+        },
+        "f55": {
+          "label": "gallery · alt: Institution founding",
+          "type": "text",
+          "value": "Institution founding"
+        },
+        "f56": {
+          "label": "gallery · alt: University campus",
+          "type": "text",
+          "value": "University campus"
+        },
+        "f57": {
+          "label": "gallery · alt: Sports development",
+          "type": "text",
+          "value": "Sports development"
+        },
+        "f58": {
+          "label": "gallery · alt: Maharana Pratap Hospital",
+          "type": "text",
+          "value": "Maharana Pratap Hospital"
+        },
+        "f59": {
+          "label": "gallery · alt: Student mentor",
+          "type": "text",
+          "value": "Student mentor"
+        },
+        "f60": {
+          "label": "gallery · alt: Classroom learning",
+          "type": "text",
+          "value": "Classroom learning"
+        },
+        "f61": {
+          "label": "Heading: GALLERY",
+          "type": "text",
+          "value": "GALLERY"
+        },
+        "f62": {
+          "label": "Heading: Fact Sheet",
+          "type": "text",
+          "value": "Fact Sheet"
+        },
+        "f63": {
+          "label": "Heading: Quotable Thoughts",
+          "type": "text",
+          "value": "Quotable Thoughts"
+        },
+        "f64": {
+          "label": "Text: The real responsibility of parents is not to choose the path, but to recogn",
+          "type": "text",
+          "value": "The real responsibility of parents is not to choose the path, but to recognise the talent, encourage it and give it room to grow."
+        },
+        "f65": {
+          "label": "Text: Don't just prepare students for jobs. Prepare them to create jobs.",
+          "type": "text",
+          "value": "Don't just prepare students for jobs. Prepare them to create jobs."
+        },
+        "f66": {
+          "label": "Image description: Letters to Young India",
+          "type": "text",
+          "value": "Letters to Young India"
+        },
+        "f67": {
+          "label": "Heading: Explore Topics",
+          "type": "text",
+          "value": "Explore Topics"
+        },
+        "f68": {
+          "label": "Image description: Shailendra Bhadauria",
+          "type": "text",
+          "value": "Shailendra Bhadauria"
+        },
+        "f69": {
+          "label": "Heading: Photo Gallery",
+          "type": "text",
+          "value": "Photo Gallery"
+        },
+        "f70": {
+          "label": "Input hint: Ask sir for details",
+          "type": "text",
+          "value": "Ask sir for details"
+        },
+        "f71": {
+          "label": "button: Send",
+          "type": "text",
+          "value": "Send"
+        },
+        "f72": {
+          "label": "Heading: My Journey in the Spotlight",
+          "type": "text",
+          "value": "My Journey in the Spotlight",
+          "hiValue": ""
+        },
+        "f73": {
+          "label": "Text: My Journey in the Spotlight",
+          "type": "text",
+          "value": "A collection of news features, interviews, and media coverage highlighting my journey, experiences, and contributions across education, entrepreneurship, healthcare, and social development.",
+          "hiValue": ""
+        }
+      }
+    },
+    "Nationbuildingpage": {
+      "kind": "page",
+      "source": "src/pages/Nationbuildingpage.jsx",
+      "fields": {
+        "f1": {
+          "label": "Image: policyMeetsPeopleImage",
+          "type": "image",
+          "value": "src/assets/WebImages/Where Policy Meets People.jpg"
+        },
+        "f2": {
+          "label": "Image: viksitBharatImage",
+          "type": "image",
+          "value": "src/assets/WebImages/Viksit Bharat 2047 — The Bigger Picture.jpg"
+        },
+        "f11": {
+          "label": "faqs: What does nation building mean to you beyond government policies and national pr",
+          "type": "text",
+          "value": "What does nation building mean to you beyond government policies and national programmes?"
+        },
+        "f12": {
+          "label": "faqs: You've spent nearly three decades establishing institutions. What has this exper",
+          "type": "text",
+          "value": "You've spent nearly three decades establishing institutions. What has this experience taught you about India's development?"
+        },
+        "f13": {
+          "label": "faqs: What role should India's youth play in achieving the vision of Viksit Bharat 204",
+          "type": "text",
+          "value": "What role should India's youth play in achieving the vision of Viksit Bharat 2047?"
+        },
+        "f18": {
+          "label": "Heading: NATION BUILDING",
+          "type": "text",
+          "value": "NATION BUILDING"
+        },
+        "f19": {
+          "label": "Heading: Where Policy Meets People",
+          "type": "text",
+          "value": "Where Policy Meets People"
+        },
+        "f20": {
+          "label": "Text: I believe India's progress depends not only on the policies we introduce but als",
+          "type": "text",
+          "value": "I believe India's progress depends not only on the policies we introduce but also on how effectively they improve people's lives. Our schools, colleges, hospitals, and public institutions have an important role in turning national ambitions into meaningful change.\n\nHaving spent nearly three decades establishing and managing institutions, I've seen how policies translate into everyday realities, the challenges that arise during implementation, and the difference that thoughtful decisions can make.\n\nThrough this space, I want to share my experiences and perspectives on strengthening institutions, creating opportunities, and contributing to India's development in ways that make a real difference on the ground."
+        },
+        "f21": {
+          "label": "Image description: Where policy meets people",
+          "type": "text",
+          "value": "Where policy meets people"
+        },
+        "f22": {
+          "label": "Image description: Viksit Bharat 2047: The Bigger Picture",
+          "type": "text",
+          "value": "Viksit Bharat 2047: The Bigger Picture"
+        },
+        "f23": {
+          "label": "Heading: Viksit Bharat 2047: The Bigger Picture",
+          "type": "text",
+          "value": "Viksit Bharat 2047: The Bigger Picture"
+        },
+        "f24": {
+          "label": "Text: When I think about Viksit Bharat 2047, I see more than an ambitious national goa",
+          "type": "text",
+          "value": "When I think about Viksit Bharat 2047, I see more than an ambitious national goal. I see an opportunity for every Indian to contribute towards building a stronger, more capable, and self-reliant nation.\n\nI believe the young people studying in our classrooms today will play a defining role in shaping the India of 2047. That places an important responsibility on those of us working in education, healthcare, and other sectors to prepare them for the opportunities and challenges ahead."
+        },
+        "f25": {
+          "label": "Text: For me, nation building is not limited to government policies or large-scale ini",
+          "type": "text",
+          "value": "For me, nation building is not limited to government policies or large-scale initiatives. It is also about the everyday decisions we make, the institutions we strengthen, and the opportunities we create for others.\n\nThe India we aspire to become in 2047 will depend on the work we are willing to do today."
+        },
+        "f29": {
+          "label": "Heading: Conversations on India's Progress",
+          "type": "text",
+          "value": "Conversations on India's Progress"
+        },
+        "f30": {
+          "label": "Heading: My Perspectives on Building a Stronger India",
+          "type": "text",
+          "value": "My Perspectives on Building a Stronger India"
+        },
+        "f31": {
+          "label": "Text: I share my thoughts on India's development, the role of strong institutions, and",
+          "type": "text",
+          "value": "I share my thoughts on India's development, the role of strong institutions, and how collective efforts can turn national ambitions into meaningful progress for every citizen."
+        },
+        "f32": {
+          "label": "Field label: Your Name",
+          "type": "text",
+          "value": "Your Name"
+        },
+        "f33": {
+          "label": "Input hint: Mohan",
+          "type": "text",
+          "value": "Mohan"
+        },
+        "f34": {
+          "label": "Field label: Message",
+          "type": "text",
+          "value": "Message"
+        },
+        "f35": {
+          "label": "Input hint: Write to here...",
+          "type": "text",
+          "value": "Write to here..."
+        },
+        "f36": {
+          "label": "button: Send Message",
+          "type": "text",
+          "value": "Send Message"
+        },
+        "f37": {
+          "label": "FAQs · question: Turning policy into results",
+          "type": "text",
+          "value": "What is the biggest challenge in turning India's development policies into meaningful results?",
+          "hiValue": ""
+        },
+        "f38": {
+          "label": "FAQs · answer: Turning policy into results",
+          "type": "text",
+          "value": "In my experience, the biggest challenge often lies in implementation. A policy may have the right intention, but its success depends on resources, coordination, and the ability of institutions to deliver. I believe we need to pay greater attention to what happens on the ground, listen to the people affected, and remain willing to improve our approach when something isn't working.",
+          "hiValue": ""
+        },
+        "f39": {
+          "label": "FAQs · question: Citizen contributions to nation building",
+          "type": "text",
+          "value": "How can ordinary citizens contribute to nation building without holding positions of power or influence?",
+          "hiValue": ""
+        },
+        "f40": {
+          "label": "FAQs · answer: Citizen contributions to nation building",
+          "type": "text",
+          "value": "I've always believed that contributing to the nation doesn't require a particular position or title. A teacher who inspires students, an entrepreneur who creates jobs, or a young person who helps improve their community is already making a difference. I think nation-building becomes truly meaningful when we stop seeing it as someone else's responsibility and begin recognising the value of our own contributions.",
+          "hiValue": ""
+        },
+        "f41": {
+          "label": "FAQs · answer: Nation building beyond policy",
+          "type": "text",
+          "value": "For me, nation building begins with the work we do every day. It is about providing quality education, making healthcare accessible, creating employment opportunities, and strengthening communities. I believe governments can create the right policies, but institutions, businesses, and individuals must help turn those policies into reality. Every meaningful contribution, however small, plays a part in shaping a stronger India.",
+          "hiValue": ""
+        },
+        "f42": {
+          "label": "FAQs · answer: Lessons from building institutions",
+          "type": "text",
+          "value": "One thing I've learned is that progress takes more than good intentions. Even well-designed policies need strong institutions and committed people to make them work. I've seen how access to education and healthcare can change opportunities for entire communities. These experiences have strengthened my belief that India's development must be measured by the difference it makes in people's everyday lives.",
+          "hiValue": ""
+        },
+        "f43": {
+          "label": "FAQs · answer: India's youth and Viksit Bharat",
+          "type": "text",
+          "value": "I believe our young people should be active participants in shaping India's future, not simply beneficiaries of its progress. We need to encourage them to think independently, develop practical skills, explore entrepreneurship, and take responsibility for the communities around them. If we give young Indians the right opportunities and confidence today, they can become the innovators, leaders, and changemakers of tomorrow.",
+          "hiValue": ""
+        }
+      }
+    },
+    "Sewapage": {
+      "kind": "page",
+      "source": "src/pages/Sewapage.jsx",
+      "fields": {
+        "f1": {
+          "label": "Image: school",
+          "type": "image",
+          "value": "src/assets/WebImages/school.jpg"
+        },
+        "f2": {
+          "label": "Image: university",
+          "type": "image",
+          "value": "src/assets/WebImages/University.jpg"
+        },
+        "f3": {
+          "label": "Image: mentor",
+          "type": "image",
+          "value": "src/assets/WebImages/Mentor.jpg"
+        },
+        "f4": {
+          "label": "Image: SupportImg",
+          "type": "image",
+          "value": "src/assets/WebImages/Support-Goes.jpg"
+        },
+        "f5": {
+          "label": "Image: classroomImage",
+          "type": "image",
+          "value": "src/assets/WebImages/Classroom.jpg"
+        },
+        "f6": {
+          "label": "circleSteps · label: School",
+          "type": "text",
+          "value": "School"
+        },
+        "f7": {
+          "label": "circleSteps · label: University",
+          "type": "text",
+          "value": "University"
+        },
+        "f8": {
+          "label": "circleSteps · label: Mentor",
+          "type": "text",
+          "value": "Mentor"
+        },
+        "f9": {
+          "label": "Heading: SEWA",
+          "type": "text",
+          "value": "SEWA"
+        },
+        "f10": {
+          "label": "Text: I have always believed that serving society is not limited to acts of charity. I",
+          "type": "text",
+          "value": "I have always believed that serving society is not limited to acts of charity. It is about understanding people's challenges and creating opportunities that can make a lasting difference in their lives.\n\nWhether through education, scholarships, healthcare, or mentorship, my efforts have been guided by one simple belief: everyone deserves a fair opportunity to grow, regardless of their background or circumstances."
+        },
+        "f11": {
+          "label": "Text: For me, Sewa is about turning this belief into meaningful action and encouraging",
+          "type": "text",
+          "value": "For me, Sewa is about turning this belief into meaningful action and encouraging others to become part of that journey."
+        },
+        "f12": {
+          "label": "Heading: The Circle We Are Building",
+          "type": "text",
+          "value": "The Circle We Are Building"
+        },
+        "f13": {
+          "label": "Text: I believe the true value of education becomes even greater when those who have b",
+          "type": "text",
+          "value": "I believe the true value of education becomes even greater when those who have benefited from it help others move forward."
+        },
+        "f14": {
+          "label": "Text: The One Graduate, One Learner initiative reflects this thought by connecting gra",
+          "type": "text",
+          "value": "The One Graduate, One Learner initiative reflects this thought by connecting graduates from our institutions with first-generation learners who may need additional guidance and encouragement.\n\nThrough mentorship, academic support, and career guidance, the idea is to help young people navigate challenges with greater confidence."
+        },
+        "f15": {
+          "label": "Text: The initiative has connected over 200 graduate mentors with first-generation lea",
+          "type": "text",
+          "value": "The initiative has connected over 200 graduate mentors with first-generation learners across our institutions in Kanpur, Lucknow, and Jaipur. For me, what makes this effort meaningful is the opportunity to create a continuing cycle of learning, support, and giving back."
+        },
+        "f16": {
+          "label": "Image description: Classroom",
+          "type": "text",
+          "value": "Classroom"
+        },
+        "f17": {
+          "label": "Heading: Entrepreneurship Support Beyond the Classroom",
+          "type": "text",
+          "value": "Entrepreneurship Support Beyond the Classroom"
+        },
+        "f18": {
+          "label": "Text: I have always encouraged young people to think beyond conventional career paths ",
+          "type": "text",
+          "value": "I have always encouraged young people to think beyond conventional career paths and explore the possibility of creating something of their own.\n\nWhile scholarships can help students access education, aspiring entrepreneurs often need additional guidance and support to turn their ideas into reality."
+        },
+        "f19": {
+          "label": "Heading: Startup Cells",
+          "type": "text",
+          "value": "Startup Cells"
+        },
+        "f20": {
+          "label": "Text: Through Startup Cells in our institutions, we aim to encourage promising student",
+          "type": "text",
+          "value": "Through Startup Cells in our institutions, we aim to encourage promising student ventures by providing mentorship, opportunities to connect with experienced professionals, and access to limited seed funding for eligible ideas.\n\nI believe even a small amount of support at the right time can give a young person the confidence to take their first step towards entrepreneurship."
+        },
+        "f21": {
+          "label": "Heading: Where the Support Goes",
+          "type": "text",
+          "value": "Where the Support Goes"
+        },
+        "f22": {
+          "label": "Text: For me, the purpose of any scholarship or support programme is to make a genuine",
+          "type": "text",
+          "value": "For me, the purpose of any scholarship or support programme is to make a genuine difference in someone's educational journey. Our scholarship initiatives are intended to help deserving students continue their education by supporting tuition fees and, where applicable, accommodation expenses.\n\nI believe such efforts must be guided by transparency and accountability, ensuring that support reaches the students who need it most. More importantly, I hope these opportunities allow young people to focus on their education, develop their abilities, and work towards a future they can shape for themselves."
+        },
+        "f23": {
+          "label": "Image description: Where scholarship support goes",
+          "type": "text",
+          "value": "Where scholarship support goes"
+        }
+      }
+    },
+    "Sportspage": {
+      "kind": "page",
+      "source": "src/pages/Sportspage.jsx",
+      "fields": {
+        "f1": {
+          "label": "Image: whyCricketImage",
+          "type": "image",
+          "value": "src/assets/WebImages/Whycricket.jpg"
+        },
+        "f2": {
+          "label": "Image: scholarshipsImage",
+          "type": "image",
+          "value": "src/assets/WebImages/Scholarships.jpg"
+        },
+        "f3": {
+          "label": "Image: Sports",
+          "type": "image",
+          "value": "src/assets/WebImages/Sports.jpg"
+        },
+        "f4": {
+          "label": "Image: Address",
+          "type": "image",
+          "value": "src/assets/WebImages/Address.jpg"
+        },
+        "f5": {
+          "label": "Image: Franchise",
+          "type": "image",
+          "value": "src/assets/WebImages/Franchise.jpg"
+        },
+        "f6": {
+          "label": "Heading: SPORTS",
+          "type": "text",
+          "value": "SPORTS"
+        },
+        "f7": {
+          "label": "Heading: Talent Doesn't Check Your Address",
+          "type": "text",
+          "value": "Talent Doesn't Check Your Address"
+        },
+        "f8": {
+          "label": "SportCard: I got into sports for the same reason I got into education: because talent ",
+          "type": "text",
+          "value": "I got into sports for the same reason I got into education: because talent is everywhere, and opportunity isn't. Through Chetak Sports Private Limited, we own and operate the Dehradun Warriors in the Uttarakhand Premier League, but the bigger ambition is grassroots. I want to build structured pathways for cricketers who would otherwise never be seen, across as many BCCI-recognised state leagues as we can reach."
+        },
+        "f9": {
+          "label": "Heading: University Sports Facilities & Scholarships",
+          "type": "text",
+          "value": "University Sports Facilities & Scholarships"
+        },
+        "f10": {
+          "label": "SportCard: Pratap University's campus includes dedicated cricket nets, a multi-purpose",
+          "type": "text",
+          "value": "Pratap University's campus includes dedicated cricket nets, a multi-purpose sports ground, and a fitness and conditioning centre available to all enrolled students, with priority access for those on athletic scholarships. Sports scholarships cover tuition fully or partially for students demonstrating state or national-level competitive achievement, renewed annually based on continued participation and academic standing - because the goal is athletes who graduate, not just athletes who play."
+        },
+        "f11": {
+          "label": "Heading: Sports in Education",
+          "type": "text",
+          "value": "Sports in Education"
+        },
+        "f12": {
+          "label": "SportCard: Indian education still largely treats sport as an extracurricular - somethi",
+          "type": "text",
+          "value": "Indian education still largely treats sport as an extracurricular - something fit in around the real work of a classroom. I'd rather see it treated as a parallel discipline, with the same rigor and the same expectation of excellence. Programmes like Khelo India have done real work putting Indian athletes on a bigger stage; what I'd add is that the pipeline has to start on campuses, not just in dedicated sports academies. A university that treats sport as part of a student's education, not separate from it, is more likely to produce athletes who don't have to choose between a degree and a future in sport."
+        },
+        "f13": {
+          "label": "Heading: Why Uttarakhand, Why Cricket",
+          "type": "text",
+          "value": "Why Uttarakhand, Why Cricket"
+        },
+        "f14": {
+          "label": "SportCard: Uttarakhand doesn't have any of my education institutions, and that was par",
+          "type": "text",
+          "value": "Uttarakhand doesn't have any of my education institutions, and that was part of the appeal, not a barrier to it - a genuine test of whether the instincts that worked in education would work somewhere entirely new. Cricket specifically, because it's the sport with the deepest talent pool in the country and the shallowest structured access outside the major cities. The Uttarakhand Premier League gave me a real, immediate platform to invest in that gap."
+        },
+        "f15": {
+          "label": "Heading: From Campus to Franchise",
+          "type": "text",
+          "value": "From Campus to Franchise"
+        },
+        "f16": {
+          "label": "SportCard: We're actively building the pipeline between our education institutions and",
+          "type": "text",
+          "value": "We're actively building the pipeline between our education institutions and Chetak Sports the ambition is a student at Pratap University or one of our schools eventually training with or playing for the Dehradun Warriors. That pipeline is still young, and I'd rather be honest about that than overstate where it is today. What I can say is that it's a deliberate goal, not an afterthought."
+        }
+      }
+    },
+    "Thoughtleadershippage": {
+      "kind": "page",
+      "source": "src/pages/Thoughtleadershippage.jsx",
+      "fields": {
+        "f1": {
+          "label": "Image: heroImage",
+          "type": "image",
+          "value": "src/assets/Home-Images/herobg.png"
+        },
+        "f7": {
+          "label": "Image: lettersImage",
+          "type": "image",
+          "value": "src/assets/WebImages/Letters to Young India.jpg"
+        },
+        "f8": {
+          "label": "themes · title: Education & Skills",
+          "type": "text",
+          "value": "Education & Skills"
+        },
+        "f9": {
+          "label": "themes · title: Entrepreneurship & Innovation",
+          "type": "text",
+          "value": "Entrepreneurship & Innovation"
+        },
+        "f10": {
+          "label": "themes · title: Leadership & Institution Building",
+          "type": "text",
+          "value": "Leadership & Institution Building"
+        },
+        "f11": {
+          "label": "themes · title: Technology & India's Future",
+          "type": "text",
+          "value": "Technology & India's Future"
+        },
+        "f12": {
+          "label": "themes · title: ",
+          "type": "text",
+          "value": ""
+        },
+        "f34": {
+          "label": "Heading: Thought Leadership",
+          "type": "text",
+          "value": "Thought Leadership"
+        },
+        "f35": {
+          "label": "Text: Over the past three decades, my journey through education, entrepreneurship, hea",
+          "type": "text",
+          "value": "Over the past three decades, my journey through education, entrepreneurship, healthcare, and sports has shaped the way I think and approach challenges. I believe every experience brings a lesson worth sharing. Through this space, I hope to encourage meaningful conversations about leadership, opportunities, and India's future. I've learned that leadership is not about having all the answers. It is about listening to people, understanding different perspectives, and making decisions with responsibility.\n\nFor me, good leadership means building trust, encouraging new ideas, and creating an environment where people have the confidence to grow and contribute."
+        },
+        "f36": {
+          "label": "Heading: Ideas That Matter to Me",
+          "type": "text",
+          "value": "Ideas That Matter to Me"
+        },
+        "f37": {
+          "label": "Heading: Letters to Young India",
+          "type": "text",
+          "value": "Letters to Young India"
+        },
+        "f38": {
+          "label": "Text: A running series of short, direct notes - one question or idea at a time, w",
+          "type": "text",
+          "value": "A running series of short, direct notes - one question or idea at a time, written for a young reader trying to figure out their next step."
+        },
+        "f39": {
+          "label": "Image description: Letters to Young India",
+          "type": "text",
+          "value": "Letters to Young India"
+        },
+        "f40": {
+          "label": "Heading: Ideas Shaped by Experience",
+          "type": "text",
+          "value": "Ideas Shaped by Experience",
+          "hiValue": ""
+        },
+        "f41": {
+          "label": "Heading: Lessons from My Journey",
+          "type": "text",
+          "value": "Lessons from My Journey",
+          "hiValue": ""
+        },
+        "f42": {
+          "label": "Subheading: Experience Is the Greatest Teacher",
+          "type": "text",
+          "value": "Experience Is the Greatest Teacher",
+          "hiValue": ""
+        },
+        "f43": {
+          "label": "Text: Experience Is the Greatest Teacher",
+          "type": "text",
+          "value": "Nearly three decades of establishing and managing institutions have taught me that meaningful progress requires patience, adaptability, and teamwork.\n\nNot every decision has worked as expected, but every challenge has offered something to learn. I believe success comes from staying committed to your purpose while remaining open to change.",
+          "hiValue": ""
+        },
+        "f44": {
+          "label": "Subheading: Perspectives Worth Sharing",
+          "type": "text",
+          "value": "Perspectives Worth Sharing",
+          "hiValue": ""
+        },
+        "f45": {
+          "label": "Theme description: Education & Skills",
+          "type": "text",
+          "value": "I believe education must go beyond degrees and prepare young people with practical skills, confidence, and independent thinking.",
+          "hiValue": ""
+        },
+        "f46": {
+          "label": "Theme description: Entrepreneurship & Innovation",
+          "type": "text",
+          "value": "I want to encourage more young Indians to explore their ideas, take initiative, and create opportunities for themselves and others.",
+          "hiValue": ""
+        },
+        "f47": {
+          "label": "Theme description: Leadership & Institution Building",
+          "type": "text",
+          "value": "My experiences have taught me the importance of strong teams, shared values, and building institutions that continue to make a difference.",
+          "hiValue": ""
+        },
+        "f48": {
+          "label": "Theme description: Technology & India's Future",
+          "type": "text",
+          "value": "I believe technology, particularly AI, can open new possibilities for India's youth if we prepare them with the right skills.",
+          "hiValue": ""
+        },
+        "f49": {
+          "label": "Heading: My Thoughts on What Matters",
+          "type": "text",
+          "value": "My Thoughts on What Matters",
+          "hiValue": ""
+        },
+        "f50": {
+          "label": "Text: My Thoughts on What Matters",
+          "type": "text",
+          "value": "Here, I share my experiences and perspectives on leadership, education, entrepreneurship, and the ideas shaping India's future.",
+          "hiValue": ""
+        },
+        "f51": {
+          "label": "Button: Explore My Articles",
+          "type": "text",
+          "value": "Explore My Articles",
+          "hiValue": ""
+        }
+      }
+    },
+    "Updevelopmentpage": {
+      "kind": "page",
+      "source": "src/pages/Updevelopmentpage.jsx",
+      "fields": {
+        "f1": {
+          "label": "Image: medical1",
+          "type": "image",
+          "value": "src/assets/WebImages/Medical.jpg"
+        },
+        "f5": {
+          "label": "caseStudies · title: Medical Education Expansion",
+          "type": "text",
+          "value": "Medical Education Expansion"
+        },
+        "f6": {
+          "label": "caseStudies · text: The expansion of medical education in Uttar Pradesh is an important step towards",
+          "type": "text",
+          "value": "The expansion of medical education in Uttar Pradesh is an important step towards improving access to healthcare and professional education."
+        },
+        "f7": {
+          "label": "caseStudies · source: ",
+          "type": "text",
+          "value": ""
+        },
+        "f8": {
+          "label": "caseStudies · sourceUrl: #",
+          "type": "link",
+          "value": "#"
+        },
+        "f9": {
+          "label": "caseStudies · text: In the 2024–25 academic session, the state planned to establish 14 new medical c",
+          "type": "text",
+          "value": "In the 2024–25 academic session, the state planned to establish 14 new medical colleges, with the potential to add approximately 1,400 MBBS seats across districts including Kushinagar, Kaushambi, Sultanpur, Amethi, Kanpur Dehat, and Lalitpur."
+        },
+        "f10": {
+          "label": "caseStudies · text: Having worked in education for many years, I understand how access to institutio",
+          "type": "text",
+          "value": "Having worked in education for many years, I understand how access to institutions closer to home can change a student's future. Expanding medical education beyond major cities can create opportunities for aspiring doctors while strengthening healthcare services in underserved regions."
+        },
+        "f11": {
+          "label": "caseStudies · text: ",
+          "type": "text",
+          "value": ""
+        },
+        "f12": {
+          "label": "caseStudies · title: Vocational Education & ITI Modernisation",
+          "type": "text",
+          "value": "Vocational Education & ITI Modernisation"
+        },
+        "f13": {
+          "label": "caseStudies · text: I have always believed that education must prepare young people for practical ch",
+          "type": "text",
+          "value": "I have always believed that education must prepare young people for practical challenges, not just examinations.\n\nUttar Pradesh's efforts to modernise Industrial Training Institutes (ITIs), introduce industry-relevant courses, and strengthen vocational training reflect an important shift towards skill-based education.\n\nFor students who want to enter the workforce early or pursue technical careers, these initiatives can open new opportunities. However, I believe their success will depend on the quality of training, industry partnerships, and the employment opportunities available after students complete their courses."
+        },
+        "f14": {
+          "label": "caseStudies · title: ODOP & the Startup Story",
+          "type": "text",
+          "value": "ODOP & the Startup Story"
+        },
+        "f15": {
+          "label": "caseStudies · text: One of Uttar Pradesh's greatest strengths is the diversity of skills, crafts, an",
+          "type": "text",
+          "value": "One of Uttar Pradesh's greatest strengths is the diversity of skills, crafts, and industries found across its districts.\n\nThe One District One Product (ODOP) initiative has brought greater attention to local products and traditional industries, while the growing startup ecosystem is encouraging young entrepreneurs to explore new business opportunities.\n\nI believe these efforts are particularly important for smaller cities, where talented individuals often have ideas and skills but limited access to mentorship, funding, and markets.\n\nFor me, real progress will come when more young people can turn their knowledge and ideas into sustainable businesses without feeling compelled to move to larger cities."
+        },
+        "f16": {
+          "label": "caseStudies · title: Sports Infrastructure",
+          "type": "text",
+          "value": "Sports Infrastructure"
+        },
+        "f17": {
+          "label": "caseStudies · text: I believe sports play an important role in developing confidence, discipline, te",
+          "type": "text",
+          "value": "I believe sports play an important role in developing confidence, discipline, teamwork, and leadership among young people.\n\nUttar Pradesh's growing investment in sports facilities, training centres, and competitive opportunities can help talented athletes pursue their ambitions with greater confidence.\n\nMy own involvement in sports has strengthened my understanding of how important structured opportunities are for young athletes. Talent exists in every part of our country, but talent alone is not enough. Young sportspersons need access to quality coaching, proper facilities, competitive exposure, and consistent encouragement.\n\nI would like to see more young athletes from smaller towns receive the support they need to compete at higher levels."
+        },
+        "f18": {
+          "label": "faqs: What makes Uttar Pradesh's development journey particularly significant to you?",
+          "type": "text",
+          "value": "What makes Uttar Pradesh's development journey particularly significant to you?"
+        },
+        "f19": {
+          "label": "faqs: How can expanding medical colleges contribute to Uttar Pradesh's overall develop",
+          "type": "text",
+          "value": "How can expanding medical colleges contribute to Uttar Pradesh's overall development?"
+        },
+        "f20": {
+          "label": "faqs: Why do you consider vocational education important for the future of Uttar Prade",
+          "type": "text",
+          "value": "Why do you consider vocational education important for the future of Uttar Pradesh's youth?"
+        },
+        "f25": {
+          "label": "Heading: UP DEVELOPMENT",
+          "type": "text",
+          "value": "UP DEVELOPMENT"
+        },
+        "f26": {
+          "label": "Heading: A Case Study Worth Understanding",
+          "type": "text",
+          "value": "A Case Study Worth Understanding"
+        },
+        "f27": {
+          "label": "Text: Over the years, I've witnessed significant changes in Uttar Pradesh's approach t",
+          "type": "text",
+          "value": "Over the years, I've witnessed significant changes in Uttar Pradesh's approach to education, skill development, entrepreneurship, and infrastructure. Having spent nearly three decades establishing institutions in the state, I've seen both the challenges that held people back and the opportunities that thoughtful development can create.\n\nI believe Uttar Pradesh's progress offers important lessons in how policies, institutional investment, and local participation can work together to create meaningful change."
+        },
+        "f28": {
+          "label": "Image description: Medical education expansion in Uttar Pradesh",
+          "type": "text",
+          "value": "Medical education expansion in Uttar Pradesh"
+        },
+        "f29": {
+          "label": "button: Prev",
+          "type": "text",
+          "value": "Prev"
+        },
+        "f30": {
+          "label": "button: Next",
+          "type": "text",
+          "value": "Next"
+        },
+        "f31": {
+          "label": "Heading: Understanding Progress, Exploring Possibilities",
+          "type": "text",
+          "value": "Understanding Progress, Exploring Possibilities"
+        },
+        "f32": {
+          "label": "Heading: Join the Conversation",
+          "type": "text",
+          "value": "Join the Conversation"
+        },
+        "f33": {
+          "label": "Text: What do you think Viksit Bharat should actually mean by 2047? Leave a thoug",
+          "type": "text",
+          "value": "What do you think Viksit Bharat should actually mean by 2047? Leave a thought below - I read these myself, and the strongest ones sometimes become a Chai Pe Charcha episode."
+        },
+        "f34": {
+          "label": "Field label: Your Name",
+          "type": "text",
+          "value": "Your Name"
+        },
+        "f35": {
+          "label": "Input hint: Mohan",
+          "type": "text",
+          "value": "Mohan"
+        },
+        "f36": {
+          "label": "Field label: Message",
+          "type": "text",
+          "value": "Message"
+        },
+        "f37": {
+          "label": "Input hint: Write to here...",
+          "type": "text",
+          "value": "Write to here..."
+        },
+        "f38": {
+          "label": "button: Send Message",
+          "type": "text",
+          "value": "Send Message"
+        },
+        "f39": {
+          "label": "FAQs · question: ODOP and startup support",
+          "type": "text",
+          "value": "How can initiatives like ODOP and startup support programmes benefit young entrepreneurs?",
+          "hiValue": ""
+        },
+        "f40": {
+          "label": "FAQs · answer: ODOP and startup support",
+          "type": "text",
+          "value": "I believe initiatives like ODOP demonstrate that economic opportunities do not have to be concentrated in major cities. Every district has its own strengths, skills, and entrepreneurial potential. With better market access, mentorship, technology, and financial support, young people can build businesses around local opportunities. I see tremendous value in encouraging entrepreneurship that creates employment while preserving and strengthening regional industries.",
+          "hiValue": ""
+        },
+        "f41": {
+          "label": "FAQs · question: Sports and smaller districts",
+          "type": "text",
+          "value": "What role can sports play in the development of smaller cities and districts?",
+          "hiValue": ""
+        },
+        "f42": {
+          "label": "FAQs · answer: Sports and smaller districts",
+          "type": "text",
+          "value": "I've always believed that sports can change a young person's outlook on life. Beyond physical fitness, they teach discipline, resilience, teamwork, and the importance of consistent effort. In smaller cities, access to proper training facilities and competitive platforms can make a significant difference. I would like to see talented young athletes receive opportunities based on their abilities rather than their geographical or financial circumstances.",
+          "hiValue": ""
+        },
+        "f43": {
+          "label": "FAQs · answer: Uttar Pradesh's development journey",
+          "type": "text",
+          "value": "Uttar Pradesh has been an important part of my personal and professional journey. Having established educational institutions here, I've witnessed how access to quality education and infrastructure can influence entire communities. What interests me most is how development is gradually reaching smaller cities and districts. I believe this shift can create meaningful opportunities for young people who previously had limited options close to home.",
+          "hiValue": ""
+        },
+        "f44": {
+          "label": "FAQs · answer: Medical colleges and development",
+          "type": "text",
+          "value": "I believe medical colleges serve two important purposes. They create opportunities for students to pursue medical education and help strengthen the healthcare ecosystem around them. When medical institutions expand into smaller districts, they can support local healthcare services, generate employment, and encourage professional development. However, I also believe infrastructure must be supported by qualified faculty, practical training, and adequate medical facilities.",
+          "hiValue": ""
+        },
+        "f45": {
+          "label": "FAQs · answer: Vocational education",
+          "type": "text",
+          "value": "Not every young person wants to follow the same academic or professional path, and I believe our education system should respect that. Vocational education provides opportunities to develop practical, industry-relevant skills and pursue meaningful careers. I would like to see stronger connections between training institutes and employers so that students can translate their learning into employment, entrepreneurship, or further professional growth.",
+          "hiValue": ""
+        }
+      }
+    },
+    "vision2047": {
+      "kind": "page",
+      "source": "src/pages/vision2047.jsx",
+      "fields": {
+        "f1": {
+          "label": "Image: heroImage",
+          "type": "image",
+          "value": "src/assets/WebImages/Viksit Bharat 2047 — The Bigger Picture.jpg"
+        },
+        "f2": {
+          "label": "Image: skillImage",
+          "type": "image",
+          "value": "src/assets/WebImages/Skills & Employability.jpg"
+        },
+        "f3": {
+          "label": "Image: educationImage",
+          "type": "image",
+          "value": "src/assets/WebImages/Classroom.jpg"
+        },
+        "f4": {
+          "label": "Image: accountabilityImage",
+          "type": "image",
+          "value": "src/assets/WebImages/Governance & Institution-Building.jpg"
+        },
+        "f5": {
+          "label": "Image: questionImage",
+          "type": "image",
+          "value": "src/assets/WebImages/Youth & Digital Literacy.jpg"
+        },
+        "f6": {
+          "label": "fourAsks · hindi: हुनर",
+          "type": "text",
+          "value": "हुनर"
+        },
+        "f7": {
+          "label": "fourAsks · english: SKILL",
+          "type": "text",
+          "value": "SKILL"
+        },
+        "f8": {
+          "label": "fourAsks · text: Every young Indian should leave education with at least one skill",
+          "type": "text",
+          "value": "Every young Indian should leave education with at least one skill the market genuinely values - not as an afterthought, but as a core outcome."
+        },
+        "f9": {
+          "label": "fourAsks · hindi: शिक्षा",
+          "type": "text",
+          "value": "शिक्षा"
+        },
+        "f10": {
+          "label": "fourAsks · english: EDUCATION",
+          "type": "text",
+          "value": "EDUCATION"
+        },
+        "f11": {
+          "label": "fourAsks · text: Character and capability, taught together, not treated as competi",
+          "type": "text",
+          "value": "Character and capability, taught together, not treated as competing priorities."
+        },
+        "f12": {
+          "label": "fourAsks · hindi: हिसाब",
+          "type": "text",
+          "value": "हिसाब"
+        },
+        "f13": {
+          "label": "fourAsks · english: ACCOUNTABILITY",
+          "type": "text",
+          "value": "ACCOUNTABILITY"
+        },
+        "f14": {
+          "label": "fourAsks · text: I believe institutions, including my own, should be judged by their impact, not ",
+          "type": "text",
+          "value": "I believe institutions, including my own, should be judged by their impact, not just their promises."
+        },
+        "f15": {
+          "label": "fourAsks · hindi: सवाल",
+          "type": "text",
+          "value": "सवाल"
+        },
+        "f16": {
+          "label": "fourAsks · english: THE RIGHT TO QUESTION",
+          "type": "text",
+          "value": "THE RIGHT TO QUESTION"
+        },
+        "f17": {
+          "label": "fourAsks · text: A generation that can tell a real fact from a viral one is a gene",
+          "type": "text",
+          "value": "A generation that can tell a real fact from a viral one is a generation no one can mislead."
+        },
+        "f18": {
+          "label": "faqs: What is the one change you believe India needs most to become a developed nation",
+          "type": "text",
+          "value": "What is the one change you believe India needs most to become a developed nation by 2047?"
+        },
+        "f19": {
+          "label": "faqs: Do you think India's education system is ready to prepare students for the chall",
+          "type": "text",
+          "value": "Do you think India's education system is ready to prepare students for the challenges of 2047?"
+        },
+        "f20": {
+          "label": "faqs: Everyone talks about India's youth being its greatest strength. But are we doing",
+          "type": "text",
+          "value": "Everyone talks about India's youth being its greatest strength. But are we doing enough to support them?"
+        },
+        "f25": {
+          "label": "Heading: VISION 2047",
+          "type": "text",
+          "value": "VISION 2047"
+        },
+        "f26": {
+          "label": "Heading: What India @100 Must Look Like",
+          "type": "text",
+          "value": "What India @100 Must Look Like"
+        },
+        "f27": {
+          "label": "Text: Looking at how far India has come in the last few decades, I feel immense pride ",
+          "type": "text",
+          "value": "Looking at how far India has come in the last few decades, I feel immense pride and optimism about what lies ahead. Our progress in technology and digital infrastructure has shown that we have the ability to find solutions to challenges that once seemed impossible. The success of initiatives like UPI is a reminder that when we think differently and act with determination, we can create solutions that benefit millions."
+        },
+        "f28": {
+          "label": "Text: I believe we need to bring that same ambition and confidence into our education ",
+          "type": "text",
+          "value": "I believe we need to bring that same ambition and confidence into our education system. Rather than simply following models developed elsewhere, we have an opportunity to build institutions that respond to India's unique strengths, challenges, and aspirations. Our young people deserve an education that prepares them not just for the world as it exists today, but for the possibilities of tomorrow.\n\nAs India approaches 100 years of independence in 2047, I hope to see a generation that looks beyond traditional career paths and has the confidence to create opportunities for itself and others. I want our classrooms to encourage innovation, entrepreneurship, and independent thinking, where students are as excited about starting something of their own as they are about securing a good job."
+        },
+        "f29": {
+          "label": "Text: For me, Viksit Bharat is not simply about economic growth or technological progr",
+          "type": "text",
+          "value": "For me, Viksit Bharat is not simply about economic growth or technological progress. It is about building an India where every young person has the knowledge, confidence, and opportunity to contribute to the nation's future. And I believe education will play the most important role in making that vision a reality."
+        },
+        "f30": {
+          "label": "Heading: The Four Asks",
+          "type": "text",
+          "value": "The Four Asks"
+        },
+        "f31": {
+          "label": "Text: The following is a proposed synthesis of positions he has already stated pu",
+          "type": "text",
+          "value": "The following is a proposed synthesis of positions he has already stated publicly, offered here as a strong starting draft not yet confirmed as his official platform."
+        },
+        "f32": {
+          "label": "Heading: A Question, Answered",
+          "type": "text",
+          "value": "A Question, Answered"
+        },
+        "f33": {
+          "label": "Heading: My Thoughts on India's Road to 2047",
+          "type": "text",
+          "value": "My Thoughts on India's Road to 2047"
+        },
+        "f34": {
+          "label": "Text: I believe India's future lies in the hands of its youth. Here, I share my though",
+          "type": "text",
+          "value": "I believe India's future lies in the hands of its youth. Here, I share my thoughts on empowering young minds to innovate, lead, and shape a stronger India by 2047."
+        },
+        "f35": {
+          "label": "Field label: Your Name",
+          "type": "text",
+          "value": "Your Name"
+        },
+        "f36": {
+          "label": "Input hint: Mohan",
+          "type": "text",
+          "value": "Mohan"
+        },
+        "f37": {
+          "label": "Field label: Message",
+          "type": "text",
+          "value": "Message"
+        },
+        "f38": {
+          "label": "Input hint: Write to here...",
+          "type": "text",
+          "value": "Write to here..."
+        },
+        "f39": {
+          "label": "button: Send Message",
+          "type": "text",
+          "value": "Send Message"
+        },
+        "f41": {
+          "label": "FAQs · answer: Transforming education",
+          "type": "text",
+          "value": "If I had to choose one, it would be transforming how we educate our young people. I want our classrooms to encourage curiosity, independent thinking, and practical learning rather than focusing only on marks and degrees. When students learn to solve problems, take initiative, and create opportunities, they become active contributors to the nation's progress. That, to me, is where meaningful change begins.",
+          "hiValue": ""
+        },
+        "f42": {
+          "label": "FAQs · answer: Preparing for 2047",
+          "type": "text",
+          "value": "I believe we have made considerable progress, but there is still a long way to go. Technology, industries, and career opportunities are evolving rapidly, and our institutions must keep pace. I would like to see greater emphasis on practical skills, industry exposure, research, and entrepreneurship. Education should prepare young people for challenges we may not even be able to predict today.",
+          "hiValue": ""
+        },
+        "f43": {
+          "label": "FAQs · answer: Supporting young people",
+          "type": "text",
+          "value": "I think we recognise the potential of our young population, but recognising it and nurturing it are two different things. Many talented young Indians still struggle with limited access to quality education, mentorship, and opportunities. I believe we need to create an environment where talent receives the right support, regardless of someone's background or hometown. Our young people deserve more than encouragement; they deserve genuine opportunities.",
+          "hiValue": ""
+        },
+        "f44": {
+          "label": "FAQs · question: Entrepreneurship and India 2047",
+          "type": "text",
+          "value": "Why do you place so much importance on entrepreneurship in your vision for India 2047?",
+          "hiValue": ""
+        },
+        "f45": {
+          "label": "FAQs · answer: Entrepreneurship and India 2047",
+          "type": "text",
+          "value": "I've always believed that a strong nation needs people who can create opportunities, not just seek them. Entrepreneurship encourages young people to think independently, identify problems, and develop solutions. But I also understand that starting something new comes with risks. That's why I want our educational institutions to provide mentorship, practical exposure, and the confidence to turn promising ideas into sustainable ventures.",
+          "hiValue": ""
+        },
+        "f46": {
+          "label": "FAQs · question: A successful Viksit Bharat",
+          "type": "text",
+          "value": "What kind of India would make you feel that the vision of Viksit Bharat 2047 has truly succeeded?",
+          "hiValue": ""
+        },
+        "f47": {
+          "label": "FAQs · answer: A successful Viksit Bharat",
+          "type": "text",
+          "value": "For me, success would mean an India where a child's future is not limited by their family's income or where they were born. I would like to see quality education, accessible healthcare, meaningful employment, and opportunities reaching every part of the country. If young Indians feel confident about their future and have the means to shape it, I would consider that real progress.",
+          "hiValue": ""
+        }
+      }
+    }
+  },
+  "assets": {
+    "src/assets/Home-Images/zee-news.png": "src/assets/Home-Images/zee-news.png",
+    "src/assets/Home-Images/ndtv.jpg": "src/assets/Home-Images/ndtv.jpg",
+    "src/assets/Home-Images/india-today.png": "src/assets/Home-Images/india-today.png",
+    "src/assets/Home-Images/aaj-tak.png": "src/assets/Home-Images/aaj-tak.png",
+    "src/assets/Home-Images/times-now.png": "src/assets/Home-Images/times-now.png",
+    "src/assets/Home-Images/vision-youth.png": "src/assets/Home-Images/vision-youth.png",
+    "src/assets/Home-Images/public-policy.png": "src/assets/Home-Images/public-policy.png",
+    "src/assets/Home-Images/herobg.png": "src/assets/Home-Images/herobg.png",
+    "src/assets/Home-Images/shalinder.png": "src/assets/Home-Images/shalinder.png",
+    "src/assets/Home-Images/image 7.png": "src/assets/Home-Images/image 7.png",
+    "src/assets/Home-Images/Container.png": "src/assets/Home-Images/Container.png",
+    "src/assets/Home-Images/Container2.png": "src/assets/Home-Images/Container2.png",
+    "src/assets/Home-Images/Frame 79.png": "src/assets/Home-Images/Frame 79.png",
+    "src/assets/Home-Images/YouthImg.jpeg": "src/assets/Home-Images/YouthImg.jpeg",
+    "src/assets/WebImages/Season 1 has 28 episodes.jpg": "src/assets/WebImages/Season 1 has 28 episodes.jpg",
+    "src/assets/WebImages/EP-1.jpg": "src/assets/WebImages/EP-1.jpg",
+    "src/assets/WebImages/EP-2.jpg": "src/assets/WebImages/EP-2.jpg",
+    "src/assets/WebImages/EP-3.jpg": "src/assets/WebImages/EP-3.jpg",
+    "src/assets/WebImages/EP-4.jpg": "src/assets/WebImages/EP-4.jpg",
+    "src/assets/WebImages/EP-5.jpg": "src/assets/WebImages/EP-5.jpg",
+    "src/assets/WebImages/EP-6.jpg": "src/assets/WebImages/EP-6.jpg",
+    "src/assets/WebImages/Established Pratap University,.jpg": "src/assets/WebImages/Established Pratap University,.jpg",
+    "src/assets/WebImages/Governance & Institution-Building.jpg": "src/assets/WebImages/Governance & Institution-Building.jpg",
+    "src/assets/WebImages/NEP & Policy.jpg": "src/assets/WebImages/NEP & Policy.jpg",
+    "src/assets/WebImages/Skills & Employability.jpg": "src/assets/WebImages/Skills & Employability.jpg",
+    "src/assets/WebImages/Mentor.jpg": "src/assets/WebImages/Mentor.jpg",
+    "src/assets/WebImages/Letters to Young India.jpg": "src/assets/WebImages/Letters to Young India.jpg",
+    "public/Journery-Images/image 93.png": "public/Journery-Images/image 93.png",
+    "public/Journery-Images/image 94.png": "public/Journery-Images/image 94.png",
+    "public/Journery-Images/image 95.png": "public/Journery-Images/image 95.png",
+    "public/Journery-Images/image 96.png": "public/Journery-Images/image 96.png",
+    "public/Journery-Images/image 97.png": "public/Journery-Images/image 97.png",
+    "public/Journery-Images/image 98.png": "public/Journery-Images/image 98.png",
+    "public/Journery-Images/Rectangle 34.png": "public/Journery-Images/Rectangle 34.png",
+    "src/assets/WebImages/Founded.jpg": "src/assets/WebImages/Founded.jpg",
+    "src/assets/WebImages/~12 institutions.jpg": "src/assets/WebImages/~12 institutions.jpg",
+    "src/assets/WebImages/5 Pratap.jpg": "src/assets/WebImages/5 Pratap.jpg",
+    "src/assets/WebImages/Maharana Pratap Hospital.jpg": "src/assets/WebImages/Maharana Pratap Hospital.jpg",
+    "src/assets/WebImages/Owner, Chetak Sports Pvt. Ltd..jpg": "src/assets/WebImages/Owner, Chetak Sports Pvt. Ltd..jpg",
+    "src/assets/WebImages/Recognitions_.jpg": "src/assets/WebImages/Recognitions_.jpg",
+    "src/assets/WebImages/Explore Topics.jpg": "src/assets/WebImages/Explore Topics.jpg",
+    "src/assets/WebImages/Address.jpg": "src/assets/WebImages/Address.jpg",
+    "src/assets/WebImages/University.jpg": "src/assets/WebImages/University.jpg",
+    "src/assets/WebImages/Sports.jpg": "src/assets/WebImages/Sports.jpg",
+    "src/assets/WebImages/Classroom.jpg": "src/assets/WebImages/Classroom.jpg",
+    "src/assets/WebImages/Where Policy Meets People.jpg": "src/assets/WebImages/Where Policy Meets People.jpg",
+    "src/assets/WebImages/Viksit Bharat 2047 — The Bigger Picture.jpg": "src/assets/WebImages/Viksit Bharat 2047 — The Bigger Picture.jpg",
+    "src/assets/WebImages/school.jpg": "src/assets/WebImages/school.jpg",
+    "src/assets/WebImages/Support-Goes.jpg": "src/assets/WebImages/Support-Goes.jpg",
+    "src/assets/WebImages/Whycricket.jpg": "src/assets/WebImages/Whycricket.jpg",
+    "src/assets/WebImages/Scholarships.jpg": "src/assets/WebImages/Scholarships.jpg",
+    "src/assets/WebImages/Franchise.jpg": "src/assets/WebImages/Franchise.jpg",
+    "src/assets/WebImages/Youth & Digital Literacy.jpg": "src/assets/WebImages/Youth & Digital Literacy.jpg",
+    "src/assets/WebImages/Sports in Education-1.jpg": "src/assets/WebImages/Sports in Education-1.jpg",
+    "src/assets/WebImages/Medical.jpg": "src/assets/WebImages/Medical.jpg",
+    "src/assets/Home-Images/blog1.png": "src/assets/Home-Images/blog1.png",
+    "src/assets/Home-Images/blog2.png": "src/assets/Home-Images/blog2.png",
+    "src/assets/Home-Images/blog3.png": "src/assets/Home-Images/blog3.png"
+  },
+  "journey": [
+    {
+      "year": "1996",
+      "title": "The Beginning",
+      "text": "Founded the Maharana Pratap Group of Institutions with a simple conviction: that access to quality education should not be limited by geography or background. What began modestly has grown into a network of nearly a dozen institutions across Kanpur and Lucknow, spanning engineering, management, pharmacy and dental sciences."
+    },
+    {
+      "year": "1997",
+      "title": "A Moment I Still Carry",
+      "text": "A year later, our first school was inaugurated by the late Shri Atal Bihari Vajpayee Ji a moment that shaped how seriously I took the responsibility of building institutions meant to last."
+    },
+    {
+      "year": "2011",
+      "title": "Pratap University",
+      "text": "Established Pratap University in Jaipur, on a hundred-acre campus designed around a simple idea: a university should prepare students not just for jobs, but for a country changing faster than any curriculum can predict."
+    }
+  ]
+}

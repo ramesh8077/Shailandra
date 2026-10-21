@@ -1,0 +1,12 @@
+import fs from 'node:fs';
+let app=fs.readFileSync('src/App.jsx','utf8').replace('./pages/SewaPage','./pages/Sewapage');
+app=app.replace('function ScrollToTop()',`import Admin from './cms/Admin';\nimport { PublicCMS, PostDetail, PostList } from './cms/PublicCMS';\nfunction ScrollToTop()`);
+app=app.replace('export default function App() {','function PublicSite() {');
+app=app.replace('<BrowserRouter>','<PublicCMS>').replace('</BrowserRouter>','</PublicCMS>');
+app=app.replace('<Routes>','<Routes>\n<Route path="/posts/:slug" element={<PostDetail />} />\n<Route path="/posts" element={<PostList title="Posts" />} />');
+app+=`\nexport default function App(){return <BrowserRouter><Routes><Route path="/admin/*" element={<Admin/>}/><Route path="*" element={<PublicSite/>}/></Routes></BrowserRouter>;}\n`;
+fs.writeFileSync('src/App.jsx',app);
+fs.writeFileSync('src/components/Blogs.jsx',`import { PostList } from '../cms/PublicCMS';\nexport default function Blogs(){return <PostList type="article" title="Blogs & Articles" limit={3}/>;}\n`);
+let vite=fs.readFileSync('vite.config.js','utf8').replace('server: {',`server: {\n    proxy: { '/api': 'http://localhost:4000' },`);
+fs.writeFileSync('vite.config.js',vite);
+fs.appendFileSync('.gitignore','\n# Local secrets and generated verification artifacts\n.env\n.env.*\n!.env.example\n.cms-build/\n.cms-test-data/\nserver/coverage/\n');
