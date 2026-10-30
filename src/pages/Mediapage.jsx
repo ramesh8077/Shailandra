@@ -119,7 +119,7 @@ export default function MediaPage() {
       </section>}
 
       {/* Fact Sheet */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
+      <section className="mx-auto max-w-6xl px-6 py-12">
         <h2 className="mb-8 text-2xl font-bold text-[#ff6422]">{cms("f62")}</h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {factSheet.map(fact => <div key={fact.title} className="rounded-md bg-gray-50 p-4">
@@ -130,8 +130,25 @@ export default function MediaPage() {
         </div>
       </section>
 
+      {/* Press logos */}
+      <section className="press-logos-top mx-auto max-w-6xl px-6 pb-16">
+        <div className="flex items-center gap-4">
+          <button type="button" aria-label="Previous" className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-gray-300 text-gray-500 hover:border-[#ff6422] hover:text-[#ff6422]">
+            <span aria-hidden="true">&lsaquo;</span>
+          </button>
+          <div className="grid flex-1 grid-cols-2 gap-4 sm:grid-cols-5">
+            {pressLogos.map(({ name, image }) => <div key={name} className="grid h-20 place-items-center rounded-md border border-gray-200 px-4">
+                <img src={image} alt={name} className="max-h-12 max-w-full object-contain" />
+              </div>)}
+          </div>
+          <button type="button" aria-label="Next" className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-gray-300 text-gray-500 hover:border-[#ff6422] hover:text-[#ff6422]">
+            <span aria-hidden="true">&rsaquo;</span>
+          </button>
+        </div>
+      </section>
+
       {/* Quotable Thoughts */}
-      <section className="bg-[#ff6422] py-16">
+      <section className="bg-[#ff6422] py-12">
         <div className="mx-auto max-w-6xl px-6">
           <h2 className="mb-10 text-center text-3xl font-extrabold text-white">{cms("f63")}</h2>
           <div className="grid items-center gap-10 md:grid-cols-[1fr_auto_1fr_auto]">
@@ -150,7 +167,7 @@ export default function MediaPage() {
       </section>
 
       {/* Explore Topics */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
+      <section className="mx-auto max-w-6xl px-6 py-12">
         <h2 className="mb-8 text-center text-3xl font-extrabold text-[#ff6422]">{cms("f67")}</h2>
         <div className="flex flex-wrap justify-center gap-4">
           {topics.map(topic => <span key={topic} className="flex items-center gap-3 rounded-full bg-orange-100 px-5 py-3 text-sm font-semibold text-gray-800">
@@ -163,7 +180,7 @@ export default function MediaPage() {
       </section>
 
       {/* Bio */}
-      <section className="mx-auto max-w-6xl px-6 pb-16">
+      <section className="mx-auto max-w-6xl px-6 pb-12">
         <div className="grid gap-10 md:grid-cols-[280px_1fr]">
           <div>
             <img src={bioPhoto} alt={cms("f68")} className="block h-auto w-full rounded-md object-cover" />
@@ -180,7 +197,7 @@ export default function MediaPage() {
       </section>
 
       {/* Photo Gallery */}
-      <section className="mx-auto max-w-6xl px-6 pb-16">
+      <section className="mx-auto max-w-6xl px-6 pb-12">
         <h2 className="mb-8 text-center text-3xl font-extrabold text-[#ff6422]">{cms("f69")}</h2>
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
           {gallery.map(item => <img key={item.alt} src={item.image} alt={item.alt} className="aspect-square w-full rounded-md object-cover" />)}
@@ -202,7 +219,7 @@ export default function MediaPage() {
       </section>
 
       {/* Press logos */}
-      <section className="mx-auto max-w-6xl px-6 pb-16">
+      <section className="hidden">
         <div className="flex items-center gap-4">
           <button type="button" aria-label="Previous" className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-gray-300 text-gray-500 hover:border-[#ff6422] hover:text-[#ff6422]">
             ‹

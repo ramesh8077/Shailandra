@@ -20,8 +20,8 @@ import ChaiPaiCharchaPage from "./pages/ChaiPaiCharchaPage";
 import Connectpage from "./pages/ConnectPage";
 import NationBuildingPage from "./pages/Nationbuildingpage";
 import MediaPage from "./pages/Mediapage";
-import Admin from './cms/Admin';
 import { PublicCMS, PostDetail, PostList } from './cms/PublicCMS';
+import Admin from './cms/Admin';
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
 
@@ -48,8 +48,8 @@ function ScrollToTop() {
        <Stats />
        <Features />
        <YouthConnect />
-       <ContactInsights />
        <Blogs />
+       <ContactInsights />
      </main>
    );
  }
@@ -71,6 +71,8 @@ function ScrollToTop() {
            <Route path="/vision-2047" element={<Vision2047Page />} />
            <Route path="/thought-leadership" element={<ThoughtLeadershipPage />} />
            <Route path="/updevelopment" element={<UpDevelopmentPage />} />
+           <Route path="/coffe-pai-charcha" element={<ChaiPaiCharchaPage />} />
+           <Route path="/coffee-pe-charcha" element={<ChaiPaiCharchaPage />} />
            <Route path="/चाय-पै-चर्चा" element={<ChaiPaiCharchaPage />} />
            <Route path="/connect" element={<Connectpage />} />
            <Route path="/nation-building" element={<NationBuildingPage />} />

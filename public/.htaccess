@@ -1,0 +1,9 @@
+RewriteEngine On
+
+# Keep real files (JS, CSS, images, favicon) working normally.
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# React Router needs the app shell on direct visits and browser reloads.
+RewriteRule ^ index.html [L]

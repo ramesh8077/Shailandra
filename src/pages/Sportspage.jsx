@@ -27,7 +27,7 @@ export default function SportsPage() {
       <PageHero title={cms("f6")} image={Sports} position="center 35%" />
 
       {/* Cards grid */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
+      <section className="mx-auto max-w-6xl px-6 py-12">
         <div className="grid gap-6 md:grid-cols-2">
           <SportCard title={cms("f7")} image={Address}>{cms("f8")}</SportCard>
 

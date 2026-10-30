@@ -78,13 +78,13 @@ export default function UpDevelopmentPage() {
       <PageHero title={cms("f25")} image={medical1} />
 
       {/* Intro */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
+      <section className="mx-auto max-w-6xl px-6 py-12">
         <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">{cms("f26")}</h2>
         <p className="whitespace-pre-line leading-relaxed text-gray-700">{cms("f27")}</p>
       </section>
 
       {/* Case study browser */}
-      {faqs.length > 0 && <section className="mx-auto max-w-6xl px-6 pb-16">
+      {faqs.length > 0 && <section className="mx-auto max-w-6xl px-6 pb-12">
         <div className="grid gap-8 md:grid-cols-[minmax(0,260px)_1fr]">
           {/* Category list */}
           <div className="flex flex-col gap-2">
@@ -122,8 +122,11 @@ export default function UpDevelopmentPage() {
         </div>
       </section>}
 
+      {/* Related Reading */}
+      <PostList title="Related reading" type="article" category="UP Development" />
+
       {/* A Question, Answered */}
-      <section className="mx-auto max-w-6xl px-6 pb-16">
+      <section className="mx-auto max-w-6xl px-6 pb-12">
         <h2 className="mb-6 text-2xl font-bold text-[#ff6422]">{cms("f31")}</h2>
         <div className="space-y-3">
           {faqs.map((item, i) => <article key={i} className="overflow-hidden rounded-md border border-gray-200">
@@ -139,8 +142,8 @@ export default function UpDevelopmentPage() {
       </section>
 
       {/* Join the Conversation */}
-      <section className="mx-auto max-w-6xl px-6 pb-16">
-        <div className="grid gap-10 rounded-md border border-gray-200 bg-gray-50 p-8 md:grid-cols-2">
+      <section className="mx-auto max-w-6xl px-6 pb-12">
+        <div className="grid gap-8 rounded-md border border-gray-200 bg-gray-50 p-6 sm:p-8 md:grid-cols-2">
           <div>
             <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">{cms("f32")}</h2>
             <p className="leading-relaxed text-gray-700">{cms("f33")}</p>
@@ -155,7 +158,5 @@ export default function UpDevelopmentPage() {
         </div>
       </section>
 
-      {/* Related Reading */}
-      <PostList title="Related reading" type="article" category="UP Development" />
     </></SectionBoundary>;
 }

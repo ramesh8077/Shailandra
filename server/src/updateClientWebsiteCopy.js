@@ -80,7 +80,7 @@ const newFields = {
 
 const contentUpdates = {
   Hero: {
-    f12: 'I believe that every experience teaches us something, and every meaningful conversation opens the door to a new perspective. Over the years, my journey across education, entrepreneurship, and social development has shaped the way I think, lead, and learn. Through this space, I hope to share my thoughts, experiences, and ideas on issues that matter, encourage meaningful conversations, and inspire fresh ways of looking at the world around us.'
+    f12: "I believe every experience offers a lesson, and every meaningful conversation brings a fresh perspective. Over the years, my journey in education, entrepreneurship, and leadership has shaped my vision. Through this space, I aim  to share insights, experiences, and ideas on education, innovation, youth empowerment, and issues shaping India's future"
   },
   Navbar: {
     f22: 'GALLERY'
@@ -99,7 +99,7 @@ const contentUpdates = {
     f13: 'Baat karni se baat banti hai'
   },
   Footer: {
-    f1: 'About Me',
+
     f2: '/',
     f3: 'My Journey',
     f4: '/journey',

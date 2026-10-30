@@ -37,7 +37,7 @@ export default function JourneyPage() {
 
       {/* Story Section */}
       <section className="section-space">
-        <div className="page-wrap grid gap-12 lg:grid-cols-2 lg:gap-16">
+        <div className="page-wrap grid gap-8 lg:grid-cols-2 lg:gap-12">
           <StoryBlock title={cms("f14")} className="text-orange-400">
             <p>{cms("f15")}</p>
 
@@ -67,8 +67,8 @@ export default function JourneyPage() {
         <div className="page-wrap">
           <h2 className="journey-heading mb-14 text-center text-orange-400">{cms("f25")}</h2>
 
-          <div className="grid items-center gap-12 lg:grid-cols-[1.15fr_0.85fr] lg:gap-16">
-            <div className="relative space-y-12 pl-10 sm:pl-16">
+          <div className="grid items-center gap-8 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
+            <div className="relative space-y-8 pl-10 sm:pl-16">
               <div className="absolute bottom-3 left-[11px] top-3 w-px bg-[#d4e0ea] sm:left-[23px]" />
 
               {timeline.map((item, index) => <article key={item.year} className="relative">
@@ -98,7 +98,7 @@ export default function JourneyPage() {
         <div className="page-wrap">
           <h2 className="journey-heading text-center text-orange-400">{cms("f26")}</h2>
 
-          <div className="mt-10 flex snap-x gap-5 overflow-x-auto pb-5 lg:grid lg:grid-cols-5 lg:overflow-visible">
+          <div className="mt-8 flex snap-x gap-5 overflow-x-auto pb-4 lg:grid lg:grid-cols-5 lg:overflow-visible">
             {beliefs.map(belief => <article key={belief.label} className="min-w-[210px] snap-center rounded-2xl bg-[#fbfbfc] p-4 text-center shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-lg lg:min-w-0">
                 <Photo src={belief.image} className="mx-auto h-40 w-full rounded-xl bg-cover bg-center" />
 
@@ -109,14 +109,14 @@ export default function JourneyPage() {
           </div>
 
           {/* Ethos Section */}
-          <div className="my-16 rounded-2xl border border-slate-300 bg-[#f5f9fc] p-7 sm:p-10">
+          <div className="my-12 rounded-2xl border border-slate-300 bg-[#f5f9fc] p-6 sm:p-8">
             <h2 className="journey-heading mb-4 text-orange-400">{cms("f27")}</h2>
 
             <p className="leading-7 text-slate-700">{cms("f28")}</p>
           </div>
 
           {/* Family and Recognition */}
-          <div className="grid gap-12 lg:grid-cols-2 lg:gap-16">
+          <div className="grid gap-8 lg:grid-cols-2 lg:gap-12">
             <StoryBlock title={cms("f29")}>
               <p>{cms("f30")}</p>
             </StoryBlock>

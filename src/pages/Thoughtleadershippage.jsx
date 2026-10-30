@@ -28,20 +28,20 @@ export default function ThoughtLeadershipPage() {
       <PageHero title={cms("f34")} image={heroImage} />
 
       {/* Intro */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
+      <section className="mx-auto max-w-6xl px-6 py-12">
         {cms("f40") && <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">{cms("f40")}</h2>}
         <p className="whitespace-pre-line leading-relaxed text-gray-700">{cms("f35")}</p>
       </section>
 
       {/* Lessons from My Journey */}
-      {(cms("f41") || cms("f43")) && <section className="mx-auto max-w-6xl px-6 pb-16">
+      {(cms("f41") || cms("f43")) && <section className="mx-auto max-w-6xl px-6 pb-12">
         <h2 className="mb-3 text-2xl font-bold text-[#ff6422]">{cms("f41")}</h2>
         <h3 className="mb-4 text-xl font-semibold text-[#10283d]">{cms("f42")}</h3>
         <p className="whitespace-pre-line leading-relaxed text-gray-700">{cms("f43")}</p>
       </section>}
 
       {/* Browse by Theme */}
-      <section className="mx-auto max-w-6xl px-6 pb-16">
+      <section className="mx-auto max-w-6xl px-6 pb-12">
         <h2 className="mb-5 text-center text-2xl font-extrabold text-[#ff6422]">{cms("f36")}</h2>
         {cms("f44") && <p className="mb-8 text-center text-sm font-semibold text-slate-600">{cms("f44")}</p>}
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -49,7 +49,7 @@ export default function ThoughtLeadershipPage() {
             title,
             description,
             Icon
-          }) => <div key={title} className="flex min-h-[220px] flex-col items-start rounded-xl border border-slate-200 bg-white p-5 shadow-[0_2px_8px_rgba(15,39,59,0.04)] transition-shadow hover:shadow-md">
+          }) => <div key={title} className="flex min-h-[200px] flex-col items-start rounded-xl border border-slate-200 bg-white p-5 shadow-[0_2px_8px_rgba(15,39,59,0.04)] transition-shadow hover:shadow-md">
               <span className="mb-3 grid h-10 w-10 place-items-center rounded-md bg-[#fff0e9] text-lg text-[#ff6422]">
                 <Icon aria-hidden="true" />
               </span>
@@ -63,7 +63,7 @@ export default function ThoughtLeadershipPage() {
       </section>
 
       {/* Letters to Young India */}
-      <section className="mx-auto max-w-6xl px-6 pb-16">
+      <section className="mx-auto max-w-6xl px-6 pb-12">
         <div className="grid items-center gap-10 md:grid-cols-2">
           <div>
             <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">{cms("f49") || cms("f37")}</h2>
@@ -80,8 +80,5 @@ export default function ThoughtLeadershipPage() {
 
       {/* Latest */}
       <PostList title="Latest articles" type="article" />
-
-      {/* Related Reading */}
-      <PostList title="Related reading" type="article" />
     </></SectionBoundary>;
 }

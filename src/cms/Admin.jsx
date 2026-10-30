@@ -323,7 +323,7 @@ function sectionRoute(key,kind) {
     vision2047: '/vision-2047',
     Thoughtleadershippage: '/thought-leadership',
     Updevelopmentpage: '/updevelopment',
-    ChaiPaiCharchaPage: '/चाय-पै-चर्चा',
+    ChaiPaiCharchaPage: '/coffe-pai-charcha',
     ConnectPage: '/connect',
     Nationbuildingpage: '/nation-building',
     Mediapage: '/media'

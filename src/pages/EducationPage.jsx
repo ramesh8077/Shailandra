@@ -30,7 +30,7 @@ export default function EducationPage() {
       <PageHero title={cms("f14")} image={heroImage} position="center 38%" />
 
       {/* Institutional Record */}
-      <section className="mx-auto grid max-w-6xl gap-10 px-6 py-16 md:grid-cols-2 items-start">
+      <section className="mx-auto grid max-w-6xl gap-8 px-6 py-12 md:grid-cols-2 md:gap-10 items-start">
         <div>
           {/* <img src={campreplac} alt="Pratap University campus" className="aspect-[4/5] w-full rounded-xl object-cover shadow-sm" /> */}
           <div className="mt-6 rounded-md border border-gray-200 bg-gray-50 p-6">
@@ -53,22 +53,22 @@ export default function EducationPage() {
       </section>
 
       {/* My Education Philosophy */}
-      <section className="mx-auto max-w-6xl px-6 py-10">
+      <section className="mx-auto max-w-6xl px-6 py-8">
         <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">{cms("f24")}</h2>
         <p className="mb-4 whitespace-pre-line leading-relaxed text-gray-700">{cms("f25")}</p>
         <p className="whitespace-pre-line leading-relaxed text-gray-700">{cms("f26")}</p>
       </section>
 
       {/* Understanding the System */}
-      <section className="mx-auto max-w-6xl px-6 py-10">
+      <section className="mx-auto max-w-6xl px-6 py-8">
         <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">{cms("f27")}</h2>
         <p className="mb-4 whitespace-pre-line leading-relaxed text-gray-700">{cms("f28")}</p>
         <p className="whitespace-pre-line leading-relaxed text-gray-700">{cms("f29")}</p>
       </section>
 
       {/* What Changed, For Whom */}
-      <section className="bg-gray-50 py-16">
-        <div className="mx-auto grid max-w-6xl items-center gap-10 px-6 md:grid-cols-2">
+      <section className="bg-gray-50 py-12">
+        <div className="mx-auto grid max-w-6xl items-center gap-8 px-6 md:grid-cols-2">
           <div>
             <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">{cms("f30")}</h2>
             <p className="whitespace-pre-line leading-relaxed text-gray-700">{cms("f31")}</p>
@@ -76,8 +76,11 @@ export default function EducationPage() {
           <img src={policyImage} alt={cms("f32")} className="aspect-video w-full rounded-xl object-cover shadow-sm" />
         </div>
       </section>
-{/* FAQs */}
-{faqs.length > 0 && <section className="mx-auto max-w-6xl px-6 py-16">
+      {/* Related Reading */}
+      <PostList title="My Thoughts on the Future of Education" type="article" category="Education" />
+
+      {/* FAQs */}
+{faqs.length > 0 && <section className="mx-auto max-w-6xl px-6 py-12">
   <h2 className="mb-6 text-2xl font-bold text-[#ff6422]">{cms("f33")}</h2>
 
   <div className="space-y-3">
@@ -98,8 +101,8 @@ export default function EducationPage() {
 </section>}
 
       {/* Join the Conversation */}
-      <section className="bg-gray-50 py-16">
-        <div className="mx-auto grid max-w-6xl gap-10 rounded-md border border-gray-200 bg-white p-8 md:grid-cols-2">
+      <section className="bg-gray-50 py-12">
+        <div className="mx-auto grid max-w-6xl gap-8 rounded-md border border-gray-200 bg-white p-6 sm:p-8 md:grid-cols-2">
           <div>
             <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">{cms("f34")}</h2>
             <p className="leading-relaxed text-gray-700">{cms("f35")}</p>
@@ -114,7 +117,5 @@ export default function EducationPage() {
         </div>
       </section>
 
-      {/* Related Reading */}
-      <PostList title="My Thoughts on the Future of Education" type="article" category="Education" />
     </></SectionBoundary>;
 }

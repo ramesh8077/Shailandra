@@ -24,13 +24,13 @@ export default function YouthConnect() {
   const handleQuestion = index => {
     setActive(active === index ? -1 : index);
   };
-  return <SectionBoundary name="YouthConnect"><section id="youth-connect" className="bg-white py-16 sm:py-20 lg:py-24">
+  return <SectionBoundary name="YouthConnect"><section id="youth-connect" className="bg-white py-12 sm:py-14 lg:py-16">
       <div className="page-wrap">
         {/* Section heading */}
         <h2 className="text-center text-2xl font-extrabold text-[#10283d] sm:text-3xl">{cms("f12")}</h2>
 
         {/* Introduction */}
-        <div className="mx-auto mt-10 grid max-w-5xl items-center gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-14">
+        <div className="mx-auto mt-8 grid max-w-5xl items-center gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
           {/* Left text */}
           <div>
             <p className="text-[15px] leading-6 text-[#10283d] sm:text-base sm:leading-7">
@@ -46,7 +46,7 @@ export default function YouthConnect() {
         </div>
 
         {/* Questions accordion */}
-        <div className="mx-auto mt-14 max-w-6xl overflow-hidden rounded-xl border border-slate-200 bg-white">
+        <div className="mx-auto mt-10 max-w-6xl overflow-hidden rounded-xl border border-slate-200 bg-white">
           {questions.map((item, index) => {
             const isActive = active === index;
             return <article key={item.q} className={`border-b border-slate-200 last:border-b-0 ${isActive ? "bg-[#fff1eb]" : "bg-white"}`}>

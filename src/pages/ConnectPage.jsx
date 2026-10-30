@@ -43,12 +43,12 @@ export default function ConnectPage() {
       <PageHero title={cms("f10")} image={heroBanner} />
 
       {/* Get in Touch / Speaking & Interview Requests */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid gap-14 md:grid-cols-2">
+      <section className="mx-auto max-w-6xl px-6 py-12">
+        <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
           {/* Left column */}
           <div>
             <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">{cms("f11")}</h2>
-            <p className="mb-12 leading-relaxed text-gray-700">{cms("f12")}</p>
+            <p className="mb-8 leading-relaxed text-gray-700">{cms("f12")}</p>
 
             <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">{cms("f13")}</h2>
             <div className="flex flex-wrap items-center gap-3">

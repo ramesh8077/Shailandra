@@ -4,6 +4,7 @@
       "kind": "page",
       "source": "src/components/ContactInsights.jsx",
       "fields": {
+     
         "f1": {
           "label": "insights · videoId: hwM3ahuLfx0",
           "type": "videoId",
@@ -19,6 +20,39 @@
           "type": "videoId",
           "value": "bbCzJ1iaXiw"
         },
+        "f29": {
+          "label": "insights · videoId: GMydyafcAZE",
+          "type": "videoId",
+          "value": "GMydyafcAZE"
+        },
+        "f30": {
+          "label": "insights · videoId: JojQiOy0KOc",
+          "type": "videoId",
+          "value": "JojQiOy0KOc"
+        },
+        "f31": {
+          "label": "insights · videoId: 4LjDu5481PA",
+          "type": "videoId",
+          "value": "4LjDu5481PA"
+        },
+
+        "f32": {
+          "label": "insights · videoId: ms8W8Foymzo",
+          "type": "videoId",
+          "value": "ms8W8Foymzo"
+        },
+        "f33": {
+          "label": "insights · videoId: 6b2V2cKUw4s",
+          "type": "videoId",
+          "value": "6b2V2cKUw4s"
+        },
+        "f34": {
+          "label": "insights · videoId: ms8W8Foymzo",
+          "type": "videoId",
+          "value": "ms8W8Foymzo"
+        },
+
+
         "f4": {
           "label": "insights · title: How to Build Your Career?",
           "type": "text",
@@ -251,11 +285,7 @@
       "kind": "settings",
       "source": "src/components/Footer.jsx",
       "fields": {
-        "f1": {
-          "label": "navItems · name: About Me",
-          "type": "text",
-          "value": "About Me"
-        },
+       
         "f2": {
           "label": "navItems · path: /",
           "type": "link",
@@ -469,24 +499,20 @@
           "value": "#"
         },
         "f9": {
-          "label": "Text: हर बच्चे की क्षमता को पहचानना और",
+          "label": "Text: शिक्षा, संस्कार और सशक्त ",
           "type": "text",
-          "value": "हर बच्चे की क्षमता को पहचानना और"
+          "value": "शिक्षा, संस्कार और सशक्त "
         },
         "f10": {
-          "label": "Text: शिक्षा के माध्यम से एक सशक्त भारत",
+          "label": "Text: भविष्य का संकल्प।",
           "type": "text",
-          "value": "शिक्षा के माध्यम से एक सशक्त भारत"
+          "value": "भविष्य का संकल्प।"
         },
-        "f11": {
-          "label": "Text: का निर्माण – यही मेरा उद्देश्य है।",
-          "type": "text",
-          "value": "का निर्माण – यही मेरा उद्देश्य है।"
-        },
+      
         "f12": {
           "label": "Text: I believe that every experience teaches us something, and every meaningful conve",
           "type": "text",
-          "value": "I believe that every experience teaches us something, and every meaningful conversation opens the door to a new perspective. Over the years, my journey across education, entrepreneurship, and social development has shaped the way I think, lead, and learn. Through this space, I hope to share my thoughts, experiences, and ideas on issues that matter, encourage meaningful conversations, and inspire fresh ways of looking at the world around us."
+          "value": "I believe every experience offers a lesson, and every meaningful conversation brings a fresh perspective. Over the years, my journey in education, entrepreneurship, and leadership has shaped my vision. Through this space, I aim  to share insights, experiences, and ideas on education, innovation, youth empowerment, and issues shaping India's future."
         },
         "f13": {
           "label": "Image description: Shailendra Bhadauria",
@@ -664,9 +690,9 @@
           "value": "/media"
         },
         "f16": {
-          "label": "moreLinks · label: Up Development",
+          "label": "moreLinks · label: UP Development",
           "type": "text",
-          "value": "Up Development"
+          "value": "UP Development"
         },
         "f17": {
           "label": "moreLinks · path: /updevelopment",
@@ -674,14 +700,14 @@
           "value": "/updevelopment"
         },
         "f18": {
-          "label": "moreLinks · label: चाय पै चर्चा",
+          "label": "moreLinks · label: Coffee Pe Charcha",
           "type": "text",
-          "value": "चाय पै चर्चा"
+          "value": "Coffee Pe Charcha"
         },
         "f19": {
-          "label": "moreLinks · path: /चाय-पै-चर्चा",
+          "label": "moreLinks · path: /coffe-pai-charcha",
           "type": "link",
-          "value": "/चाय-पै-चर्चा"
+          "value": "/coffe-pai-charcha"
         },
         "f20": {
           "label": "moreLinks · label: Sports",
@@ -696,7 +722,7 @@
         "f22": {
           "label": "moreLinks · label: GALLERY",
           "type": "text",
-          "value": "GALLERY"
+          "value": "Sewa"
         },
         "f23": {
           "label": "moreLinks · path: /sewa",
@@ -957,19 +983,19 @@
           "value": "He's not there to win the argument. He's there to make sure it actually goes somewhere."
         },
         "f32": {
-          "label": "Heading: चाय पे चर्चा 2047",
+          "label": "Heading: Coffee Pe Charcha 2047",
           "type": "text",
-          "value": "चाय पे चर्चा 2047"
+          "value": "Coffee Pe Charcha 2047"
         },
         "f33": {
-          "label": "Text: Some of my best conversations about India's future have happened over chai,",
+          "label": "Text: Some of my best conversations about India's future have happened over coffee,",
           "type": "text",
-          "value": "Some of my best conversations about India's future have happened over chai, not in boardrooms."
+          "value": "Some of my best conversations about India's future have happened over coffee, not in boardrooms."
         },
         "f34": {
-          "label": "Text: Chai Pe Charcha started as an attempt to bring that same informality real c",
+          "label": "Text: Coffee Pe Charcha started as an attempt to bring that same informality real c",
           "type": "text",
-          "value": "Chai Pe Charcha started as an attempt to bring that same informality real conversation, real disagreement, real curiosity to a wider audience."
+          "value": "Coffee Pe Charcha started as an attempt to bring that same informality real conversation, real disagreement, real curiosity to a wider audience."
         },
         "f35": {
           "label": "Text: Season 1 has 28 episodes",
@@ -1002,9 +1028,9 @@
           "value": "Instagram"
         },
         "f41": {
-          "label": "Image description: Chai Pe Charcha 2047 Season 1",
+          "label": "Image description: Coffee Pe Charcha 2047 Season 1",
           "type": "text",
-          "value": "Chai Pe Charcha 2047 Season 1"
+          "value": "Coffee Pe Charcha 2047 Season 1"
         },
         "f42": {
           "label": "Heading: Meet the Hosts",
@@ -1860,7 +1886,7 @@
         "f61": {
           "label": "Heading: GALLERY",
           "type": "text",
-          "value": "GALLERY"
+          "value": "Media"
         },
         "f62": {
           "label": "Heading: Fact Sheet",

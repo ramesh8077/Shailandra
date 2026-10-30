@@ -24,13 +24,13 @@ export default function SewaPage() {
       <PageHero title={cms("f9")} image={SupportImg} position="center 38%" />
 
       {/* Intro */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
+      <section className="mx-auto max-w-6xl px-6 py-12">
         <p className="mb-4 whitespace-pre-line leading-relaxed text-gray-700">{cms("f10")}</p>
         <p className="whitespace-pre-line leading-relaxed text-gray-700">{cms("f11")}</p>
       </section>
 
       {/* The Circle We are Building */}
-      <section className="mx-auto max-w-6xl px-6 pb-16 text-center">
+      <section className="mx-auto max-w-6xl px-6 pb-12 text-center">
         <h2 className="mb-10 text-3xl font-extrabold text-[#ff6422]">{cms("f12")}</h2>
         <div className="flex items-center justify-center gap-1 sm:gap-10">
           {circleSteps.map((step, i) => <div key={step.label} className="flex items-center gap-1 sm:gap-10">
@@ -47,8 +47,8 @@ export default function SewaPage() {
       </section>
 
       {/* Entrepreneurship Support Beyond the Classroom */}
-      <section className="mx-auto max-w-6xl px-6 py-10">
-        <div className="grid gap-10 md:grid-cols-2 items-start">
+      <section className="mx-auto max-w-6xl px-6 py-8">
+        <div className="grid gap-8 md:grid-cols-2 items-start">
           <div>
             <img src={classroomImage} alt={cms("f16")} className="block h-auto w-full rounded-md object-contain" />
           </div>
@@ -62,8 +62,8 @@ export default function SewaPage() {
       </section>
 
       {/* Where the Support Goes */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
-        <div className="grid gap-10 md:grid-cols-2 items-start">
+      <section className="mx-auto max-w-6xl px-6 py-12">
+        <div className="grid gap-8 md:grid-cols-2 items-start">
           <div>
             <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">{cms("f21")}</h2>
             <p className="whitespace-pre-line leading-relaxed text-gray-700">{cms("f22")}</p>

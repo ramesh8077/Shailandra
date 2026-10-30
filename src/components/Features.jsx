@@ -46,18 +46,18 @@ export default function Features() {
       behavior: "smooth"
     });
   };
-  return <SectionBoundary name="Features"><section id="features" className="bg-white py-16 sm:py-20 lg:py-24">
+  return <SectionBoundary name="Features"><section id="features" className="bg-white py-12 sm:py-14 lg:py-16">
       <div className="page-wrap">
         {/* Heading */}
-        <h2 className="mb-10 text-center text-2xl font-extrabold text-[#10283d] sm:text-3xl">{cms("f19")}</h2>
+        <h2 className="mb-8 text-center text-2xl font-extrabold text-[#10283d] sm:text-3xl">{cms("f19")}</h2>
 
         {/* Media logos */}
-        <div className="relative mx-auto mb-14 flex max-w-fit items-center gap-3 sm:gap-5">
+        <div className="relative mx-auto mb-10 flex w-full max-w-5xl items-center gap-2 sm:gap-5">
           <button type="button" onClick={() => scrollMedia("left")} aria-label="Previous media logos" className="grid h-10 w-10 shrink-0 place-items-center rounded-full bg-white text-lg font-bold text-[#17364d] shadow-md transition hover:bg-[#ff6422] hover:text-white">
             ←
           </button>
 
-          <div ref={mediaRef} className="flex flex-1 gap-3 overflow-x-auto px-1 py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:justify-center">
+          <div ref={mediaRef} className="flex min-w-0 flex-1 gap-3 overflow-x-auto px-1 py-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:justify-center">
             {media.map(item => <div key={item.name} className="grid h-[90px] min-w-[145px] place-items-center rounded-xl border border-slate-100 bg-white px-5 shadow-[0_5px_20px_rgba(15,39,59,0.08)] sm:h-[95px] sm:min-w-[155px]">
                 <img src={item.image} alt={item.name} className="max-h-16 w-auto max-w-[140px] object-contain" />
               </div>)}

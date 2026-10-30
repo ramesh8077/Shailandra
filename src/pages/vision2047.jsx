@@ -1,8 +1,8 @@
 import { SectionBoundary } from "../cms/PublicCMS";
-import { PostList } from "../cms/PublicCMS";
 import { useSection } from "../cms/contentContext";
 import { useState } from "react";
 import PageHero from "../components/PageHero";
+import Blogs from "../components/Blogs";
 export default function Vision2047Page() {
   const cms = useSection("vision2047");
   const questionImage = cms("f5");
@@ -52,7 +52,7 @@ export default function Vision2047Page() {
       <PageHero title={cms("f25")} image={heroImage} position="center 35%" />
 
       {/* What India @100 Must Look Like */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
+      <section className="mx-auto max-w-6xl px-6 py-12">
         <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">{cms("f26")}</h2>
         <p className="mb-4 whitespace-pre-line leading-relaxed text-gray-700">{cms("f27")}</p>
         <p className="mb-4 whitespace-pre-line leading-relaxed text-gray-700">{cms("f28")}</p>
@@ -60,7 +60,7 @@ export default function Vision2047Page() {
       </section>
 
       {/* The Four Asks */}
-      <section className="mx-auto max-w-6xl px-6 pb-16">
+      <section className="mx-auto max-w-6xl px-6 pb-12">
         <h2 className="mb-3 text-2xl font-bold text-[#ff6422]">{cms("f30")}</h2>
         <p className="mb-8 italic leading-relaxed text-gray-700">{cms("f31")}</p>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -73,8 +73,11 @@ export default function Vision2047Page() {
         </div>
       </section>
 
+      {/* Blogs & Articles */}
+      <Blogs />
+
       {/* A Question, Answered */}
-      {faqs.length > 0 && <section className="mx-auto max-w-6xl px-6 py-16">
+      {faqs.length > 0 && <section className="mx-auto max-w-6xl px-6 py-12">
         <h2 className="mb-6 text-2xl font-bold text-[#ff6422]">{cms("f32")}</h2>
         <div className="space-y-3">
           {faqs.map((item, i) => <article key={i} className="overflow-hidden rounded-md border border-gray-200">
@@ -90,8 +93,8 @@ export default function Vision2047Page() {
       </section>}
 
       {/* Join the Conversation */}
-      <section className="mx-auto max-w-6xl px-6 pb-16">
-        <div className="grid gap-10 rounded-md border border-gray-200 bg-gray-50 p-8 md:grid-cols-2">
+      <section className="mx-auto max-w-6xl px-6 pb-12">
+        <div className="grid gap-8 rounded-md border border-gray-200 bg-gray-50 p-6 sm:p-8 md:grid-cols-2">
           <div>
             <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">{cms("f33")}</h2>
             <p className="leading-relaxed text-gray-700">{cms("f34")}</p>
@@ -106,7 +109,5 @@ export default function Vision2047Page() {
         </div>
       </section>
 
-      {/* Related Reading */}
-      <PostList title="Related reading" type="article" category="Vision 2047" />
     </></SectionBoundary>;
 }

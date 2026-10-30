@@ -9,7 +9,9 @@ export default defineConfig({
     babel({ presets: [reactCompilerPreset()] })
   ],
   server: {
-    proxy: { '/api': 'http://localhost:4000' },
+    proxy: {
+      '/api': 'http://localhost:4000',
+    },
     watch: {
       usePolling: true,
     },

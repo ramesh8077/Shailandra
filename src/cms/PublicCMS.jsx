@@ -1,7 +1,59 @@
 import { useContext, useEffect, useState } from 'react';
-import { Link, useLocation, useParams } from 'react-router-dom';
-import { api, mediaSrc } from './api';
-import { ContentContext as Context } from './contentContext';
+import { Link, useParams } from 'react-router-dom';
+import { API_BASE, api, mediaSrc } from './api';
+import { ContentContext as Context, staticContent } from './contentContext';
+import {
+  isStaticContentSource,
+  mediaAltFor,
+  parseStaticSnapshot,
+  staticPostPage,
+  staticSnapshotUrl
+} from './staticSnapshot';
+
+async function fetchJson(url, options = {}, timeoutMs = 3500) {
+  const controller = new AbortController();
+  const timeout = window.setTimeout(() => controller.abort(), timeoutMs);
+  try {
+    const response = await fetch(url, {
+      ...options,
+      signal: controller.signal
+    });
+    if (!response.ok) throw new Error(`Request failed with HTTP ${response.status}`);
+    return await response.json();
+  } finally {
+    window.clearTimeout(timeout);
+  }
+}
+
+function validLiveSite(site) {
+  if (!site || typeof site.sections !== 'object' || !Array.isArray(site.journey)) return false;
+  const expectedSections = Object.keys(staticContent.sections);
+  if (!expectedSections.every(key => {
+    const section = site.sections[key];
+    return section &&
+      section.en && typeof section.en === 'object' &&
+      section.hi && typeof section.hi === 'object' &&
+      Object.keys(staticContent.sections[key].en).every(field =>
+        typeof section.en[field] === 'string' && typeof section.hi[field] === 'string'
+      );
+  })) return false;
+  return site.journey.every(entry =>
+    entry &&
+    typeof entry.year === 'string' &&
+    typeof entry.title === 'string' &&
+    typeof entry.text === 'string' &&
+    Number.isInteger(entry.order) &&
+    ['en', 'hi'].includes(entry.locale)
+  );
+}
+
+function sectionImagePaths(content) {
+  return Object.fromEntries(Object.entries(content.sections).map(([key, section]) => [
+    key,
+    section
+  ]));
+}
+
 export function SectionBoundary({
   name,
   children
@@ -9,94 +61,176 @@ export function SectionBoundary({
   const context = useContext(Context);
   return context?.sections[name] ? children : <p className="page-wrap py-10">This section is not currently published.</p>;
 }
+
 export function PublicCMS({
   children
 }) {
-  const location = useLocation();
-  const [result, setResult] = useState({}),
-    [locale, setLocale] = useState('en');
-  const preview = new URLSearchParams(location.search).get('preview') === 'draft';
-  const {data,error}=result.preview===preview?result:{};
+  const [locale, setLocale] = useState('en');
+  const [content, setContent] = useState(staticContent);
+  const [snapshot, setSnapshot] = useState(null);
+  const [snapshotReady, setSnapshotReady] = useState(false);
+
   useEffect(() => {
     let active = true;
-    const refresh = () => api(preview ? '/manage/preview/site' : '/public/site').then(result => {
-      if (active) {
-        setResult({preview,data:result});
+    let reportedSnapshotError = false;
+    let currentSnapshot = null;
+
+    const loadSnapshot = async () => {
+      try {
+        const value = await fetchJson(staticSnapshotUrl(), {
+          cache: 'no-store'
+        }, 4000);
+        const data = parseStaticSnapshot(value);
+        if (!active) return;
+        currentSnapshot = data;
+        setSnapshot(data);
+        setContent(current => ({
+          sections: {
+            ...current.sections,
+            ...sectionImagePaths(data)
+          },
+          journey: data.journey
+        }));
+      } catch (error) {
+        if (active && !reportedSnapshotError) {
+          console.warn('The published static snapshot is unavailable; bundled defaults remain in use.', error);
+          reportedSnapshotError = true;
+        }
+      } finally {
+        if (active) setSnapshotReady(true);
       }
-    }).catch(e => {
-      if (active) {
-        setResult({preview,error:e.message});
+    };
+
+    const refreshLiveSite = async () => {
+      try {
+        const site = await fetchJson(`${API_BASE}/api/public/site`, {
+          cache: 'no-store'
+        });
+        if (!validLiveSite(site)) throw new Error('CMS returned incomplete published site content');
+        if (currentSnapshot?.journey.length && !site.journey.length) {
+          throw new Error('CMS returned no published journey entries while the static snapshot contains them');
+        }
+        if (active) {
+          setContent(current => ({
+            sections: {
+              ...current.sections,
+              ...site.sections
+            },
+            journey: site.journey
+          }));
+        }
+      } catch (error) {
+        if (active) console.warn('Live CMS content is unavailable; the last static snapshot remains in use.', error);
       }
-    });
-    refresh();
-    const timer = setInterval(refresh, 15000);
-    window.addEventListener('focus', refresh);
+    };
+
+    loadSnapshot();
+    if (!isStaticContentSource) {
+      refreshLiveSite();
+      const refreshInterval = window.setInterval(refreshLiveSite, 15000);
+      window.addEventListener('focus', refreshLiveSite);
+      return () => {
+        active = false;
+        window.clearInterval(refreshInterval);
+        window.removeEventListener('focus', refreshLiveSite);
+      };
+    }
+
     return () => {
       active = false;
-      clearInterval(timer);
-      window.removeEventListener('focus', refresh);
     };
-  }, [location.pathname, preview]);
-  if (error) return <main className="page-wrap py-20" role="alert"><h1 className="section-title">Content is unavailable</h1><p>{error}</p><button onClick={() => window.location.reload()}>Try again</button></main>;
-  if (!data) return <p className="page-wrap py-20" role="status">Loading…</p>;
-  if (!Object.keys(data.sections).length) return <p className="page-wrap py-20">No page content has been published yet.</p>;
+  }, []);
+
   return <Context.Provider value={{
-    ...data,
-    locale
-  }}><div className="flex justify-end gap-3 bg-slate-50 px-6 py-1 text-sm">{preview && <strong>Protected draft preview</strong>}<label>Language / भाषा <select aria-label="Language" value={locale} onChange={e => setLocale(e.target.value)}><option value="en">English</option><option value="hi">हिन्दी</option></select></label></div>{children}</Context.Provider>;
+    ...content,
+    locale,
+    posts: snapshot?.posts || [],
+    media: snapshot?.media || {},
+    snapshotReady,
+    staticSource: isStaticContentSource
+  }}><div className="flex justify-end gap-3 bg-slate-50 px-6 py-1 text-sm"><label>Language / भाषा <select aria-label="Language" value={locale} onChange={e => setLocale(e.target.value)}><option value="en">English</option><option value="hi">हिन्दी</option></select></label></div>{children}</Context.Provider>;
 }
+
 export function PostList({
   type,
   category,
   limit = 6,
   title = 'Latest articles'
 }) {
-  const location = useLocation();
-  category ||= new URLSearchParams(location.search).get('category') || undefined;
-  const context = useContext(Context),
-    locale = context?.locale || 'en';
-  const [result, setResult] = useState({}),
-    [page, setPage] = useState(1),
-    [q, setQ] = useState('');
-  const listKey=JSON.stringify([type,category,page,limit,locale,q]);
-  const {data,error}=result.listKey===listKey?result:{};
+  const context = useContext(Context);
+  const locale = context?.locale || 'en';
+  const [page, setPage] = useState(1);
+  const [search, setSearch] = useState('');
+  const [liveResult, setLiveResult] = useState(null);
+  const [liveError, setLiveError] = useState(false);
+  const staticResult = staticPostPage(context?.posts || [], {
+    type,
+    category,
+    locale,
+    search,
+    page,
+    limit
+  });
+  const queryKey = JSON.stringify([type, category, locale, search, page, limit]);
+
   useEffect(() => {
-    let active = true;
+    setLiveResult(null);
+    setLiveError(false);
+    if (isStaticContentSource) return undefined;
+
+    const controller = new AbortController();
+    const timeout = window.setTimeout(() => controller.abort(), 3500);
     const params = new URLSearchParams({
-      page,
-      limit,
-      locale,
-      q,
-      ...(type ? {
-        type
-      } : {}),
-      ...(category ? {
-        category
-      } : {})
+      page: String(page),
+      limit: String(limit),
+      locale
     });
-    const refresh = () => api(`/public/posts?${params}`).then(d => {
-      if (active) {
-        setResult({listKey,data:d});
+    if (type) params.set('type', type);
+    if (category) params.set('category', category);
+    if (search.trim()) params.set('q', search.trim());
+
+    fetch(`${API_BASE}/api/public/posts?${params}`, {
+      cache: 'no-store',
+      signal: controller.signal
+    }).then(async response => {
+      if (!response.ok) throw new Error(`CMS returned HTTP ${response.status}`);
+      return response.json();
+    }).then(data => {
+      if (!data || !Array.isArray(data.items) || !Number.isInteger(data.total) ||
+          !Number.isInteger(data.page) || !Number.isInteger(data.limit) ||
+          data.items.some(post => !post || typeof post.slug !== 'string' || typeof post.title !== 'string')) {
+        throw new Error('CMS returned incomplete post data');
       }
-    }).catch(e => {
-      if (active) {
-        setResult({listKey,error:e.message});
+      if ((data.total === 0 || data.total < staticResult.total) && staticResult.total > 0) {
+        throw new Error('CMS returned fewer published posts than the static snapshot');
       }
-    });
-    refresh();
-    const timer = setInterval(refresh, 15000);
-    window.addEventListener('focus', refresh);
+      setLiveResult({
+        key: queryKey,
+        data
+      });
+    }).catch(() => {
+      if (!controller.signal.aborted) setLiveError(true);
+      else setLiveError(true);
+    }).finally(() => window.clearTimeout(timeout));
+
     return () => {
-      active = false;
-      clearInterval(timer);
-      window.removeEventListener('focus', refresh);
+      controller.abort();
+      window.clearTimeout(timeout);
     };
-  }, [type, category, page, limit, locale, q, listKey]);
-  return <section className="section-space bg-white"><div className="page-wrap"><h2 className="section-title">{title}</h2><label className="block mb-6">Search / खोजें <input className="rounded border p-2" value={q} onChange={e => {
-          setQ(e.target.value);
-          setPage(1);
-        }} /></label>{error ? <p role="alert">{error}</p> : !data ? <p role="status">Loading…</p> : <>{!data.items.length && <p>No published posts yet.</p>}<div className="grid gap-8 md:grid-cols-3">{data.items.map(post => <article key={post.id} className="group">{post.cover && <img className="h-60 w-full rounded-2xl object-cover transition duration-500 group-hover:scale-105" src={mediaSrc(post.cover)} alt={post.title} />}<p className="mt-5 text-xs text-slate-500">{new Date(post.publishedAt).toLocaleDateString(locale === 'hi' ? 'hi-IN' : 'en-IN')}</p><h3 className="mt-2 text-xl font-bold">{post.title}</h3><p className="mt-2 text-slate-600">{post.excerpt}</p><Link className="mt-4 inline-flex rounded border border-[#ff6422] px-4 py-2 text-[#ff6422]" to={`/posts/${post.slug}`}>{locale === 'hi' ? 'और पढ़ें' : 'Read more'} ↗</Link></article>)}</div><div className="mt-8 flex gap-4"><button disabled={page === 1} onClick={() => setPage(p => p - 1)}>Previous</button><span>{page} / {Math.max(1, Math.ceil(data.total / limit))}</span><button disabled={page * limit >= data.total} onClick={() => setPage(p => p + 1)}>Next</button></div></>}</div></section>;
+  }, [category, limit, locale, page, queryKey, search, staticResult.total, type]);
+
+  const livePage = liveResult?.key === queryKey ? liveResult.data : null;
+  const result = livePage || staticResult;
+  const usingSnapshot = !livePage && staticResult.total > 0;
+  const waitingForSnapshot = !livePage && !context?.snapshotReady;
+  const hasResults = result.items.length > 0;
+
+  return <section className="section-space bg-white"><div className="page-wrap"><h2 className="section-title">{title}</h2><label className="mb-6 block max-w-md text-sm">Search / खोजें<input className="mt-2 w-full rounded border border-slate-300 px-4 py-3" value={search} onChange={event => {
+        setSearch(event.target.value);
+        setPage(1);
+      }} /></label>{usingSnapshot && liveError && !isStaticContentSource && <p role="status" className="mb-4 text-sm text-slate-600">Showing the latest exported content while the live CMS is unavailable.</p>}{waitingForSnapshot && !hasResults ? <p role="status" className="text-slate-600">Loading published articles…</p> : hasResults ? <><div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">{result.items.map(post => <article key={post.id || post.slug} className="overflow-hidden rounded-xl border border-slate-200 bg-white"><Link to={`/posts/${post.slug}`} className="block h-full">{post.cover && <img src={mediaSrc(post.cover)} alt={mediaAltFor(post.cover, context?.media)} className="h-52 w-full object-cover" />}<div className="p-5"><p className="text-sm font-semibold uppercase tracking-wide text-[#f05d25]">{post.category || post.type}</p><h3 className="mt-2 text-lg font-bold text-[#10283d]">{post.title}</h3>{post.excerpt && <p className="mt-3 text-sm leading-6 text-slate-600">{post.excerpt}</p>}</div></Link></article>)}</div><div className="mt-8 flex items-center justify-center gap-5"><button type="button" disabled={page <= 1} onClick={() => setPage(value => value - 1)}>Previous</button><span>{page} / {Math.max(1, Math.ceil(result.total / result.limit))}</span><button type="button" disabled={page * result.limit >= result.total} onClick={() => setPage(value => value + 1)}>Next</button></div></> : <p role="status" className="text-slate-600">{liveError && !context?.posts?.length && !isStaticContentSource ? 'Published articles are temporarily unavailable, and no static snapshot is available.' : 'No published posts yet.'}</p>}</div></section>;
 }
+
 export function PostDetail({
   preview = false
 }) {
@@ -104,49 +238,76 @@ export function PostDetail({
     slug,
     id
   } = useParams();
-  const [post, setPost] = useState(null),
-    [error, setError] = useState('');
+  const context = useContext(Context);
+  const [post, setPost] = useState(null);
+  const [error, setError] = useState('');
+
   useEffect(() => {
     let active = true;
-    const refresh = () => api(preview ? `/manage/content/${id}` : `/public/posts/${encodeURIComponent(slug)}`).then(d => {
-      if (active) {
-        setPost(preview ? d.draft : d);
-        setError('');
+    setPost(null);
+    setError('');
+
+    if (!preview) {
+      const published = context?.posts.find(entry => entry.slug === slug);
+      if (published) setPost(published);
+
+      if (isStaticContentSource) {
+        if (context?.snapshotReady && !published) {
+          setError('This published article is not in the current static export.');
+        }
+        return () => {
+          active = false;
+        };
       }
-    }).catch(e => {
-      if (active) {
-        setPost(null);
-        setError(e.message);
-      }
+
+    }
+
+    if (preview) {
+      api(`/manage/content/${id}`).then(document => {
+        if (active) setPost(document.draft);
+      }).catch(requestError => {
+        if (active) setError(requestError.message || 'The article could not be loaded.');
+      });
+      return () => {
+        active = false;
+      };
+    }
+
+    fetchJson(`${API_BASE}/api/public/posts/${encodeURIComponent(slug)}`, {
+        cache: 'no-store'
+      }).then(data => {
+        if (active) {
+          setPost(data);
+          setError('');
+        }
+      }).catch(requestError => {
+        if (active && !context?.posts.some(entry => entry.slug === slug) && context?.snapshotReady) {
+          setError(requestError.message || 'The article could not be loaded.');
+        }
     });
-    refresh();
-    const timer = setInterval(refresh, 15000);
+
     return () => {
       active = false;
-      clearInterval(timer);
     };
-  }, [slug, id, preview]);
+  }, [context?.posts, context?.snapshotReady, id, preview, slug]);
+
   useEffect(() => {
-    if (!post) return;
-    const previous = document.title;
-    document.title = post.seoTitle || post.title;
-    let meta = document.querySelector('meta[name="description"]');
-    const created = !meta;
-    if (!meta) {
-      meta = document.createElement('meta');
-      meta.name = 'description';
-      document.head.append(meta);
-    }
-    const old = meta.content;
-    meta.content = post.seoDescription || post.excerpt;
+    if (!post || preview) return undefined;
+    const previousTitle = document.title;
+    const description = document.querySelector('meta[name="description"]');
+    const previousDescription = description?.getAttribute('content');
+    document.title = post.seoTitle || post.title || previousTitle;
+    if (description && post.seoDescription) description.setAttribute('content', post.seoDescription);
     return () => {
-      document.title = previous;
-      if (created) meta.remove();else meta.content = old;
+      document.title = previousTitle;
+      if (description && previousDescription !== null) description.setAttribute('content', previousDescription);
     };
-  }, [post]);
-  if (error) return <p role="alert" className="page-wrap py-20">{error}</p>;
-  if (!post) return <p role="status" className="page-wrap py-20">Loading…</p>;
-  return <article className="page-wrap py-16 max-w-4xl" lang={post.locale}>{preview && <p className="mb-6 rounded bg-amber-100 p-3">Protected draft preview · only signed-in staff can view this.</p>}<h1 className="section-title">{post.title}</h1><p className="mb-6 text-slate-500">{post.author} · {post.category}</p>{post.cover && <img className="mb-8 max-h-[520px] w-full rounded-xl object-cover" src={mediaSrc(post.cover)} alt={post.title} />}<p className="mb-6 text-xl">{post.excerpt}</p><div className="cms-body" dangerouslySetInnerHTML={{
-      __html: post.body.replaceAll('src="/api/media/', `src="${mediaSrc('/api/media/')}`)
-    }} />{post.videoUrl && <iframe className="mt-8 aspect-video w-full" src={post.videoUrl} title={post.title} allowFullScreen />}</article>;
+  }, [post, preview]);
+
+  if (error) return <main className="page-wrap py-20"><p role="alert">{error}</p></main>;
+  if (!post) return <main className="page-wrap py-20"><p role="status">Loading article…</p></main>;
+
+  return <main className="page-wrap section-space"><article className="mx-auto max-w-3xl"><p className="text-sm font-semibold uppercase tracking-wide text-[#f05d25]">{post.category || post.type}</p><h1 className="mt-3 text-3xl font-extrabold text-[#10283d] md:text-5xl">{post.title}</h1>{post.excerpt && <p className="mt-5 text-lg leading-8 text-slate-600">{post.excerpt}</p>}{post.cover && <img className="mt-8 max-h-[32rem] w-full rounded-xl object-cover" src={mediaSrc(post.cover)} alt={mediaAltFor(post.cover, context?.media)} />}<div className="post-body mt-8 leading-8" dangerouslySetInnerHTML={{
+      __html: isStaticContentSource ? post.body : post.body.replace(/(["'(])\/api\/media\//g, `$1${API_BASE}/api/media/`)
+    }} /></article></main>;
 }

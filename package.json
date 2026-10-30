@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
+    "export:static": "node server/scripts/exportStatic.js",
     "lint": "oxlint",
     "preview": "vite preview"
   },

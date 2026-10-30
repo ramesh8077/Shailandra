@@ -31,7 +31,7 @@ export default function Navbar() {
     label: cms("f16"),
     path: cms("f17")
   }, {
-    label: cms("f18"),
+    label: "Coffee Pe Charcha",
     path: cms("f19")
   }, {
     label: cms("f20"),

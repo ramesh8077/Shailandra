@@ -1,33 +1,50 @@
 import { SectionBoundary } from "../cms/PublicCMS";
-import { PostList } from "../cms/PublicCMS";
 import { useSection } from "../cms/contentContext";
 import PageHero from "../components/PageHero";
 import { FaInstagram, FaYoutube } from "react-icons/fa6";
+import episode1Image from "../assets/WebImages/EP-1.jpg";
+import episode2Image from "../assets/WebImages/EP-2.jpg";
+import episode3Image from "../assets/WebImages/EP-3.jpg";
+import episode4Image from "../assets/WebImages/EP-4.jpg";
+import episode5Image from "../assets/WebImages/EP-5.jpg";
+import episode6Image from "../assets/WebImages/EP-6.jpg";
 export default function ChaiPeCharchaPage() {
   const cms = useSection("ChaiPaiCharchaPage");
   const seasonImage = cms("f1");
-  const hosts = [{
-    role: cms("f8"),
-    name: cms("f9"),
-    bio: [cms("f10"), cms("f11")],
-    quote: cms("f12"),
-    closing: cms("f13")
+  const episodes = [{
+    image: episode1Image,
+    title: "Jobs for Bharat 2047",
+    link: "https://www.youtube.com/shorts/GMydyafcAZE"
   }, {
-    role: cms("f14"),
-    name: cms("f15"),
-    bio: [cms("f16"), cms("f17")],
-    quote: cms("f18"),
-    closing: cms("f19")
+    image: episode2Image,
+    title: "India's Manufacturing Moment?",
+    link: "https://www.youtube.com/shorts/ms8W8Foymzo"
+  }, {
+    image: episode3Image,
+    title: "Degree Se Skills Tak",
+    link: "https://www.youtube.com/shorts/4LjDu5481PA"
+  }, {
+    image: episode4Image,
+    title: "AI: Friend or Foe?",
+    link: "https://www.youtube.com/shorts/JojQiOy0KOc"
+  }, {
+    image: episode5Image,
+    title: "Clean India, Green India?",
+    link: "https://www.youtube.com/shorts/bbCzJ1iaXiw"
+  }, {
+    image: episode6Image,
+    title: "Bharat in a Multipolar World",
+    link: "https://www.youtube.com/shorts/hwM3ahuLfx0"
   }];
   return <SectionBoundary name="ChaiPaiCharchaPage"><>
-      <PageHero title={cms("f32")} image={seasonImage} />
+      <PageHero title="Coffee Pe Charcha 2047" image={seasonImage} />
 
       {/* Intro */}
-      <section className="mx-auto max-w-6xl px-6 py-16">
+      <section className="mx-auto max-w-6xl px-6 py-12">
         <div className="grid items-center gap-10 md:grid-cols-2">
           <div>
-            <p className="mb-4 text-lg italic font-semibold leading-relaxed text-gray-900">{cms("f33")}</p>
-            <p className="mb-6 leading-relaxed text-gray-600">{cms("f34")}</p>
+            <p className="mb-4 text-lg italic font-semibold leading-relaxed text-gray-900">Some of my best conversations about India's future have happened over coffee, not in boardrooms.</p>
+            <p className="mb-6 leading-relaxed text-gray-600">Coffee Pe Charcha started as an attempt to bring that same informality, real conversation, real disagreement, and real curiosity to a wider audience.</p>
 
             <div className="flex items-start gap-4">
               <div className="grid h-11 w-11 shrink-0 place-items-center rounded-md bg-[#ff6422]">
@@ -47,49 +64,29 @@ export default function ChaiPeCharchaPage() {
           </div>
 
           <div>
-            <img src={seasonImage} alt={cms("f41")} className="block h-auto w-full rounded-md object-contain" />
+            <img src={seasonImage} alt="Coffee Pe Charcha 2047 Season 1" className="block h-auto w-full rounded-md object-contain" />
           </div>
         </div>
       </section>
 
-      {/* Meet the Hosts */}
-      <section className="mx-auto max-w-6xl px-6 pb-16">
-        <h2 className="mb-1 text-center text-3xl font-extrabold text-[#ff6422]">{cms("f42")}</h2>
-        <p className="mb-10 text-center text-gray-500">{cms("f43")}</p>
-
-        <div className="grid gap-6 md:grid-cols-2">
-          {hosts.map(host => <div key={host.name} className="overflow-hidden rounded-md border border-gray-200">
-              <div className="flex items-center gap-4 bg-[#ff6422] p-6">
-                <div aria-hidden="true" className="grid h-20 w-20 shrink-0 place-items-center rounded-full bg-white text-3xl font-extrabold text-[#ff6422]">
-                  {host.name[0]}
-                </div>
-                <div>
-                  <p className="text-xs font-bold tracking-wide text-white/80">{host.role}</p>
-                  <p className="text-2xl font-bold text-white">{host.name}</p>
-                </div>
+      {/* Season 1 Episodes */}
+      <section className="mx-auto max-w-6xl px-6 pb-12">
+        <h2 className="mb-1 text-center text-3xl font-extrabold text-[#ff6422]">Season 1 — Episodes</h2>
+        <p className="mb-8 text-center text-sm text-gray-600">(Gen-Z Mascot Characters)</p>
+        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+          {episodes.map(episode => <a key={episode.title} href={episode.link} target="_blank" rel="noopener noreferrer" className="overflow-hidden rounded-xl bg-[#ff6422] text-white transition hover:-translate-y-1 hover:shadow-lg">
+              <img src={episode.image} alt={episode.title} className="aspect-video w-full object-cover" />
+              <div className="flex min-h-20 items-center justify-between gap-3 px-5 py-4">
+                <span className="font-semibold leading-snug">{episode.title}</span>
+                <FaYoutube aria-hidden="true" className="shrink-0 text-xl" />
               </div>
-
-              <div className="bg-gray-50 p-6">
-                {host.bio.map((paragraph, i) => <p key={i} className="mb-4 leading-relaxed text-gray-700">
-                    {paragraph}
-                  </p>)}
-
-                <div className="mb-4 rounded-md bg-orange-100 px-5 py-4 font-semibold text-gray-900">
-                  {host.quote}
-                </div>
-
-                <p className="leading-relaxed text-gray-700">{host.closing}</p>
-              </div>
-            </div>)}
+            </a>)}
         </div>
       </section>
 
-      {/* Season 1 Episodes */}
-      <PostList title="Season 1 episodes" type="video" category="Chai Pe Charcha" />
-
       {/* Have a question for a future episode? */}
-      <section className="mx-auto max-w-6xl px-6 pb-16">
-        <div className="grid gap-10 rounded-md border border-gray-200 bg-gray-50 p-8 md:grid-cols-2">
+      <section className="mx-auto max-w-6xl px-6 pb-12">
+        <div className="grid gap-8 rounded-md border border-gray-200 bg-gray-50 p-6 sm:p-8 md:grid-cols-2">
           <div>
             <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">{cms("f46")}</h2>
             <p className="leading-relaxed text-gray-700">{cms("f47")}</p>
