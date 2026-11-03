@@ -65,7 +65,7 @@ export function SectionBoundary({
 export function PublicCMS({
   children
 }) {
-  const [locale, setLocale] = useState('en');
+  const [locale] = useState('en');
   const [content, setContent] = useState(staticContent);
   const [snapshot, setSnapshot] = useState(null);
   const [snapshotReady, setSnapshotReady] = useState(false);
@@ -148,14 +148,15 @@ export function PublicCMS({
     media: snapshot?.media || {},
     snapshotReady,
     staticSource: isStaticContentSource
-  }}><div className="flex justify-end gap-3 bg-slate-50 px-6 py-1 text-sm"><label>Language / भाषा <select aria-label="Language" value={locale} onChange={e => setLocale(e.target.value)}><option value="en">English</option><option value="hi">हिन्दी</option></select></label></div>{children}</Context.Provider>;
+  }}>{children}</Context.Provider>;
 }
 
 export function PostList({
   type,
   category,
   limit = 6,
-  title = 'Latest articles'
+  title = 'Latest articles',
+  fallbackItems = []
 }) {
   const context = useContext(Context);
   const locale = context?.locale || 'en';
@@ -220,7 +221,11 @@ export function PostList({
   }, [category, limit, locale, page, queryKey, search, staticResult.total, type]);
 
   const livePage = liveResult?.key === queryKey ? liveResult.data : null;
-  const result = livePage || staticResult;
+  const result = livePage?.items?.length || staticResult.items.length
+    ? livePage || staticResult
+    : context?.snapshotReady && !search.trim() && fallbackItems.length
+      ? { ...staticResult, items: fallbackItems, total: fallbackItems.length }
+      : livePage || staticResult;
   const usingSnapshot = !livePage && staticResult.total > 0;
   const waitingForSnapshot = !livePage && !context?.snapshotReady;
   const hasResults = result.items.length > 0;

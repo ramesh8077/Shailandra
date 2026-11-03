@@ -45,8 +45,9 @@ export default function Footer() {
           </div>}
         </div>}
 
-        <div className="flex flex-col gap-5 pt-7 text-sm">
-          <div className="flex justify-end gap-3">
+        <div className="flex flex-col gap-4 border-t border-black/10 pt-6 text-sm sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-center text-slate-600 sm:text-left">{cms("f26")} {new Date().getFullYear()} {cms("f27")}</p>
+          <div className="flex justify-center gap-3 sm:justify-end">
             {socialLinks.map(({
               name,
               href,
@@ -55,7 +56,6 @@ export default function Footer() {
                 <Icon aria-hidden="true" />
             </a>)}
           </div>
-          <p className="text-center">{cms("f26")} {new Date().getFullYear()} {cms("f27")}</p>
         </div>
       </div>
     </footer></SectionBoundary>;

@@ -1,4 +1,4 @@
-import { SectionBoundary } from "../cms/PublicCMS";
+import { PostList, SectionBoundary } from "../cms/PublicCMS";
 import { useSection } from "../cms/contentContext";
 import { useState } from "react";
 import PageHero from "../components/PageHero";
@@ -105,30 +105,16 @@ export default function MediaPage() {
   }];
   const [activeLang, setActiveLang] = useState("English");
   const [galleryPage, setGalleryPage] = useState(1);
-  const [question, setQuestion] = useState("");
-  function handleAsk(e) {
-    e.preventDefault();
-    // TODO: wire this up to your Q&A / chat endpoint
-  }
   return <SectionBoundary name="Mediapage"><>
       <PageHero title={cms("f61")} image={heroBanner} />
 
-      {(cms("f72") || cms("f73")) && <section className="mx-auto max-w-6xl px-6 pt-12">
-        <h2 className="mb-3 text-2xl font-bold text-[#ff6422]">{cms("f72")}</h2>
-        <p className="max-w-4xl whitespace-pre-line leading-relaxed text-gray-700">{cms("f73")}</p>
-      </section>}
-
-      {/* Fact Sheet */}
-      <section className="mx-auto max-w-6xl px-6 py-12">
-        <h2 className="mb-8 text-2xl font-bold text-[#ff6422]">{cms("f62")}</h2>
-        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {factSheet.map(fact => <div key={fact.title} className="rounded-md bg-gray-50 p-4">
-              <img src={fact.image} alt={fact.title} className="mb-4 h-32 w-full rounded-md object-cover" />
-              <p className="mb-1 font-bold text-gray-900">{fact.title}</p>
-              <p className="text-sm leading-relaxed text-gray-600">{fact.text}</p>
-            </div>)}
+      {/* My journey in the spotlight */}
+      {(cms("f72") || cms("f73")) && <section className="mx-auto max-w-6xl px-6 pb-12 pt-14 sm:pb-14 sm:pt-20">
+        <div className="max-w-5xl">
+          <h2 className="mb-4 text-2xl font-extrabold leading-tight text-[#ff6422] sm:text-3xl">{cms("f72")}</h2>
+          <p className="max-w-4xl whitespace-pre-line text-base leading-7 text-[#10283d] sm:text-lg sm:leading-8">{cms("f73")}</p>
         </div>
-      </section>
+      </section>}
 
       {/* Press logos */}
       <section className="press-logos-top mx-auto max-w-6xl px-6 pb-16">
@@ -144,6 +130,68 @@ export default function MediaPage() {
           <button type="button" aria-label="Next" className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-gray-300 text-gray-500 hover:border-[#ff6422] hover:text-[#ff6422]">
             <span aria-hidden="true">&rsaquo;</span>
           </button>
+        </div>
+      </section>
+
+      <PostList type="news" title="Online Coverage" limit={6} fallbackItems={[{
+        id: "sample-online-coverage",
+        slug: "sample-online-coverage",
+        type: "news",
+        category: "Media coverage",
+        title: "Shailendra Bhadauria’s journey in education and institution building",
+        excerpt: "A sample online coverage card. Replace this example by publishing a news post from the CMS admin panel.",
+        body: "<p>Sample online coverage.</p>"
+      }, {
+        id: "sample-online-coverage-2",
+        slug: "sample-online-coverage-2",
+        type: "news",
+        category: "Education",
+        title: "Building institutions that expand access to quality education",
+        excerpt: "A sample feature highlighting the work of creating stronger learning opportunities for young people.",
+        body: "<p>Sample online coverage.</p>"
+      }, {
+        id: "sample-online-coverage-3",
+        slug: "sample-online-coverage-3",
+        type: "news",
+        category: "Youth development",
+        title: "Empowering youth through education, skills, and opportunity",
+        excerpt: "A sample interview about preparing the next generation to lead, innovate, and contribute.",
+        body: "<p>Sample online coverage.</p>"
+      }, {
+        id: "sample-online-coverage-4",
+        slug: "sample-online-coverage-4",
+        type: "news",
+        category: "Social development",
+        title: "Education, healthcare, and sport as foundations for social progress",
+        excerpt: "A sample news story covering a broader vision for institution building and community impact.",
+        body: "<p>Sample online coverage.</p>"
+      }, {
+        id: "sample-online-coverage-5",
+        slug: "sample-online-coverage-5",
+        type: "news",
+        category: "Leadership",
+        title: "A long-term vision for learning and community impact",
+        excerpt: "A sample profile on leadership, service, and creating institutions that make a lasting difference.",
+        body: "<p>Sample online coverage.</p>"
+      }, {
+        id: "sample-online-coverage-6",
+        slug: "sample-online-coverage-6",
+        type: "news",
+        category: "Sports and youth",
+        title: "How sport helps young people build confidence and character",
+        excerpt: "A sample feature on using sport to support discipline, teamwork, and youth development.",
+        body: "<p>Sample online coverage.</p>"
+      }]} />
+
+      {/* Fact Sheet */}
+      <section className="mx-auto max-w-6xl px-6 py-12">
+        <h2 className="mb-8 text-2xl font-bold text-[#ff6422]">{cms("f62")}</h2>
+        <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {factSheet.map(fact => <div key={fact.title} className="rounded-md bg-gray-50 p-4">
+              <img src={fact.image} alt={fact.title} className="mb-4 h-32 w-full rounded-md object-cover" />
+              <p className="mb-1 font-bold text-gray-900">{fact.title}</p>
+              <p className="text-sm leading-relaxed text-gray-600">{fact.text}</p>
+            </div>)}
         </div>
       </section>
 
@@ -238,13 +286,5 @@ export default function MediaPage() {
         </div>
       </section>
 
-      {/* Ask a question bar */}
-      <section className="bg-orange-50 py-10">
-        <form onSubmit={handleAsk} className="mx-auto flex max-w-6xl flex-col gap-3 px-6 sm:flex-row sm:gap-4">
-          <input type="text" value={question} onChange={e => setQuestion(e.target.value)} placeholder={cms("f70")} className="min-w-0 flex-1 rounded-md border border-gray-200 bg-white px-5 py-4 text-sm text-gray-700 outline-none" />
-          <button type="submit" className="flex items-center justify-center gap-2 rounded-md bg-[#ff6422] px-8 py-4 text-sm font-bold text-white">{cms("f71")}<span aria-hidden="true">➤</span>
-          </button>
-        </form>
-      </section>
     </></SectionBoundary>;
 }

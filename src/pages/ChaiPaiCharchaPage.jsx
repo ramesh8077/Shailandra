@@ -72,7 +72,7 @@ export default function ChaiPeCharchaPage() {
       {/* Season 1 Episodes */}
       <section className="mx-auto max-w-6xl px-6 pb-12">
         <h2 className="mb-1 text-center text-3xl font-extrabold text-[#ff6422]">Season 1 — Episodes</h2>
-        <p className="mb-8 text-center text-sm text-gray-600">(Gen-Z Mascot Characters)</p>
+        <p className="mb-8 text-center text-sm text-gray-600"></p>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {episodes.map(episode => <a key={episode.title} href={episode.link} target="_blank" rel="noopener noreferrer" className="overflow-hidden rounded-xl bg-[#ff6422] text-white transition hover:-translate-y-1 hover:shadow-lg">
               <img src={episode.image} alt={episode.title} className="aspect-video w-full object-cover" />
