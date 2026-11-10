@@ -3,6 +3,7 @@ import { useSection } from "../cms/contentContext";
 import { useState } from "react";
 import { FaFacebookF, FaInstagram, FaXTwitter, FaYoutube } from "react-icons/fa6";
 import PageHero from "../components/PageHero";
+import Blogs from "../components/Blogs";
 export default function ConnectPage() {
   const cms = useSection("ConnectPage");
   const heroBanner = cms("f1");
@@ -43,6 +44,7 @@ export default function ConnectPage() {
       <PageHero title={cms("f10")} image={heroBanner} />
 
       {/* Get in Touch / Speaking & Interview Requests */}
+      <Blogs />
       <section className="mx-auto max-w-6xl px-6 py-12">
         <div className="grid gap-8 md:grid-cols-2 lg:gap-12">
           {/* Left column */}

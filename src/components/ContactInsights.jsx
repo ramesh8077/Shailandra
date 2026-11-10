@@ -40,7 +40,7 @@ export default function ContactInsights() {
         <div className="mx-auto grid w-[calc(100%-32px)] max-w-[1180px] items-start gap-8 lg:grid-cols-[1.05fr_0.95fr] lg:gap-12">
           {/* Left Form */}
           <div>
-            <h2 className="mb-6 text-2xl font-extrabold text-[#10283d] sm:text-3xl">{cms("f5")}</h2>
+            <h2 className="mb-6 text-2xl font-extrabold text-[#10283d] sm:text-3xl">Contact form</h2>
 
             <form className="grid gap-5 sm:grid-cols-2" onSubmit={handleSubmit}>
               <label className="field">

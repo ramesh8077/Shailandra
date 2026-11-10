@@ -21,9 +21,9 @@ export default function Footer() {
     href: cms("f22"),
     Icon: FaXTwitter
   }];
-  return <SectionBoundary name="Footer"><footer className="bg-[#fff4f1] py-10 sm:py-12">
+  return <SectionBoundary name="Footer"><footer className="bg-[#fff4f1] py-8 sm:py-10">
       <div className="page-wrap">
-        <div className="flex flex-col gap-5 border-b border-black py-6 lg:flex-row lg:items-center lg:justify-between">
+        <div className="flex flex-col gap-5 border-b border-black py-5 lg:flex-row lg:items-center lg:justify-between">
           <h2 className="text-xl font-extrabold text-[#f05d25]">{cms("f23")}</h2>
           <form className="flex w-full max-w-xl" onSubmit={e => e.preventDefault()}>
             <input type="email" required placeholder={cms("f24")} className="min-w-0 flex-1 rounded-l-md border border-r-0 border-orange-200 bg-white px-5 py-3 outline-none focus:border-[#ff6422]" />
@@ -31,7 +31,7 @@ export default function Footer() {
           </form>
         </div>
 
-        {(cms("f28") || cms("f30")) && <div className="grid gap-8 border-b border-black py-10 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
+        {(cms("f28") || cms("f30")) && <div className="grid gap-8 border-b border-black py-6 lg:grid-cols-[1.1fr_0.9fr] lg:gap-16">
           {cms("f28") && <div>
             <h2 className="text-2xl font-extrabold text-[#f05d25]">{cms("f28")}</h2>
             <p className="mt-4 max-w-2xl whitespace-pre-line text-sm leading-7 text-slate-700">{cms("f29")}</p>
@@ -45,8 +45,8 @@ export default function Footer() {
           </div>}
         </div>}
 
-        <div className="flex flex-col gap-4 border-t border-black/10 pt-6 text-sm sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-center text-slate-600 sm:text-left">{cms("f26")} {new Date().getFullYear()} {cms("f27")}</p>
+        <div className="flex flex-col gap-4 border-t border-black/10 pt-5 text-sm sm:flex-row sm:items-center sm:justify-between">
+          <p className="text-center text-slate-600 sm:text-left">Copyright © {new Date().getFullYear()} Shailendra Bhadauria. All rights reserved.</p>
           <div className="flex justify-center gap-3 sm:justify-end">
             {socialLinks.map(({
               name,

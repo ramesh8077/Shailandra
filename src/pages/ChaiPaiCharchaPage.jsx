@@ -1,6 +1,7 @@
 import { SectionBoundary } from "../cms/PublicCMS";
 import { useSection } from "../cms/contentContext";
 import PageHero from "../components/PageHero";
+import Blogs from "../components/Blogs";
 import { FaInstagram, FaYoutube } from "react-icons/fa6";
 import episode1Image from "../assets/WebImages/EP-1.jpg";
 import episode2Image from "../assets/WebImages/EP-2.jpg";
@@ -71,7 +72,7 @@ export default function ChaiPeCharchaPage() {
 
       {/* Season 1 Episodes */}
       <section className="mx-auto max-w-6xl px-6 pb-12">
-        <h2 className="mb-1 text-center text-3xl font-extrabold text-[#ff6422]">Season 1 — Episodes</h2>
+        <h2 className="mb-1 text-center text-3xl font-extrabold text-[#ff6422]">Season 1 — episodes</h2>
         <p className="mb-8 text-center text-sm text-gray-600"></p>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {episodes.map(episode => <a key={episode.title} href={episode.link} target="_blank" rel="noopener noreferrer" className="overflow-hidden rounded-xl bg-[#ff6422] text-white transition hover:-translate-y-1 hover:shadow-lg">
@@ -83,6 +84,8 @@ export default function ChaiPeCharchaPage() {
             </a>)}
         </div>
       </section>
+
+      <Blogs />
 
       {/* Have a question for a future episode? */}
       <section className="mx-auto max-w-6xl px-6 pb-12">

@@ -1,6 +1,6 @@
 import { SectionBoundary } from "../cms/PublicCMS";
-import { PostList } from "../cms/PublicCMS";
-import { useSection } from "../cms/contentContext";
+import Blogs from "../components/Blogs";
+import { sentenceCase, useSection } from "../cms/contentContext";
 import { useState } from "react";
 import PageHero from "../components/PageHero";
 export default function UpDevelopmentPage() {
@@ -95,7 +95,7 @@ export default function UpDevelopmentPage() {
 
           {/* Content panel */}
           <div>
-            <h3 className="mb-4 text-xl font-bold text-[#ff6422]">{category.title}</h3>
+            <h3 className="mb-4 text-xl font-bold text-[#ff6422]">{sentenceCase(category.title)}</h3>
 
             {activeCategory === 0 && <img src={medical1} alt={cms("f28")} className="mb-6 h-auto w-full rounded-md object-contain" />}
 
@@ -123,11 +123,11 @@ export default function UpDevelopmentPage() {
       </section>}
 
       {/* Related Reading */}
-      <PostList title="Related reading" type="article" category="UP Development" />
+      <Blogs />
 
       {/* A Question, Answered */}
       <section className="mx-auto max-w-6xl px-6 pb-12">
-        <h2 className="mb-6 text-2xl font-bold text-[#ff6422]">{cms("f31")}</h2>
+        <h2 className="mb-6 text-2xl font-bold text-[#ff6422]">FAQs</h2>
         <div className="space-y-3">
           {faqs.map((item, i) => <article key={i} className="overflow-hidden rounded-md border border-gray-200">
               <button type="button" onClick={() => setOpenFaq(openFaq === i ? null : i)} aria-expanded={openFaq === i} className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-gray-800">
@@ -145,7 +145,7 @@ export default function UpDevelopmentPage() {
       <section className="mx-auto max-w-6xl px-6 pb-12">
         <div className="grid gap-8 rounded-md border border-gray-200 bg-gray-50 p-6 sm:p-8 md:grid-cols-2">
           <div>
-            <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">{cms("f32")}</h2>
+            <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">Contact form</h2>
             <p className="leading-relaxed text-gray-700">{cms("f33")}</p>
           </div>
           <form onSubmit={e => e.preventDefault()} className="flex flex-col gap-4">

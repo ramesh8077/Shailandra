@@ -20,15 +20,13 @@ export default function YouthConnect() {
     q: cms("f10"),
     a: cms("f11")
   }];
-  const [active, setActive] = useState(2);
+  const [active, setActive] = useState(-1);
   const handleQuestion = index => {
     setActive(active === index ? -1 : index);
   };
   return <SectionBoundary name="YouthConnect"><section id="youth-connect" className="bg-white py-12 sm:py-14 lg:py-16">
       <div className="page-wrap">
-        {/* Section heading */}
         <h2 className="text-center text-2xl font-extrabold text-[#10283d] sm:text-3xl">{cms("f12")}</h2>
-
         {/* Introduction */}
         <div className="mx-auto mt-8 grid max-w-5xl items-center gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:gap-12">
           {/* Left text */}
@@ -46,7 +44,8 @@ export default function YouthConnect() {
         </div>
 
         {/* Questions accordion */}
-        <div className="mx-auto mt-10 max-w-6xl overflow-hidden rounded-xl border border-slate-200 bg-white">
+        <h2 className="mb-5 mt-12 text-center text-2xl font-extrabold text-[#10283d] sm:text-3xl">FAQs</h2>
+        <div className="mx-auto max-w-6xl overflow-hidden rounded-xl border border-slate-200 bg-white">
           {questions.map((item, index) => {
             const isActive = active === index;
             return <article key={item.q} className={`border-b border-slate-200 last:border-b-0 ${isActive ? "bg-[#fff1eb]" : "bg-white"}`}>

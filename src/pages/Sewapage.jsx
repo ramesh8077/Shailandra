@@ -1,6 +1,7 @@
 import { SectionBoundary } from "../cms/PublicCMS";
 import { useSection } from "../cms/contentContext";
 import PageHero from "../components/PageHero";
+import Blogs from "../components/Blogs";
 export default function SewaPage() {
   const cms = useSection("Sewapage");
   const classroomImage = cms("f5");
@@ -32,13 +33,13 @@ export default function SewaPage() {
       {/* The Circle We are Building */}
       <section className="mx-auto max-w-6xl px-6 pb-12 text-center">
         <h2 className="mb-10 text-3xl font-extrabold text-[#ff6422]">{cms("f12")}</h2>
-        <div className="flex items-center justify-center gap-1 sm:gap-10">
-          {circleSteps.map((step, i) => <div key={step.label} className="flex items-center gap-1 sm:gap-10">
-              <div>
+        <div className="flex items-start justify-center gap-1 sm:items-center sm:gap-10">
+          {circleSteps.map((step, i) => <div key={step.label} className="flex min-w-0 flex-1 items-center gap-1 sm:flex-none sm:gap-10">
+              <div className="min-w-0 flex-1 sm:flex-none">
                 <img src={step.image} alt={step.label} className="mx-auto h-16 w-16 shrink-0 rounded-full object-cover sm:h-36 sm:w-36" />
-                <p className="mt-4 text-lg font-bold text-gray-900">{step.label}</p>
+                <p className="mt-3 text-sm font-bold leading-snug text-gray-900 sm:mt-4 sm:text-lg">{step.label}</p>
               </div>
-              {i < circleSteps.length - 1 && <span className="text-2xl text-gray-700">→</span>}
+              {i < circleSteps.length - 1 && <span aria-hidden="true" className="shrink-0 text-lg text-gray-700 sm:text-2xl">→</span>}
             </div>)}
         </div>
 
@@ -73,5 +74,6 @@ export default function SewaPage() {
           </div>
         </div>
       </section>
+      <Blogs />
     </></SectionBoundary>;
 }

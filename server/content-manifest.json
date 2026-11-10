@@ -484,9 +484,9 @@
           "value": "Philanthropist"
         },
         "f6": {
-          "label": "roles · path: #",
+          "label": "roles · path: /sewa",
           "type": "link",
-          "value": "#"
+          "value": "/sewa"
         },
         "f7": {
           "label": "roles · label: Nation Builder",
@@ -494,9 +494,9 @@
           "value": "Nation Builder"
         },
         "f8": {
-          "label": "roles · path: #",
+          "label": "roles · path: /",
           "type": "link",
-          "value": "#"
+          "value": "/"
         },
         "f9": {
           "label": "Text: शिक्षा, संस्कार और सशक्त ",
@@ -1884,9 +1884,9 @@
           "value": "Classroom learning"
         },
         "f61": {
-          "label": "Heading: GALLERY",
+          "label": "Heading: Media Centre",
           "type": "text",
-          "value": "Media"
+          "value": "Media Centre"
         },
         "f62": {
           "label": "Heading: Fact Sheet",

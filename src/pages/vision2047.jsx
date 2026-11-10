@@ -78,7 +78,7 @@ export default function Vision2047Page() {
 
       {/* A Question, Answered */}
       {faqs.length > 0 && <section className="mx-auto max-w-6xl px-6 py-12">
-        <h2 className="mb-6 text-2xl font-bold text-[#ff6422]">{cms("f32")}</h2>
+        <h2 className="mb-6 text-2xl font-bold text-[#ff6422]">FAQs</h2>
         <div className="space-y-3">
           {faqs.map((item, i) => <article key={i} className="overflow-hidden rounded-md border border-gray-200">
               <button type="button" onClick={() => setOpenFaq(openFaq === i ? null : i)} aria-expanded={openFaq === i} className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-gray-800">
@@ -96,7 +96,7 @@ export default function Vision2047Page() {
       <section className="mx-auto max-w-6xl px-6 pb-12">
         <div className="grid gap-8 rounded-md border border-gray-200 bg-gray-50 p-6 sm:p-8 md:grid-cols-2">
           <div>
-            <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">{cms("f33")}</h2>
+            <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">Contact form</h2>
             <p className="leading-relaxed text-gray-700">{cms("f34")}</p>
           </div>
           <form onSubmit={e => e.preventDefault()} className="flex flex-col gap-4">

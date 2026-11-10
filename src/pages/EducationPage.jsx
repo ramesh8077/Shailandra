@@ -1,9 +1,9 @@
 import { SectionBoundary } from "../cms/PublicCMS";
-import { PostList } from "../cms/PublicCMS";
 import { useSection } from "../cms/contentContext";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import PageHero from "../components/PageHero";
+import Blogs from "../components/Blogs";
 export default function EducationPage() {
   const cms = useSection("EducationPage");
   const policyImage = cms("f2");
@@ -30,24 +30,41 @@ export default function EducationPage() {
       <PageHero title={cms("f14")} image={heroImage} position="center 38%" />
 
       {/* Institutional Record */}
-      <section className="mx-auto grid max-w-6xl gap-8 px-6 py-12 md:grid-cols-2 md:gap-10 items-start">
-        <div>
-          {/* <img src={campreplac} alt="Pratap University campus" className="aspect-[4/5] w-full rounded-xl object-cover shadow-sm" /> */}
-          <div className="mt-6 rounded-md border border-gray-200 bg-gray-50 p-6">
-            <span className="text-3xl text-[#ff6422]">&ldquo;</span>
-            <p className="italic leading-relaxed text-gray-700">{cms("f15")}</p>
-            <span className="block text-right text-3xl text-[#ff6422]">&rdquo;</span>
+      <section className="relative isolate overflow-hidden bg-[#f3f8fb] py-14 sm:py-16 lg:py-20">
+        <div aria-hidden="true" className="pointer-events-none absolute -right-24 -top-28 -z-10 h-80 w-80 rounded-full bg-orange-100/70 blur-3xl" />
+        <div className="page-wrap">
+          <div className="mb-9 max-w-3xl">
+            <p className="mb-3 text-xs font-extrabold tracking-[0.2em] text-[#f05d25]">Education · institution building</p>
+            <h2 className="text-3xl font-extrabold tracking-tight text-[#10283d] sm:text-4xl">{cms("f16")}</h2>
           </div>
-        </div>
 
-        <div>
-          <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">{cms("f16")}</h2>
-          <p className="mb-4 whitespace-pre-line leading-relaxed text-gray-700">{cms("f17")}</p>
-          <p className="mb-6 whitespace-pre-line leading-relaxed text-gray-700">{cms("f18")}</p>
-          <p className="mb-3 text-sm text-gray-500">{cms("f19")}</p>
-          <div className="flex flex-wrap gap-4">
-            <Link to={cms("f20")} className="rounded-md bg-[#ff6422] px-5 py-3 text-sm font-bold text-white">{cms("f21")}</Link>
-            <Link to={cms("f22")} className="rounded-md border border-gray-300 px-5 py-3 text-sm font-bold text-gray-800">{cms("f23")}</Link>
+          <div className="grid items-stretch gap-6 lg:grid-cols-[0.82fr_1.18fr] lg:gap-8">
+            <blockquote className="relative flex min-h-64 flex-col justify-between overflow-hidden rounded-3xl bg-[#10283d] p-7 text-white shadow-xl shadow-[#10283d]/10 sm:p-9">
+              <span aria-hidden="true" className="absolute -right-3 -top-12 font-serif text-[190px] leading-none text-white/[0.06]">&rdquo;</span>
+              <span aria-hidden="true" className="relative z-10 font-serif text-6xl leading-none text-[#ff6422]">&ldquo;</span>
+              <p className="relative z-10 my-5 text-lg font-medium italic leading-8 text-white/95 sm:text-xl">{cms("f15")}</p>
+              <footer className="relative z-10 mt-4 flex items-center gap-3 text-xs font-bold tracking-[0.16em] text-white/60">
+                <span className="h-px w-8 bg-[#ff6422]" />Shailendra Bhadauria
+              </footer>
+            </blockquote>
+
+            <div className="rounded-3xl border border-slate-200/80 bg-white p-6 shadow-sm sm:p-8 lg:p-10">
+              <div className="space-y-5 text-[15px] leading-7 text-slate-700 sm:text-base sm:leading-8">
+                <p className="whitespace-pre-line">{cms("f17")}</p>
+                <p className="whitespace-pre-line">{cms("f18")}</p>
+              </div>
+              <div className="mt-8 border-t border-slate-100 pt-6">
+                <p className="mb-4 text-sm font-semibold text-slate-500">{cms("f19")}</p>
+                <div className="flex flex-wrap gap-3">
+                  <Link to={cms("f20")} className="group inline-flex min-h-12 items-center justify-center gap-2 rounded-xl bg-[#ff6422] px-5 py-3 text-sm font-bold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-[#e95318] hover:shadow-md">
+                    {cms("f21")}<span aria-hidden="true" className="transition-transform group-hover:translate-x-1">→</span>
+                  </Link>
+                  <Link to={cms("f22")} className="inline-flex min-h-12 items-center justify-center rounded-xl border border-slate-300 px-5 py-3 text-sm font-bold text-[#10283d] transition hover:border-[#10283d] hover:bg-slate-50">
+                    {cms("f23")}
+                  </Link>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -77,11 +94,11 @@ export default function EducationPage() {
         </div>
       </section>
       {/* Related Reading */}
-      <PostList title="My Thoughts on the Future of Education" type="article" category="Education" />
+      <Blogs />
 
       {/* FAQs */}
 {faqs.length > 0 && <section className="mx-auto max-w-6xl px-6 py-12">
-  <h2 className="mb-6 text-2xl font-bold text-[#ff6422]">{cms("f33")}</h2>
+  <h2 className="mb-6 text-2xl font-bold text-[#ff6422]">FAQs</h2>
 
   <div className="space-y-3">
     {faqs.map((item, i) => <div key={i} className="overflow-hidden rounded-md border border-gray-200">
@@ -104,7 +121,7 @@ export default function EducationPage() {
       <section className="bg-gray-50 py-12">
         <div className="mx-auto grid max-w-6xl gap-8 rounded-md border border-gray-200 bg-white p-6 sm:p-8 md:grid-cols-2">
           <div>
-            <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">{cms("f34")}</h2>
+            <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">Contact form</h2>
             <p className="leading-relaxed text-gray-700">{cms("f35")}</p>
           </div>
           <form onSubmit={e => e.preventDefault()} className="flex flex-col gap-4">

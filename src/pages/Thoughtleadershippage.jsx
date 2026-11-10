@@ -1,5 +1,5 @@
 import { SectionBoundary } from "../cms/PublicCMS";
-import { PostList } from "../cms/PublicCMS";
+import Blogs from "../components/Blogs";
 import { useSection } from "../cms/contentContext";
 import { FaBuilding, FaBriefcase, FaLaptop, FaRegNewspaper } from "react-icons/fa6";
 import PageHero from "../components/PageHero";
@@ -79,6 +79,6 @@ export default function ThoughtLeadershipPage() {
       </section>
 
       {/* Latest */}
-      <PostList title="Latest articles" type="article" />
+      <Blogs />
     </></SectionBoundary>;
 }

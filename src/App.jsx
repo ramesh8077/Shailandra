@@ -47,8 +47,8 @@ function ScrollToTop() {
        <Journey />
        <Stats />
        <Features />
-       <YouthConnect />
        <Blogs />
+       <YouthConnect />
        <ContactInsights />
      </main>
    );
@@ -58,7 +58,7 @@ function ScrollToTop() {
    return (
      <PublicCMS>
        <ScrollToTop />
-       <div className="min-h-screen overflow-x-hidden bg-white text-[#10283d]">
+       <div className="public-site min-h-screen bg-white text-[#10283d]">
          <Navbar />
          <Routes>
 <Route path="/posts/:slug" element={<PostDetail />} />

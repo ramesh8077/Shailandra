@@ -1,2 +1,2 @@
 import { PostList } from '../cms/PublicCMS';
-export default function Blogs(){return <PostList type="article" title="Blogs & Articles" limit={3}/>;}
+export default function Blogs(){return <PostList title="Blogs & Articles" limit={6}/>;}

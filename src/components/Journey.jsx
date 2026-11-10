@@ -29,7 +29,10 @@ export default function Journey() {
   }];
   return <SectionBoundary name="Journey"><section id="journey" className="section-space">
       <div className="page-wrap">
-        <p className="mx-auto mb-14 max-w-4xl text-center text-lg leading-relaxed text-slate-700">{cms("f13")}</p>
+        <h2 className="mb-5 text-center text-2xl font-extrabold tracking-tight text-[#17364d] sm:text-3xl">
+          A journey of institution building
+        </h2>
+        <p className="mx-auto mb-14 max-w-4xl text-justify text-lg leading-relaxed text-slate-700">{cms("f13")}</p>
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {cards.map(card => <article key={card.title} className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl">

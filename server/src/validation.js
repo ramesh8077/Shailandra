@@ -26,6 +26,14 @@ export function cleanBody(html) {
   });
 }
 export const video = z.string().max(300).refine(v => !v || /^https:\/\/(www\.youtube-nocookie\.com\/embed\/[\w-]{11}|player\.vimeo\.com\/video\/\d+)$/.test(v), 'Use https://www.youtube-nocookie.com/embed/VIDEO_ID or https://player.vimeo.com/video/ID');
+const sourceUrl = z.string().max(2000).default('').refine(value => {
+  if (!value) return true;
+  try {
+    return new URL(value).protocol === 'https:';
+  } catch {
+    return false;
+  }
+}, 'Use a valid HTTPS link to the original coverage');
 const post = z.object({
   type: z.enum(['article', 'news', 'video']),
   title: z.string().min(1).max(200),
@@ -39,8 +47,17 @@ const post = z.object({
   author: z.string().min(1).max(120),
   seoTitle: z.string().max(200),
   seoDescription: z.string().max(400),
-  videoUrl: video
-}).strict();
+  videoUrl: video,
+  sourceUrl
+}).strict().superRefine((value, context) => {
+  if (value.type !== 'news') return;
+  if (value.category === 'Digital Spotlight' && !value.sourceUrl) {
+    context.addIssue({ code: 'custom', path: ['sourceUrl'], message: 'Digital Spotlight news must include its original HTTPS link' });
+  }
+  if (value.category === 'Print Spotlight' && !value.cover) {
+    context.addIssue({ code: 'custom', path: ['cover'], message: 'Print Spotlight items must include a clipping image' });
+  }
+});
 const journey = z.object({
   year: z.string().min(1).max(50),
   title: z.string().min(1).max(200),

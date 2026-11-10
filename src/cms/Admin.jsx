@@ -185,7 +185,8 @@ const blankPost = {
   author: '',
   seoTitle: '',
   seoDescription: '',
-  videoUrl: ''
+  videoUrl: '',
+  sourceUrl: ''
 };
 const blankJourney = {
   year: '',
@@ -294,7 +295,7 @@ function EditorForm({
               select: url => change('cover', url)
             })} onClear={() => change('cover', '')} /><RichEditor value={draft.body} onChange={v => change('body', v)} onImage={insert => setPicker({
               select: insert
-            })} /><Field label="Tags (comma-separated)" value={draft.tags.join(', ')} onChange={v => change('tags', v.split(',').map(t => t.trim()))} />{field('videoUrl', 'Video embed URL (YouTube privacy-enhanced or Vimeo)')}<p className="muted">https://www.youtube-nocookie.com/embed/VIDEO_ID or https://player.vimeo.com/video/ID</p><h2>Search engines</h2>{field('seoTitle', 'SEO title')}{field('seoDescription', 'SEO description', true)}</> : doc.kind === 'journey' ? <><div className="form-grid">{field('year', 'Year / period')}{field('title', 'Title')}<Field label="Display order" type="number" value={draft.order} onChange={v => change('order', v)} min={0} /><Locale value={draft.locale} onChange={v => change('locale', v)} /></div>{field('text', 'Story', true)}</> : <><Locale value={locale} onChange={setLocale} /><p className="muted">English and Hindi have separate fields. Image replacement affects this field only after publication.</p>{schema.data ? Object.entries(schema.data.sections[doc.key].fields).map(([key, definition]) => definition.type === 'image' ? <MediaField key={key} label={definition.label} value={draft[locale][key]} onChoose={() => setPicker({
+            })} /><Field label="Original coverage URL (HTTPS)" value={draft.sourceUrl} onChange={value => change('sourceUrl', value)} /><p className="muted">For Media Centre, choose News and category “Digital Spotlight” with this source URL, or “Print Spotlight” with a clipping cover image.</p><Field label="Tags (comma-separated)" value={draft.tags.join(', ')} onChange={v => change('tags', v.split(',').map(t => t.trim()))} />{field('videoUrl', 'Video embed URL (YouTube privacy-enhanced or Vimeo)')}<p className="muted">https://www.youtube-nocookie.com/embed/VIDEO_ID or https://player.vimeo.com/video/ID</p><h2>Search engines</h2>{field('seoTitle', 'SEO title')}{field('seoDescription', 'SEO description', true)}</> : doc.kind === 'journey' ? <><div className="form-grid">{field('year', 'Year / period')}{field('title', 'Title')}<Field label="Display order" type="number" value={draft.order} onChange={v => change('order', v)} min={0} /><Locale value={locale} onChange={setLocale} /></div>{field('text', 'Story', true)}</> : <><Locale value={locale} onChange={setLocale} /><p className="muted">English and Hindi have separate fields. Image replacement affects this field only after publication.</p>{schema.data ? Object.entries(schema.data.sections[doc.key].fields).map(([key, definition]) => definition.type === 'image' ? <MediaField key={key} label={definition.label} value={draft[locale][key]} onChoose={() => setPicker({
               select: url => setDraft(d => ({
                 ...d,
                 [locale]: {
@@ -438,7 +439,7 @@ function MediaLibrary({
       setBusy(false);
     }
   }
-  return <><h1>Media library</h1><p>JPEG, PNG or WebP · up to 10 MB. Upload a new version, then select it in the desired content field. Existing uses keep the original.</p><Notice error={error || loadError} message={message} /><form className="panel" onSubmit={upload}><label className="admin-field">Image<input ref={inputRef} type="file" accept="image/jpeg,image/png,image/webp" required onChange={e => setFile(e.target.files[0])} /></label><Field label="Image description" value={alt} onChange={setAlt} /><button className="primary" disabled={busy}>{busy ? 'Uploading…' : 'Upload image'}</button></form><Field label="Search filenames" value={q} onChange={v => {
+  return <><h1>Media library</h1><p>JPEG, PNG or WebP · up to 10 MB. Upload a new version, then select it in the desired content field. Existing uses keep the original. Recommended sizes: hero banners 1920 × 760 px (2.5:1); cards and article covers 1200 × 900 px (4:3); video thumbnails 1280 × 720 px (16:9); square photos 800 × 800 px; transparent logos up to 600 × 300 px. Banners and cards crop to fill their frames, so keep important subjects near the center. The library shows each image’s current dimensions.</p><Notice error={error || loadError} message={message} /><form className="panel" onSubmit={upload}><label className="admin-field">Image<input ref={inputRef} type="file" accept="image/jpeg,image/png,image/webp" required onChange={e => setFile(e.target.files[0])} /></label><Field label="Image description" value={alt} onChange={setAlt} /><button className="primary" disabled={busy}>{busy ? 'Uploading…' : 'Upload image'}</button></form><Field label="Search filenames" value={q} onChange={v => {
       setQ(v);
       setPage(1);
     }} />{data && <><div className="media-grid">{data.items.map(m => <div className="panel" key={m._id}><img src={mediaSrc(m.url)} alt={m.alt} /><strong>{m.originalName}</strong><small>{m.width} × {m.height} · {Math.round(m.size / 1024)} KB</small><p>{m.usage.length} content reference(s)</p>{m.usage.length > 0 && <details><summary>Where used</summary><ul>{m.usage.map(u => <li key={u.id}><Link to={`/admin/edit/${u.id}`}>{sectionLabel(u.key)}</Link></li>)}</ul></details>}<div className="toolbar">{onSelect ? <button type="button" onClick={() => onSelect(m.url)}>Select image</button> : <button type="button" onClick={async () => {

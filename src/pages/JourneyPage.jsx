@@ -2,6 +2,7 @@ import { SectionBoundary } from "../cms/PublicCMS";
 import { useSection, useJourney } from "../cms/contentContext";
 import Photo from "../components/Photo";
 import PageHero from "../components/PageHero";
+import Blogs from "../components/Blogs";
 
 // Page images
 
@@ -127,6 +128,7 @@ export default function JourneyPage() {
           </div>
         </div>
       </section>
+      <Blogs />
     </main></SectionBoundary>;
 }
 function StoryBlock({

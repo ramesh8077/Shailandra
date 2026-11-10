@@ -2,6 +2,7 @@ import { PostList, SectionBoundary } from "../cms/PublicCMS";
 import { useSection } from "../cms/contentContext";
 import { useState } from "react";
 import PageHero from "../components/PageHero";
+import Blogs from "../components/Blogs";
 export default function MediaPage() {
   const cms = useSection("Mediapage");
   const pressTimesNow = cms("f23");
@@ -105,8 +106,34 @@ export default function MediaPage() {
   }];
   const [activeLang, setActiveLang] = useState("English");
   const [galleryPage, setGalleryPage] = useState(1);
+  const configuredHeroTitle = cms("f61");
+  const heroTitle = ["gallery", "media"].includes(configuredHeroTitle?.trim().toLowerCase())
+    ? "Media Centre"
+    : configuredHeroTitle || "Media Centre";
   return <SectionBoundary name="Mediapage"><>
-      <PageHero title={cms("f61")} image={heroBanner} />
+      <PageHero title={heroTitle} image={heroBanner} />
+
+      <PostList
+        type="news"
+        category="Digital Spotlight"
+        title="In the Digital Spotlight"
+        limit={12}
+        layout="rail"
+        outbound
+        searchable={false}
+        emptyMessage="Online coverage will appear here when a news post is published with the category “Digital Spotlight” and its original HTTPS link."
+      />
+
+      <PostList
+        type="news"
+        category="Print Spotlight"
+        title="In the Print Spotlight"
+        limit={12}
+        layout="rail"
+        imageLightbox
+        searchable={false}
+        emptyMessage="Newspaper clippings will appear here when a news post is published with the category “Print Spotlight” and a cover image."
+      />
 
       {/* My journey in the spotlight */}
       {(cms("f72") || cms("f73")) && <section className="mx-auto max-w-6xl px-6 pb-12 pt-14 sm:pb-14 sm:pt-20">
@@ -132,56 +159,6 @@ export default function MediaPage() {
           </button>
         </div>
       </section>
-
-      <PostList type="news" title="Online Coverage" limit={6} fallbackItems={[{
-        id: "sample-online-coverage",
-        slug: "sample-online-coverage",
-        type: "news",
-        category: "Media coverage",
-        title: "Shailendra Bhadauria’s journey in education and institution building",
-        excerpt: "A sample online coverage card. Replace this example by publishing a news post from the CMS admin panel.",
-        body: "<p>Sample online coverage.</p>"
-      }, {
-        id: "sample-online-coverage-2",
-        slug: "sample-online-coverage-2",
-        type: "news",
-        category: "Education",
-        title: "Building institutions that expand access to quality education",
-        excerpt: "A sample feature highlighting the work of creating stronger learning opportunities for young people.",
-        body: "<p>Sample online coverage.</p>"
-      }, {
-        id: "sample-online-coverage-3",
-        slug: "sample-online-coverage-3",
-        type: "news",
-        category: "Youth development",
-        title: "Empowering youth through education, skills, and opportunity",
-        excerpt: "A sample interview about preparing the next generation to lead, innovate, and contribute.",
-        body: "<p>Sample online coverage.</p>"
-      }, {
-        id: "sample-online-coverage-4",
-        slug: "sample-online-coverage-4",
-        type: "news",
-        category: "Social development",
-        title: "Education, healthcare, and sport as foundations for social progress",
-        excerpt: "A sample news story covering a broader vision for institution building and community impact.",
-        body: "<p>Sample online coverage.</p>"
-      }, {
-        id: "sample-online-coverage-5",
-        slug: "sample-online-coverage-5",
-        type: "news",
-        category: "Leadership",
-        title: "A long-term vision for learning and community impact",
-        excerpt: "A sample profile on leadership, service, and creating institutions that make a lasting difference.",
-        body: "<p>Sample online coverage.</p>"
-      }, {
-        id: "sample-online-coverage-6",
-        slug: "sample-online-coverage-6",
-        type: "news",
-        category: "Sports and youth",
-        title: "How sport helps young people build confidence and character",
-        excerpt: "A sample feature on using sport to support discipline, teamwork, and youth development.",
-        body: "<p>Sample online coverage.</p>"
-      }]} />
 
       {/* Fact Sheet */}
       <section className="mx-auto max-w-6xl px-6 py-12">
@@ -286,5 +263,6 @@ export default function MediaPage() {
         </div>
       </section>
 
+      <Blogs />
     </></SectionBoundary>;
 }
