@@ -8,6 +8,7 @@ import Features from "../src/components/Features";
 import YouthConnect from "../src/components/YouthConnect";
 import ContactInsights from "../src/components/ContactInsights";
 import Blogs from "../src/components/Blogs";
+import SiteFAQs from "../src/components/SiteFAQs";
 import Footer from "../src/components/Footer";
 import JourneyPage from "./pages/JourneyPage";
 import EducationPage from "./pages/EducationPage";
@@ -47,14 +48,14 @@ function ScrollToTop() {
        <Journey />
        <Stats />
        <Features />
-       <Blogs />
        <YouthConnect />
-       <ContactInsights />
      </main>
    );
  }
  
  function PublicSite() {
+   const { pathname } = useLocation();
+   const hasArticleListing = pathname === "/posts";
    return (
      <PublicCMS>
        <ScrollToTop />
@@ -62,7 +63,7 @@ function ScrollToTop() {
          <Navbar />
          <Routes>
 <Route path="/posts/:slug" element={<PostDetail />} />
-<Route path="/posts" element={<PostList title="Posts" />} />
+<Route path="/posts" element={<PostList title="Blogs & Articles" />} />
            <Route path="/" element={<HomePage />} />
            <Route path="/journey" element={<JourneyPage />} />
            <Route path="/education" element={<EducationPage />} />
@@ -78,6 +79,9 @@ function ScrollToTop() {
            <Route path="/nation-building" element={<NationBuildingPage />} />
            <Route path="/media" element={<MediaPage />} />
          </Routes>
+         {!hasArticleListing && <Blogs />}
+         <SiteFAQs />
+         <ContactInsights />
          <Footer />
        </div>
      </PublicCMS>

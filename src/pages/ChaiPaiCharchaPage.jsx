@@ -1,7 +1,6 @@
 import { SectionBoundary } from "../cms/PublicCMS";
 import { useSection } from "../cms/contentContext";
 import PageHero from "../components/PageHero";
-import Blogs from "../components/Blogs";
 import { FaInstagram, FaYoutube } from "react-icons/fa6";
 import episode1Image from "../assets/WebImages/EP-1.jpg";
 import episode2Image from "../assets/WebImages/EP-2.jpg";
@@ -70,10 +69,10 @@ export default function ChaiPeCharchaPage() {
         </div>
       </section>
 
-      {/* Season 1 Episodes */}
+      {/* Coffee Pe Charcha YouTube series */}
       <section className="mx-auto max-w-6xl px-6 pb-12">
-        <h2 className="mb-1 text-center text-3xl font-extrabold text-[#ff6422]">Season 1 — episodes</h2>
-        <p className="mb-8 text-center text-sm text-gray-600"></p>
+        <h2 className="mb-3 text-center text-3xl font-extrabold text-[#ff6422]">Coffee Pe Charcha</h2>
+        <p className="mb-8 text-center text-sm leading-6 text-gray-600">A YouTube series on the ideas and questions shaping India’s future. Watch the latest episodes below.</p>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {episodes.map(episode => <a key={episode.title} href={episode.link} target="_blank" rel="noopener noreferrer" className="overflow-hidden rounded-xl bg-[#ff6422] text-white transition hover:-translate-y-1 hover:shadow-lg">
               <img src={episode.image} alt={episode.title} className="aspect-video w-full object-cover" />
@@ -85,8 +84,6 @@ export default function ChaiPeCharchaPage() {
         </div>
       </section>
 
-      <Blogs />
-
       {/* Have a question for a future episode? */}
       <section className="mx-auto max-w-6xl px-6 pb-12">
         <div className="grid gap-8 rounded-md border border-gray-200 bg-gray-50 p-6 sm:p-8 md:grid-cols-2">
@@ -94,13 +91,11 @@ export default function ChaiPeCharchaPage() {
             <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">{cms("f46")}</h2>
             <p className="leading-relaxed text-gray-700">{cms("f47")}</p>
           </div>
-          <form onSubmit={e => e.preventDefault()} className="flex flex-col gap-4">
-            <label className="text-sm font-semibold text-gray-800">{cms("f48")}<input type="text" placeholder={cms("f49")} className="mt-1 w-full border-b border-gray-300 pb-2 text-sm outline-none" />
-            </label>
-            <label className="text-sm font-semibold text-gray-800">{cms("f50")}<textarea placeholder={cms("f51")} rows={3} className="mt-1 w-full border-b border-gray-300 pb-2 text-sm outline-none" />
-            </label>
-            <button className="rounded-md bg-[#ff6422] px-5 py-3 text-sm font-bold text-white">{cms("f52")}</button>
-          </form>
+          <div className="flex items-center sm:justify-end">
+            <a href="#contact" className="inline-flex min-h-12 items-center justify-center rounded-md bg-[#ff6422] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#e95318]">
+              {cms("f52")}
+            </a>
+          </div>
         </div>
       </section>
     </></SectionBoundary>;

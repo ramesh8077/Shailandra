@@ -1,5 +1,4 @@
 import { SectionBoundary } from "../cms/PublicCMS";
-import Blogs from "../components/Blogs";
 import { sentenceCase, useSection } from "../cms/contentContext";
 import { useState } from "react";
 import PageHero from "../components/PageHero";
@@ -43,25 +42,8 @@ export default function UpDevelopmentPage() {
       sourceUrl: null
     }]
   }];
-  const faqs = [{
-    question: cms("f18"),
-    answer: cms("f43")
-  }, {
-    question: cms("f19"),
-    answer: cms("f44")
-  }, {
-    question: cms("f20"),
-    answer: cms("f45")
-  }, {
-    question: cms("f39"),
-    answer: cms("f40")
-  }, {
-    question: cms("f41"),
-    answer: cms("f42")
-  }].filter(item => item.question && item.answer);
   const [activeCategory, setActiveCategory] = useState(0);
   const [slideIndex, setSlideIndex] = useState(0);
-  const [openFaq, setOpenFaq] = useState(null);
   const category = caseStudies[activeCategory];
   const slide = category.slides[slideIndex];
   function selectCategory(index) {
@@ -84,7 +66,7 @@ export default function UpDevelopmentPage() {
       </section>
 
       {/* Case study browser */}
-      {faqs.length > 0 && <section className="mx-auto max-w-6xl px-6 pb-12">
+      {caseStudies.length > 0 && <section className="mx-auto max-w-6xl px-6 pb-12">
         <div className="grid gap-8 md:grid-cols-[minmax(0,260px)_1fr]">
           {/* Category list */}
           <div className="flex flex-col gap-2">
@@ -121,42 +103,6 @@ export default function UpDevelopmentPage() {
           </div>
         </div>
       </section>}
-
-      {/* Related Reading */}
-      <Blogs />
-
-      {/* A Question, Answered */}
-      <section className="mx-auto max-w-6xl px-6 pb-12">
-        <h2 className="mb-6 text-2xl font-bold text-[#ff6422]">FAQs</h2>
-        <div className="space-y-3">
-          {faqs.map((item, i) => <article key={i} className="overflow-hidden rounded-md border border-gray-200">
-              <button type="button" onClick={() => setOpenFaq(openFaq === i ? null : i)} aria-expanded={openFaq === i} className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-gray-800">
-                <span>{item.question}</span>
-                <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-gray-300 text-gray-500">
-                  {openFaq === i ? "−" : "+"}
-                </span>
-              </button>
-              {openFaq === i && <p className="whitespace-pre-line border-t border-gray-200 px-5 py-4 text-sm leading-relaxed text-gray-600">{item.answer}</p>}
-            </article>)}
-        </div>
-      </section>
-
-      {/* Join the Conversation */}
-      <section className="mx-auto max-w-6xl px-6 pb-12">
-        <div className="grid gap-8 rounded-md border border-gray-200 bg-gray-50 p-6 sm:p-8 md:grid-cols-2">
-          <div>
-            <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">Contact form</h2>
-            <p className="leading-relaxed text-gray-700">{cms("f33")}</p>
-          </div>
-          <form onSubmit={e => e.preventDefault()} className="flex flex-col gap-4">
-            <label className="text-sm font-semibold text-gray-800">{cms("f34")}<input type="text" placeholder={cms("f35")} className="mt-1 w-full border-b border-gray-300 pb-2 text-sm outline-none" />
-            </label>
-            <label className="text-sm font-semibold text-gray-800">{cms("f36")}<textarea placeholder={cms("f37")} rows={3} className="mt-1 w-full border-b border-gray-300 pb-2 text-sm outline-none" />
-            </label>
-            <button className="rounded-md bg-[#ff6422] px-5 py-3 text-sm font-bold text-white">{cms("f38")}</button>
-          </form>
-        </div>
-      </section>
 
     </></SectionBoundary>;
 }

@@ -266,7 +266,7 @@ export function PostList({
 
   return <section className="section-space bg-white">
     <div className="page-wrap">
-      <h2 className="section-title">{sentenceCase(title)}</h2>
+      <h2 className="section-title text-center">{sentenceCase(title)}</h2>
       {searchable && <label className="mb-6 block max-w-md text-sm">Search / खोजें<input className="mt-2 w-full rounded border border-slate-300 px-4 py-3" value={search} onChange={event => {
         setSearch(event.target.value);
         setPage(1);
@@ -281,7 +281,7 @@ export function PostList({
           <span>{page} / {Math.max(1, Math.ceil(result.total / result.limit))}</span>
           <button type="button" disabled={page * result.limit >= result.total} onClick={() => setPage(value => value + 1)}>Next</button>
         </div>
-      </> : <p role="status" className="text-slate-600">{liveError && !context?.posts?.length && !isStaticContentSource ? 'Published articles are temporarily unavailable, and no static snapshot is available.' : emptyMessage || 'No published posts yet.'}</p>}
+      </> : <p role="status" className="rounded-xl border border-slate-200 bg-slate-50 px-6 py-8 text-center text-slate-600">{liveError && !context?.posts?.length && !isStaticContentSource ? 'Published articles are temporarily unavailable, and no static snapshot is available.' : emptyMessage || 'No published articles are available yet.'}</p>}
       {activeImage && <div role="dialog" aria-modal="true" aria-label={activeImage.title} onClick={event => event.target === event.currentTarget && setActiveImage(null)} className="fixed inset-0 z-50 grid place-items-center bg-black/80 p-4" onKeyDown={event => event.key === 'Escape' && setActiveImage(null)}>
         <div className="relative max-h-full max-w-6xl rounded-xl bg-white p-3 shadow-2xl">
           <button type="button" onClick={() => setActiveImage(null)} aria-label="Close enlarged image" className="absolute right-5 top-5 z-10 grid h-10 w-10 place-items-center rounded-full bg-black/70 text-2xl text-white">×</button>

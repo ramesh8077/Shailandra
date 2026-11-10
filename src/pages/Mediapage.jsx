@@ -2,7 +2,6 @@ import { PostList, SectionBoundary } from "../cms/PublicCMS";
 import { useSection } from "../cms/contentContext";
 import { useState } from "react";
 import PageHero from "../components/PageHero";
-import Blogs from "../components/Blogs";
 export default function MediaPage() {
   const cms = useSection("Mediapage");
   const pressTimesNow = cms("f23");
@@ -106,44 +105,11 @@ export default function MediaPage() {
   }];
   const [activeLang, setActiveLang] = useState("English");
   const [galleryPage, setGalleryPage] = useState(1);
-  const configuredHeroTitle = cms("f61");
-  const heroTitle = ["gallery", "media"].includes(configuredHeroTitle?.trim().toLowerCase())
-    ? "Media Centre"
-    : configuredHeroTitle || "Media Centre";
+  const heroTitle = "Media Centre";
   return <SectionBoundary name="Mediapage"><>
       <PageHero title={heroTitle} image={heroBanner} />
 
-      <PostList
-        type="news"
-        category="Digital Spotlight"
-        title="In the Digital Spotlight"
-        limit={12}
-        layout="rail"
-        outbound
-        searchable={false}
-        emptyMessage="Online coverage will appear here when a news post is published with the category “Digital Spotlight” and its original HTTPS link."
-      />
-
-      <PostList
-        type="news"
-        category="Print Spotlight"
-        title="In the Print Spotlight"
-        limit={12}
-        layout="rail"
-        imageLightbox
-        searchable={false}
-        emptyMessage="Newspaper clippings will appear here when a news post is published with the category “Print Spotlight” and a cover image."
-      />
-
-      {/* My journey in the spotlight */}
-      {(cms("f72") || cms("f73")) && <section className="mx-auto max-w-6xl px-6 pb-12 pt-14 sm:pb-14 sm:pt-20">
-        <div className="max-w-5xl">
-          <h2 className="mb-4 text-2xl font-extrabold leading-tight text-[#ff6422] sm:text-3xl">{cms("f72")}</h2>
-          <p className="max-w-4xl whitespace-pre-line text-base leading-7 text-[#10283d] sm:text-lg sm:leading-8">{cms("f73")}</p>
-        </div>
-      </section>}
-
-      {/* Press logos */}
+      {/* Press logos directly after the banner */}
       <section className="press-logos-top mx-auto max-w-6xl px-6 pb-16">
         <div className="flex items-center gap-4">
           <button type="button" aria-label="Previous" className="grid h-10 w-10 shrink-0 place-items-center rounded-full border border-gray-300 text-gray-500 hover:border-[#ff6422] hover:text-[#ff6422]">
@@ -160,6 +126,14 @@ export default function MediaPage() {
         </div>
       </section>
 
+      {/* My journey in the spotlight */}
+      {(cms("f72") || cms("f73")) && <section className="mx-auto max-w-6xl px-6 pb-12 pt-14 sm:pb-14 sm:pt-20">
+        <div className="max-w-5xl">
+          <h2 className="mb-4 text-2xl font-extrabold leading-tight text-[#ff6422] sm:text-3xl">{cms("f72")}</h2>
+          <p className="max-w-4xl whitespace-pre-line text-base leading-7 text-[#10283d] sm:text-lg sm:leading-8">{cms("f73")}</p>
+        </div>
+      </section>}
+
       {/* Fact Sheet */}
       <section className="mx-auto max-w-6xl px-6 py-12">
         <h2 className="mb-8 text-2xl font-bold text-[#ff6422]">{cms("f62")}</h2>
@@ -171,6 +145,27 @@ export default function MediaPage() {
             </div>)}
         </div>
       </section>
+
+      <PostList
+        type="news"
+        category="Digital Spotlight"
+        title="In the Digital Spotlight"
+        limit={12}
+        layout="rail"
+        outbound
+        searchable={false}
+        emptyMessage="Online news coverage will appear here when a post is published in the Digital Spotlight category with its original link."
+      />
+      <PostList
+        type="news"
+        category="Print Spotlight"
+        title="In the Print Spotlight"
+        limit={12}
+        layout="rail"
+        imageLightbox
+        searchable={false}
+        emptyMessage="Newspaper clippings will appear here when a post is published in the Print Spotlight category with a cover image."
+      />
 
       {/* Quotable Thoughts */}
       <section className="bg-[#ff6422] py-12">
@@ -263,6 +258,5 @@ export default function MediaPage() {
         </div>
       </section>
 
-      <Blogs />
     </></SectionBoundary>;
 }

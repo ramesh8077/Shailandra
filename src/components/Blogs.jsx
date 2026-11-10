@@ -1,2 +1,11 @@
 import { PostList } from '../cms/PublicCMS';
-export default function Blogs(){return <PostList title="Blogs & Articles" limit={6}/>;}
+import { useLocation } from 'react-router-dom';
+
+export default function Blogs() {
+  const { pathname } = useLocation();
+
+  return <>
+    <PostList title="Blogs & Articles" limit={6} />
+    {pathname === '/nation-building' && <PostList title="In the Room" type="news" />}
+  </>;
+}

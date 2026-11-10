@@ -1,30 +1,11 @@
 import { SectionBoundary } from "../cms/PublicCMS";
 import { useSection } from "../cms/contentContext";
-import { useState } from "react";
 import { Link } from "react-router-dom";
 import PageHero from "../components/PageHero";
-import Blogs from "../components/Blogs";
 export default function EducationPage() {
   const cms = useSection("EducationPage");
   const policyImage = cms("f2");
   const heroImage = cms("f1");
-  const faqs = [{
-    question: cms("f7"),
-    answer: cms("f45")
-  }, {
-    question: cms("f8"),
-    answer: cms("f46")
-  }, {
-    question: cms("f9"),
-    answer: cms("f47")
-  }, {
-    question: cms("f41"),
-    answer: cms("f42")
-  }, {
-    question: cms("f43"),
-    answer: cms("f44")
-  }].filter(item => item.question && item.answer);
-  const [openFaq, setOpenFaq] = useState(null);
   return <SectionBoundary name="EducationPage"><>
       {/* Hero banner */}
       <PageHero title={cms("f14")} image={heroImage} position="center 38%" />
@@ -93,46 +74,5 @@ export default function EducationPage() {
           <img src={policyImage} alt={cms("f32")} className="aspect-video w-full rounded-xl object-cover shadow-sm" />
         </div>
       </section>
-      {/* Related Reading */}
-      <Blogs />
-
-      {/* FAQs */}
-{faqs.length > 0 && <section className="mx-auto max-w-6xl px-6 py-12">
-  <h2 className="mb-6 text-2xl font-bold text-[#ff6422]">FAQs</h2>
-
-  <div className="space-y-3">
-    {faqs.map((item, i) => <div key={i} className="overflow-hidden rounded-md border border-gray-200">
-        <button type="button" onClick={() => setOpenFaq(openFaq === i ? null : i)} aria-expanded={openFaq === i} className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-gray-800 transition-colors hover:bg-gray-50">
-          <span>{item.question}</span>
-
-          <span className="grid h-7 w-7 shrink-0 place-items-center rounded-full border border-gray-300 text-lg text-gray-500">
-            {openFaq === i ? "−" : "+"}
-          </span>
-        </button>
-
-        {openFaq === i && <div className="border-t border-gray-200 px-5 py-4 text-sm leading-relaxed text-gray-600">
-            {item.answer}
-          </div>}
-      </div>)}
-  </div>
-</section>}
-
-      {/* Join the Conversation */}
-      <section className="bg-gray-50 py-12">
-        <div className="mx-auto grid max-w-6xl gap-8 rounded-md border border-gray-200 bg-white p-6 sm:p-8 md:grid-cols-2">
-          <div>
-            <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">Contact form</h2>
-            <p className="leading-relaxed text-gray-700">{cms("f35")}</p>
-          </div>
-          <form onSubmit={e => e.preventDefault()} className="flex flex-col gap-4">
-            <label className="text-sm font-semibold text-gray-800">{cms("f36")}<input type="text" placeholder={cms("f37")} className="mt-1 w-full border-b border-gray-300 pb-2 text-sm outline-none" />
-            </label>
-            <label className="text-sm font-semibold text-gray-800">{cms("f38")}<textarea placeholder={cms("f39")} rows={3} className="mt-1 w-full border-b border-gray-300 pb-2 text-sm outline-none" />
-            </label>
-            <button className="rounded-md bg-[#ff6422] px-5 py-3 text-sm font-bold text-white">{cms("f40")}</button>
-          </form>
-        </div>
-      </section>
-
     </></SectionBoundary>;
 }

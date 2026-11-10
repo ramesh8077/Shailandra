@@ -1,7 +1,6 @@
 import { SectionBoundary } from "../cms/PublicCMS";
 import { useSection } from "../cms/contentContext";
 import PageHero from "../components/PageHero";
-import Blogs from "../components/Blogs";
 export default function SewaPage() {
   const cms = useSection("Sewapage");
   const classroomImage = cms("f5");
@@ -49,9 +48,9 @@ export default function SewaPage() {
 
       {/* Entrepreneurship Support Beyond the Classroom */}
       <section className="mx-auto max-w-6xl px-6 py-8">
-        <div className="grid gap-8 md:grid-cols-2 items-start">
-          <div>
-            <img src={classroomImage} alt={cms("f16")} className="block h-auto w-full rounded-md object-contain" />
+        <div className="grid items-center gap-8 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-12">
+          <div className="mx-auto w-full max-w-[420px] overflow-hidden rounded-xl">
+            <img src={classroomImage} alt={cms("f16")} className="aspect-[4/5] h-full w-full object-cover object-center" />
           </div>
           <div>
             <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">{cms("f17")}</h2>
@@ -64,16 +63,15 @@ export default function SewaPage() {
 
       {/* Where the Support Goes */}
       <section className="mx-auto max-w-6xl px-6 py-12">
-        <div className="grid gap-8 md:grid-cols-2 items-start">
+        <div className="grid items-center gap-8 md:grid-cols-2 lg:gap-12">
           <div>
             <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">{cms("f21")}</h2>
             <p className="whitespace-pre-line leading-relaxed text-gray-700">{cms("f22")}</p>
           </div>
-          <div>
-            <img src={SupportImg} alt={cms("f23")} className="block h-auto w-full rounded-md object-contain" />
+          <div className="mx-auto w-full max-w-[420px] overflow-hidden rounded-xl">
+            <img src={SupportImg} alt={cms("f23")} className="aspect-[4/5] h-full w-full object-cover object-center" />
           </div>
         </div>
       </section>
-      <Blogs />
     </></SectionBoundary>;
 }

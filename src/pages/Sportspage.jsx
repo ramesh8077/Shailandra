@@ -1,7 +1,6 @@
 import { SectionBoundary } from "../cms/PublicCMS";
 import { useSection } from "../cms/contentContext";
 import PageHero from "../components/PageHero";
-import Blogs from "../components/Blogs";
 function SportCard({
   title,
   image,
@@ -41,6 +40,5 @@ export default function SportsPage() {
           <SportCard title={cms("f15")} image={Franchise}>{cms("f16")}</SportCard>
         </div>
       </section>
-      <Blogs />
     </></SectionBoundary>;
 }

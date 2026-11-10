@@ -43,8 +43,23 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
   const [mobileMoreOpen, setMobileMoreOpen] = useState(false);
   const [desktopMoreOpen, setDesktopMoreOpen] = useState(false);
+  const [isWideScreen, setIsWideScreen] = useState(() =>
+    typeof window !== "undefined" && window.matchMedia("(min-width: 1280px)").matches
+  );
   const location = useLocation();
   const moreRef = useRef(null);
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(min-width: 1280px)");
+    const updateViewport = event => {
+      setIsWideScreen(event.matches);
+      if (event.matches) {
+        setOpen(false);
+        setMobileMoreOpen(false);
+      }
+    };
+    mediaQuery.addEventListener("change", updateViewport);
+    return () => mediaQuery.removeEventListener("change", updateViewport);
+  }, []);
   useEffect(() => {
     setOpen(false);
     setMobileMoreOpen(false);
@@ -92,7 +107,11 @@ export default function Navbar() {
             </Link>)}
 
           <div className="relative" ref={moreRef}>
-            <button type="button" onClick={() => setDesktopMoreOpen(previous => !previous)} aria-expanded={desktopMoreOpen} aria-controls="desktop-more-menu" className={`flex items-center gap-1 whitespace-nowrap py-3 text-[14px] font-medium transition-colors hover:text-[#ff6422] ${isMoreActive || desktopMoreOpen ? "font-semibold text-[#ff6422]" : "text-[#536170]"}`}>{cms("f28")}<svg viewBox="0 0 20 20" fill="none" className={`h-4 w-4 transition-transform ${desktopMoreOpen ? "rotate-180" : ""}`} aria-hidden="true">
+            <button type="button" onClick={() => {
+              setOpen(false);
+              setMobileMoreOpen(false);
+              setDesktopMoreOpen(previous => !previous);
+            }} aria-expanded={desktopMoreOpen} aria-controls="desktop-more-menu" className={`flex items-center gap-1 whitespace-nowrap py-3 text-[14px] font-medium transition-colors hover:text-[#ff6422] ${isMoreActive || desktopMoreOpen ? "font-semibold text-[#ff6422]" : "text-[#536170]"}`}>{cms("f28")}<svg viewBox="0 0 20 20" fill="none" className={`h-4 w-4 transition-transform ${desktopMoreOpen ? "rotate-180" : ""}`} aria-hidden="true">
                 <path d="M5 7.5 10 12.5 15 7.5" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </button>
@@ -108,7 +127,10 @@ export default function Navbar() {
         <Link to={cms("f29")} className="hidden shrink-0 justify-center rounded-full bg-[#ff6422] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#ea5318] xl:inline-flex 2xl:px-7">{cms("f30")}</Link>
 
         {/* Menu button for phones, tablets, and narrower laptops */}
-        <button type="button" onClick={() => setOpen(previous => !previous)} aria-label={open ? "Close navigation menu" : "Open navigation menu"} aria-expanded={open} aria-controls="mobile-navigation" className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-slate-200 text-[#10283d] transition hover:border-[#ff6422] hover:text-[#ff6422] xl:hidden">
+        <button type="button" onClick={() => {
+          setDesktopMoreOpen(false);
+          setOpen(previous => !previous);
+        }} aria-label={open ? "Close navigation menu" : "Open navigation menu"} aria-expanded={open} aria-controls="mobile-navigation" className="grid h-11 w-11 shrink-0 place-items-center rounded-full border border-slate-200 text-[#10283d] transition hover:border-[#ff6422] hover:text-[#ff6422] xl:hidden">
           {open ? <span className="text-3xl leading-none" aria-hidden="true">
               ×
             </span> : <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -118,7 +140,7 @@ export default function Navbar() {
       </div>
 
       {/* Scrollable menu: no fixed height cutting off pages */}
-      {open && <div id="mobile-navigation" className="max-h-[calc(100dvh-76px)] overflow-y-auto overscroll-contain border-t border-slate-100 bg-white sm:max-h-[calc(100dvh-84px)] xl:hidden">
+      {open && !isWideScreen && <div id="mobile-navigation" className="max-h-[calc(100dvh-76px)] overflow-y-auto overscroll-contain border-t border-slate-100 bg-white sm:max-h-[calc(100dvh-84px)] xl:hidden">
           <nav aria-label="Mobile navigation" className="mx-auto w-full max-w-[1600px] px-4 pb-6 pt-2 sm:px-6 lg:px-8">
             {links.map(link => <Link key={link.path} to={link.path} aria-current={isLinkActive(link.path) ? "page" : undefined} className={`block border-b border-slate-100 px-2 py-3.5 text-sm font-semibold ${isLinkActive(link.path) ? "text-[#ff6422]" : "text-[#536170] hover:text-[#ff6422]"}`}>
                 {link.label}
