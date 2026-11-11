@@ -1,6 +1,6 @@
 # Shalinder CMS handover
 
-The existing React 19 + Vite 8 + Tailwind 3 JSX site now reads content from an Express 5 / Mongoose 8 CMS. No production deployment or external account was created. The backend uses MongoDB (Atlas recommended) for content, staff and sessions, and a persistent filesystem directory for images.
+The React 19 + Vite 8 + Tailwind 3 site is served by the same Express 5 Node.js process as its CMS API. The CMS stores content, staff and sessions in Hostinger MySQL. Uploaded WebP images use a persistent directory outside the deployment folders. The app serves the frontend even while MySQL is unavailable; CMS API calls return 503 until the database recovers.
 
 ## Content inventory and mapping
 
@@ -30,66 +30,58 @@ The incorrect `../../public/Journery-Images/...` imports were removed by the con
 ## Changed-file summary
 
 - [server/src/](./server/src/): config, content/staff/media/activity models, authentication, validation, management/public APIs, controlled image serving, explicit seed and account CLI commands.
-- [server/test/cms.test.js](./server/test/cms.test.js): integration tests with an isolated real MongoDB test process and actual image encoding.
+- [server/src/mysqlStore.js](./server/src/mysqlStore.js): MySQL connection, schema initialization and persistent session storage.
 - [src/cms/](./src/cms/): separate admin layout/login, database dashboard, content forms, rich text, media picker/library, staff management, public provider, listings and detail routes.
 - [src/App.jsx](./src/App.jsx), [src/components/](./src/components/), [src/pages/](./src/pages/): CMS connections, corrected import case and published feeds, preserving existing public styling.
 - [vite.config.js](./vite.config.js): development `/api` proxy to port 4000.
 - [.env.example](./.env.example), [server/.env.example](./server/.env.example), [.gitignore](./.gitignore): local configuration templates and exclusions.
 - [scripts/](./scripts/): one-time source conversion utilities used for this implementation. **Do not rerun these on the already migrated source.** The supported repeatable migration is `npm.cmd run seed` in the backend.
 
-There is no usable Git metadata in the supplied project folder; Git status reported an error pointing outside this folder. No commits, resets or deployments were made. Existing `dist` and root dependency files were not used as edit targets. Backend dependency installation created its own lockfile.
+The supplied static `dist` build remains the existing live frontend until a new Hostinger deployment replaces it. No production database was created or deployment performed during this code change.
 
-## Windows PowerShell setup
+## Hostinger single-app deployment
 
-Use Node.js 22.12 or newer (Node 22 LTS recommended). The existing frontend versions are retained. Use `npm.cmd` to avoid PowerShell script execution-policy restrictions.
+The root repository is one Hostinger Node.js application. It builds Vite's frontend to `dist/`, then starts Express from `server/src/index.js`; Express serves both the SPA and `/api`. Keep `VITE_API_BASE` empty so requests use same-origin URLs.
 
-```powershell
-Set-Location C:\Users\91975\Shalinderweb
-npm.cmd ci
-Copy-Item .env.example .env
-Set-Location server
-npm.cmd ci
-Copy-Item .env.example .env
-node -e "console.log(require('node:crypto').randomBytes(48).toString('hex'))"
+In Hostinger, create the Node.js Web App from the GitHub repository and set:
+
+- Root directory: `./`
+- Framework preset: **Other**
+- Node.js: **22.x** (22.12 or newer)
+- Build command: `npm run build:hostinger`
+- Output directory: `dist`
+- Entry file: `server/src/index.js`
+
+Set the following environment variables in that one app. Use the complete database name and username shown under Hostinger **Databases → Management**. Set a fresh secret using `openssl rand -hex 48`. Create the upload folder outside `public_html` and `hbuilds`; use the Hostinger account's actual home path.
+
+```env
+NODE_ENV=production
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_NAME=<Hostinger database name>
+DB_USER=<Hostinger database user>
+DB_PASSWORD=<Hostinger database password>
+DB_CONNECTION_LIMIT=5
+SESSION_SECRET=<fresh random 96-character hex value>
+FRONTEND_ORIGIN=https://shailendrabhadauria.com
+VITE_API_BASE=
+UPLOAD_DIR=/home/<Hostinger account>/storage/shalinder-uploads
+SEED_DEFAULT_CONTENT=true
+INITIAL_ADMIN_EMAIL=<your admin email>
+INITIAL_ADMIN_NAME=<your display name>
+INITIAL_ADMIN_PASSWORD=<unique password of at least 12 characters>
 ```
 
-Edit the backend `.env`: paste the generated value into `SESSION_SECRET`, set `MONGODB_URI`, and choose an **absolute persistent directory outside this repository**, for example `C:/shalinder-data/uploads`. Create that directory and grant read/write permission only to the Node service account and backup operator. Never put secrets in `VITE_*` values. Keep frontend `VITE_API_BASE` empty for the supported same-origin proxy setup.
+On first start, the app creates the MySQL tables, seeds the site's initial editable content when requested, and creates the first administrator if no administrator exists. After the logs confirm these steps, set `SEED_DEFAULT_CONTENT=false` and remove the `INITIAL_ADMIN_*` values from Hostinger. The initial administrator is created only once. Never put database credentials or secrets in `VITE_*` variables or commit them to GitHub.
 
-```powershell
-# Run from C:\Users\91975\Shalinderweb\server after configuring .env
-New-Item -ItemType Directory -Force C:\shalinder-data\uploads
-npm.cmd run setup-admin
-# Prompts for email, display name and a hidden password of at least 12 characters.
-# Refuses to create another first administrator once an administrator exists.
-npm.cmd run seed
-# Explicitly imports existing pages/images; never runs on server startup.
-# Existing records are left unchanged on subsequent runs.
-npm.cmd run dev
-```
+If MySQL is offline or unavailable during startup, the Node process still serves the frontend and retries the database connection every 10 seconds. CMS APIs return HTTP 503 until MySQL is ready. A health check is available at `/api/health`. The frontend also starts with bundled content defaults, so a failed API request does not prevent React from rendering.
 
-In a second terminal:
-
-```powershell
-Set-Location C:\Users\91975\Shalinderweb
-npm.cmd run dev
-```
-
-Open `http://localhost:5173` and `http://localhost:5173/admin`. Use `localhost` consistently: the configured origin is exactly `http://localhost:5173` (using `127.0.0.1` in the browser requires updating `FRONTEND_ORIGIN`).
-
-### Atlas setup
-
-1. Use an existing Atlas project/cluster or create one yourself; this implementation does not purchase a plan.
-2. Create a database user scoped to `readWrite` on the chosen application database. Do not use the Atlas account password as the database password.
-3. Allow only the development IP and later the deployment egress IP in Network Access. Do not leave unrestricted access enabled.
-4. Copy the driver's `mongodb+srv://...` connection string into backend `MONGODB_URI`, including the database name, for example `...mongodb.net/shalinder?retryWrites=true&w=majority`. Percent-encode special characters in credentials.
-5. Run the first-admin command and explicit seed. Mongoose creates indexes for unique slugs, section keys, staff email, listing types/dates, timeline order and activity dates. On larger deployments manage index creation as a release step.
-
-Atlas connectivity, credentials, IP allowlisting, backups and production performance need verification with your actual account.
+For local development, configure `server/.env` from `server/.env.example`, start the backend in the `server` folder with `npm run dev`, then start Vite in the repository root with `npm run dev`. Vite proxies `/api` to port 4000.
 
 ## Staff authentication and permissions
 
 - Passwords use per-user random salts with Node's scrypt. There are no production default accounts/passwords or public signup endpoints.
-- Server-side sessions are stored in MongoDB with an 8-hour cookie/TTL. Cookies are HttpOnly, SameSite=Lax, Secure in production. Login regenerates the session; logout destroys it. Disabling or changing a staff role, or using the password-reset command, invalidates existing sessions through a version counter.
+- Server-side sessions are stored in the MySQL `cms_sessions` table with an 8-hour cookie expiry. Cookies are HttpOnly, SameSite=Lax, Secure in production. Login regenerates the session; logout destroys it. Disabling or changing a staff role invalidates existing sessions through a version counter.
 - CSRF tokens are bound to sessions and required for all writes including login. The request Origin must exactly match `FRONTEND_ORIGIN`. CORS credentials are enabled only for that configured origin. Login is rate-limited per IP.
 - Editors can create/edit drafts, preview, upload images and edit image descriptions. Administrators additionally publish/unpublish/trash/restore, delete unused images and manage users. There is no separate publisher role; publishing is an administrator permission.
 - Staff cannot change their own access through the user-management API, preventing accidental sole-admin lockout. Use a second administrator for access changes.
@@ -119,59 +111,16 @@ The legacy public contact/question forms and several pre-existing FAQ/press cont
 - Public APIs never return working drafts, trashed items, staff records or session/password data. They and media use `no-store`; public React views refresh on navigation, focus and a 15-second interval. An already-open tab may show the previous render until its next refresh. Do not add a CDN cache to `/api`.
 - **Direct video upload is intentionally disabled.** The supported free-storage flow is YouTube/Vimeo embeds and optimized thumbnail images. Enabling video upload later requires stream/range handling, an allowlist/signature check, a strict size cap and documented disk/bandwidth capacity; it is not a hidden unlimited upload option.
 
-## Deployment requirements (not performed)
+## Deployment requirements
 
-Use one continuously running Node 22.12+ backend instance, MongoDB Atlas and a durable upload volume. The current management-write gate serializes writes in that Node process to prevent publication/deletion races. **Do not run multiple backend writers/cluster workers against the same database without adding distributed locking or transactional reference accounting**, and replace the in-process login limiter with a shared store before horizontal scaling.
+This release uses one Node 22.12+ Hostinger Node.js app. Configure the repository root as the app root, build Vite into `dist`, and use `server/src/index.js` as the entry point. The same Express process serves static frontend files and CMS API routes. A MySQL outage does not prevent the process from serving the public frontend; CMS API endpoints return 503 until the database reconnects.
 
-Terminate HTTPS at a trusted reverse proxy. Set `NODE_ENV=production`, a strong `SESSION_SECRET`, the exact HTTPS `FRONTEND_ORIGIN`, and persistent `UPLOAD_DIR`. The backend trusts exactly one proxy hop; restrict direct access to Node and have the proxy replace forwarded headers. Serve frontend assets and proxy `/api/*` to Node under the same public origin. SPA routes, including `/admin/*`, `/posts/*` and the Hindi route, must fall back to frontend `index.html`; `/api/*` must never fall back to HTML. Set proxy request limits slightly above the 10 MB image limit and reasonable timeouts. Never cache management, auth or controlled-media responses. Run the Node process under a dedicated account with service restart/log rotation.
-
-Build without overwriting the supplied build directory during local verification:
-
-```powershell
-Set-Location C:\Users\91975\Shalinderweb
-npm.cmd run lint
-npm.cmd run build -- --outDir .cms-build
-Set-Location server
-npm.cmd test
-npm.cmd audit
-# Production install/start, on the intended host after configuring environment:
-npm.cmd ci --omit=dev
-npm.cmd start
-```
-
-The test suite starts an isolated MongoDB test process and never uses `MONGODB_URI`/Atlas. Its first run may download a MongoDB binary. It writes only QA artifacts to `.cms-test-data`; these are ignored by Git. `server/test-ui.mjs` is an explicit, disposable browser-QA fixture using generated test credentials and an isolated database; never run it as the production service.
+Keep `UPLOAD_DIR` outside Hostinger's versioned deployment folders and `public_html`, and back up that directory with the database. Use the configured HTTPS `FRONTEND_ORIGIN`, a stable random `SESSION_SECRET`, and Hostinger's database host `127.0.0.1`. The management-write queue assumes one Node process; do not enable multiple writers without adding distributed locking.
 
 ## Backup and restore
 
-Back up **MongoDB and the upload directory together**. Database-only backups do not contain image bytes. Use Atlas snapshots/PITR if available on your existing plan; do not assume a paid feature is enabled. MongoDB Database Tools provide `mongodump`/`mongorestore` for a manual alternative.
-
-For a consistent manual backup, stop CMS writes/the backend, take the database dump, copy the upload directory, then restart. Use a protected backup directory outside the repository, encryption at rest, limited access, retention and a second failure domain. Read credentials interactively rather than adding passwords to shell history:
-
-```powershell
-# Requires MongoDB Database Tools installed. Enter the URI through Read-Host.
-$cmsBackupUri = Read-Host 'MongoDB URI for backup'
-$cmsBackupRoot = 'D:\ShalinderBackups\2026-10-14'
-New-Item -ItemType Directory -Force $cmsBackupRoot
-mongodump --uri=$cmsBackupUri --archive="$cmsBackupRoot\database.archive.gz" --gzip
-Copy-Item -LiteralPath 'C:\shalinder-data\uploads' -Destination "$cmsBackupRoot\uploads" -Recurse
-Remove-Variable cmsBackupUri
-```
-
-Restore first to a **new isolated database and empty upload directory**, never overwrite a live environment casually:
-
-```powershell
-$cmsRestoreUri = Read-Host 'URI of isolated restore database'
-mongorestore --uri=$cmsRestoreUri --archive='D:\ShalinderBackups\2026-10-14\database.archive.gz' --gzip --nsFrom='shalinder.*' --nsTo='shalinder_restore.*'
-Copy-Item -LiteralPath 'D:\ShalinderBackups\2026-10-14\uploads' -Destination 'C:\shalinder-restore\uploads' -Recurse
-Remove-Variable cmsRestoreUri
-```
-
-Point an isolated backend at that restored database/directory, use a new session secret, confirm login, published pages, draft privacy and representative images, then plan cutover. Verify both backup exit codes and periodically test restoration. Session data may be excluded from backup; always invalidate sessions during recovery. Do not run seed as a restore procedure.
+Back up the Hostinger MySQL database and the `UPLOAD_DIR` image directory together. Use Hostinger's database backup/export tools or phpMyAdmin to export SQL, and copy the upload directory to protected storage. A database backup alone does not include uploaded image bytes. Test restoring both to an isolated database and empty upload folder before using a restore in production.
 
 ## Verification and remaining operational work
 
-- Production frontend build succeeds in `.cms-build`.
-- Integration tests cover unauthenticated writes, CSRF/roles, duplicate slugs, protected previews, save/publish/unpublish/trash/restore, stale revisions, rich-text sanitization, private images, fake/oversized uploads, referenced-image deletion blocking, replacement isolation, app/database-client restart persistence, idempotent seed, page publication and account disabling/logout.
-- Backend dependency audit after the Sharp update: **0 known vulnerabilities**.
-- Local lint completes with no errors; one pre-existing navbar state-in-effect advisory remains. See [CMS-VERIFICATION.md](./CMS-VERIFICATION.md) for integration and browser results.
-- Atlas, SMTP and production infrastructure have not been tested. Configure Atlas and persistent storage, run first-admin/seed, review editorial content and translations, and verify HTTPS/proxy behavior before launch.
+The MySQL conversion and Hostinger configuration are implemented in source, but no Hostinger database or production account was accessed. I did not run the MongoDB-era integration suite; those tests still need to be migrated before they can validate this MySQL adapter. Before launch, deploy to a staging hostname and verify the homepage, admin sign-in, seeded pages, publishing, image upload, and frontend behavior while MySQL is unavailable.

@@ -19,32 +19,19 @@ You can also try [the experimental native React Compiler support in plugin-react
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
 # Custom CMS
 
-See [CMS-HANDOVER.md](./CMS-HANDOVER.md) for the implemented CMS, content inventory, Windows setup, Atlas configuration, staff setup, editorial guide, tests and backup/deployment requirements. Frontend and backend environment templates are separate. No production deployment has been performed.
+The React/Vite frontend and Express CMS API now deploy as one Node.js app. Express serves the built frontend and same-origin /api routes. If MySQL is temporarily unavailable, the public React site continues to render from bundled content defaults while CMS API requests return HTTP 503.
 
-## Backend-independent public site
+## Hostinger build settings
 
-The regular `npm run build` command builds the live-CMS-compatible frontend into `dist/`. The public pages keep bundled defaults and use a successfully loaded static snapshot if one is present; published posts can use the snapshot when the CMS API is unavailable. Admin routes continue to require the authenticated backend.
+- Root directory: ./
+- Framework preset: Other
+- Node.js: 22.x (22.12 or newer)
+- Build command: npm run build:hostinger
+- Output directory: dist
+- Entry file: server/src/index.js
 
-To export the latest published CMS content and build a standalone static site, first configure `server/.env` with `MONGODB_URI`, `SESSION_SECRET` (at least 32 characters), and `UPLOAD_DIR` (optional; defaults to `C:\shalinder-data\uploads`). Then run from the repository root:
+Configure the root .env values in the Hostinger app's Environment Variables. Copy the MySQL database name, username and password from Hostinger Databases → Management. Generate a stable session secret with openssl rand -hex 48; keep VITE_API_BASE empty. Set UPLOAD_DIR to a persistent folder outside public_html and hbuilds.
 
-```powershell
-npm.cmd run export:static
-```
+On the first start, you can set SEED_DEFAULT_CONTENT=true and provide INITIAL_ADMIN_EMAIL, INITIAL_ADMIN_NAME, and INITIAL_ADMIN_PASSWORD. The app seeds editable content and creates the first administrator only when none exists. After confirming startup logs, disable seeding and remove the initial admin variables.
 
-The command reads published CMS records and referenced media, validates them, then creates a new timestamped directory under `exports/`. It never writes to MongoDB and refuses to overwrite an existing export or `dist/`. To choose the output directory, provide a new path inside `exports/`:
-
-```powershell
-npm.cmd run export:static -- --out-dir exports\shalinder-static-review
-```
-
-The export connects to the database configured by `MONGODB_URI`; do not run it against production until the data owner explicitly approves. It exports published pages/settings, journey entries, posts, language variants, and referenced WebP images. Drafts, trashed items, users, and session data are excluded. Successful output includes `index.html`, `content-snapshot.json`, local `site-assets/`, and `.htaccess`.
-
-Preview an exported directory without copying it into `dist/`:
-
-```powershell
-npx.cmd vite preview --outDir exports\shalinder-static-review --host 127.0.0.1
-```
-
-For Hostinger, make a backup of the current `public_html` first, then upload the **contents** of the validated export directory (including `.htaccess`) to the document root. Do not upload it as a nested folder. Verify the homepage, a post detail URL, local images, and a browser refresh on nested routes before switching visitors to it. Deployment is manual; this command does not contact Hostinger.
-
-After CMS changes, create a fresh export and deploy that folder to publish the changes in static mode. A static site continues to display its exported public content and images if Express, MongoDB, or the admin panel is unavailable. CMS login, editing, uploads, publishing, and staff management still require the backend. Back up MongoDB and `UPLOAD_DIR` separately and together; see [CMS-HANDOVER.md](./CMS-HANDOVER.md#backup-and-restore).
+See CMS-HANDOVER.md for the content inventory, security notes, editorial workflow, and backups. The MongoDB-era integration suite has not yet been migrated to MySQL.

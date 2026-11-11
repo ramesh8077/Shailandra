@@ -1,7 +1,7 @@
-import mongoose from 'mongoose';
 import { createInterface } from 'node:readline/promises';
 import { configFromEnv } from './config.js';
 import { User } from './models.js';
+import { initializeDatabase, pool } from './mysqlStore.js';
 import { credentials } from './validation.js';
 import { hashPassword } from './security.js';
 import { seed } from './seed.js';
@@ -39,8 +39,7 @@ async function passwordPrompt() {
   });
 }
 try {
-  await mongoose.connect(config.mongoUri);
-  await User.init();
+  await initializeDatabase();
   const command = process.argv[2];
   if (command === 'seed') await seed(config);else if (['admin', 'reset'].includes(command)) {
     if (command === 'admin' && (await User.exists({
@@ -87,5 +86,5 @@ try {
   console.error(error.message);
   process.exitCode = 1;
 } finally {
-  await mongoose.disconnect();
+  await pool.end();
 }

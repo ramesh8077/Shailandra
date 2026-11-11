@@ -4,8 +4,8 @@ import path from 'node:path';
 import { manifest, validateContent } from './validation.js';
 
 const mediaReference = /\/api\/media\/([^"'()\s<>?#]+)/g;
-const sensitiveKeys = /^(?:draft|trashed|password(?:hash)?|sessions?|csrf|tokens?|secret|mongo(?:uri)?|uploaddir|env)$/i;
-const connectionString = /mongodb(?:\+srv)?:\/\//i;
+const sensitiveKeys = /^(?:draft|trashed|password(?:hash)?|sessions?|csrf|tokens?|secret|mongo(?:uri)?|database|db_(?:host|user|password|name)|uploaddir|env)$/i;
+const connectionString = /(?:mongodb(?:\+srv)?|mysql):\/\//i;
 
 function requirePlainObject(value, label) {
   if (!value || typeof value !== 'object' || Array.isArray(value)) {

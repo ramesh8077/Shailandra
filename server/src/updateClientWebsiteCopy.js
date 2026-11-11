@@ -1,8 +1,8 @@
-import mongoose from 'mongoose';
 import { writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { configFromEnv } from './config.js';
 import { Content } from './models.js';
+import { initializeDatabase, pool } from './mysqlStore.js';
 import { manifest, validateContent } from './validation.js';
 
 const textField = (label, value) => ({ label, type: 'text', value, hiValue: '' });
@@ -284,7 +284,7 @@ async function addBlogDrafts() {
 }
 
 const config = configFromEnv();
-await mongoose.connect(config.mongoUri);
+await initializeDatabase();
 try {
   updateManifest();
   const updates = [];
@@ -307,5 +307,5 @@ try {
   const draftsCreated = await addBlogDrafts();
   console.log(`Updated ${updates.length} CMS pages and created ${draftsCreated} article drafts.`);
 } finally {
-  await mongoose.disconnect();
+  await pool.end();
 }

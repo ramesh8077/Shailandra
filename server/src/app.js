@@ -1,6 +1,5 @@
 import express from 'express';
 import session from 'express-session';
-import MongoStore from 'connect-mongo';
 import helmet from 'helmet';
 import cors from 'cors';
 import { rateLimit } from 'express-rate-limit';
@@ -9,9 +8,9 @@ import sharp from 'sharp';
 import { randomBytes, randomUUID } from 'node:crypto';
 import { mkdir, writeFile, unlink } from 'node:fs/promises';
 import path from 'node:path';
-import mongoose from 'mongoose';
 import { z } from 'zod';
 import { User, Content, Media, Activity } from './models.js';
+import { MysqlSessionStore } from './mysqlStore.js';
 import { hashPassword, verifyPassword, problem, mediaRefs } from './security.js';
 import { credentials, userInput, validateContent, manifest } from './validation.js';
 const id = z.string().regex(/^[a-f\d]{24}$/);
@@ -37,6 +36,7 @@ const dto = d => ({
 });
 export function createApp(config) {
   const app = express();
+  app.locals.dbReady = false;
   if (config.production) app.set('trust proxy', 1);
   app.use(helmet({
     crossOriginResourcePolicy: {
@@ -50,12 +50,9 @@ export function createApp(config) {
   app.use(express.json({
     limit: '1mb'
   }));
-  const store = MongoStore.create({
-    mongoUrl: config.mongoUri,
-    collectionName: 'sessions',
-    ttl: 8 * 3600
-  });
+  const store = new MysqlSessionStore();
   app.locals.sessionStore = store;
+  app.get('/api/health', (_req, res) => res.json({ ok: true, database: app.locals.dbReady ? 'ready' : 'unavailable' }));
   app.use(session({
     name: 'shalinder.sid',
     secret: config.secret,
@@ -78,6 +75,10 @@ export function createApp(config) {
     if (req.get('origin') !== config.origin) throw problem(403, 'Untrusted request origin');
     if (!req.session.csrf || req.get('x-csrf-token') !== req.session.csrf) throw problem(403, 'Invalid CSRF token. Reload and retry.');
     next();
+  });
+  app.use('/api', (_req, res, next) => {
+    if (app.locals.dbReady) return next();
+    res.status(503).json({ error: { message: 'CMS database is temporarily unavailable. The public website is still available.' } });
   });
   const auth = async (req, _res, next) => {
     const user = req.session.userId && (await User.findById(req.session.userId));
@@ -596,7 +597,7 @@ export function createApp(config) {
       status = 400;
       message = err.issues.map(i => `${i.path.join('.')}: ${i.message}`).join('; ');
     }
-    if (err.code === 11000) {
+    if (err.code === 'ER_DUP_ENTRY') {
       status = 409;
       message = 'This slug, email or section already exists.';
     }
@@ -604,9 +605,9 @@ export function createApp(config) {
       status = err.code === 'LIMIT_FILE_SIZE' ? 413 : 400;
       message = 'Upload rejected: use one image no larger than 10 MB.';
     }
-    if (err instanceof mongoose.Error.CastError) {
-      status = 400;
-      message = 'Invalid identifier';
+    if (['ECONNREFUSED', 'ECONNRESET', 'EPIPE', 'ETIMEDOUT', 'PROTOCOL_CONNECTION_LOST', 'ER_CON_COUNT_ERROR', 'ER_ACCESS_DENIED_ERROR', 'ER_BAD_DB_ERROR', 'ER_NO_SUCH_TABLE', 'ER_SERVER_SHUTDOWN'].includes(err.code)) {
+      status = 503;
+      message = 'CMS database is temporarily unavailable. The public website is still available.';
     }
     if (status === 500) console.error(err);
     res.status(status).json({
@@ -614,6 +615,17 @@ export function createApp(config) {
         message
       }
     });
+  });
+
+  // Vite's build is served by this same process. Public pages therefore remain
+  // available when MySQL is offline; only /api requests depend on the database.
+  app.use(express.static(config.frontendDir, {
+    index: false,
+    fallthrough: true,
+    maxAge: config.production ? '1h' : 0
+  }));
+  app.get(/^(?!\/api(?:\/|$)).*/, (_req, res, next) => {
+    res.sendFile(config.indexFile, error => error && next(error));
   });
   return app;
 }

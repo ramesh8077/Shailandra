@@ -3,8 +3,8 @@ import { copyFile, lstat, mkdir, mkdtemp, readdir, readFile, rename, rm } from '
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import mongoose from 'mongoose';
 import { Content, Media } from '../src/models.js';
+import { initializeDatabase, pool } from '../src/mysqlStore.js';
 import { createStaticSnapshot } from '../src/staticExport.js';
 import { buildStaticSite } from '../src/staticBuild.js';
 
@@ -70,7 +70,7 @@ async function verifyBuiltOutput(outputDir, snapshotResult, forbiddenValues) {
         await inspect(entryPath);
       } else if (inspectExtensions.has(path.extname(entry.name).toLowerCase()) || entry.name === '.htaccess') {
         const text = await readFile(entryPath, 'utf8');
-        if (/mongodb(?:\+srv)?:\/\//i.test(text)) {
+        if (/(?:mongodb(?:\+srv)?|mysql):\/\//i.test(text)) {
           throw new Error(`A database connection string was found in ${path.relative(outputDir, entryPath)}`);
         }
         for (const secret of forbiddenValues) {
@@ -104,12 +104,8 @@ try {
     if (error.code !== 'ENOENT') throw error;
   }
 
-  await mongoose.connect(config.mongoUri, {
-    serverSelectionTimeoutMS: 15000,
-    autoIndex: false
-  });
+  await initializeDatabase();
   connected = true;
-  if (mongoose.connection.readyState !== 1) throw new Error('MongoDB did not reach the connected state');
 
   dataDir = await mkdtemp(path.join(os.tmpdir(), 'shailinder-static-data-'));
   const result = await createStaticSnapshot({
@@ -117,7 +113,7 @@ try {
     Media,
     uploadDir: config.uploadDir,
     dataDir,
-    forbiddenValues: [config.mongoUri, config.secret]
+    forbiddenValues: [config.database.password, config.secret]
   });
   await copyFile(path.join(root, 'public', '.htaccess'), path.join(dataDir, '.htaccess'));
 
@@ -128,7 +124,7 @@ try {
     outDir: buildDir
   });
 
-  await verifyBuiltOutput(buildDir, result, [config.mongoUri, config.secret]);
+  await verifyBuiltOutput(buildDir, result, [config.database.password, config.secret]);
   await rename(buildDir, outputDir);
   buildDir = null;
   completed = true;
@@ -147,7 +143,7 @@ try {
   process.exitCode = 1;
 } finally {
   if (connected) {
-    await mongoose.disconnect().catch(error => {
+    await pool.end().catch(error => {
       console.error(`Could not close the export database connection cleanly: ${error.message}`);
       process.exitCode = 1;
     });
