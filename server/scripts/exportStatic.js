@@ -86,7 +86,6 @@ async function verifyBuiltOutput(outputDir, snapshotResult, forbiddenValues) {
 
 let dataDir;
 let buildDir;
-let connected = false;
 let completed = false;
 
 try {
@@ -105,8 +104,6 @@ try {
   }
 
   await initializeDatabase();
-  connected = true;
-
   dataDir = await mkdtemp(path.join(os.tmpdir(), 'shailinder-static-data-'));
   const result = await createStaticSnapshot({
     Content,
@@ -142,12 +139,10 @@ try {
   console.error(`Static export failed: ${error.message}`);
   process.exitCode = 1;
 } finally {
-  if (connected) {
-    await pool.end().catch(error => {
-      console.error(`Could not close the export database connection cleanly: ${error.message}`);
-      process.exitCode = 1;
-    });
-  }
+  await pool.end().catch(error => {
+    console.error(`Could not close the export database connection cleanly: ${error.message}`);
+    process.exitCode = 1;
+  });
   if (dataDir) {
     await rm(dataDir, { recursive: true, force: true }).catch(error => {
       console.error(`Could not remove temporary export data ${dataDir}: ${error.message}`);

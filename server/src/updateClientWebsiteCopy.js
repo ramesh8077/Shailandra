@@ -284,8 +284,8 @@ async function addBlogDrafts() {
 }
 
 const config = configFromEnv();
-await initializeDatabase();
 try {
+  await initializeDatabase();
   updateManifest();
   const updates = [];
   for (const key of Object.keys(contentUpdates)) {

@@ -70,15 +70,15 @@ export function createApp(config) {
     res.set('Cache-Control', 'no-store');
     next();
   });
+  app.use('/api', (_req, res, next) => {
+    if (app.locals.dbReady) return next();
+    res.status(503).json({ error: { message: 'CMS database is temporarily unavailable. The public website is still available.' } });
+  });
   app.use('/api', (req, _res, next) => {
     if (['GET', 'HEAD', 'OPTIONS'].includes(req.method)) return next();
     if (req.get('origin') !== config.origin) throw problem(403, 'Untrusted request origin');
     if (!req.session.csrf || req.get('x-csrf-token') !== req.session.csrf) throw problem(403, 'Invalid CSRF token. Reload and retry.');
     next();
-  });
-  app.use('/api', (_req, res, next) => {
-    if (app.locals.dbReady) return next();
-    res.status(503).json({ error: { message: 'CMS database is temporarily unavailable. The public website is still available.' } });
   });
   const auth = async (req, _res, next) => {
     const user = req.session.userId && (await User.findById(req.session.userId));
