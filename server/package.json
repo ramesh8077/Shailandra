@@ -11,7 +11,7 @@
     "setup-admin": "node src/cli.js admin",
     "reset-password": "node src/cli.js reset",
     "seed": "node src/cli.js seed",
-    "test": "node --test --test-concurrency=1 test/cms.test.js test/static-export.test.js"
+    "test": "node --test --test-concurrency=1 test/cms.test.js test/static-export.test.js test/database-unavailable.test.js"
   },
   "dependencies": {
     "cors": "^2.8.5",
