@@ -5,6 +5,7 @@ import { User } from './models.js';
 import { hashPassword } from './security.js';
 import { credentials } from './validation.js';
 import { seed } from './seed.js';
+import { importInitialBlogPosts } from './initialBlogPosts.js';
 const config = configFromEnv();
 const app = createApp(config);
 const port = Number(process.env.PORT || 4000);
@@ -19,6 +20,8 @@ async function connectDatabase() {
       app.locals.dbReady = true;
       try {
         if (process.env.SEED_DEFAULT_CONTENT === 'true') await seed(config);
+        const importedBlogs = await importInitialBlogPosts();
+        if (importedBlogs) console.log(`Imported ${importedBlogs} initial blog posts into CMS`);
         const bootstrapEmail = process.env.INITIAL_ADMIN_EMAIL?.trim();
         const bootstrapName = process.env.INITIAL_ADMIN_NAME?.trim();
         const bootstrapPassword = process.env.INITIAL_ADMIN_PASSWORD;
