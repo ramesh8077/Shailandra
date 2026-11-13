@@ -55,7 +55,8 @@ function ScrollToTop() {
  
  function PublicSite() {
    const { pathname } = useLocation();
-   const hasArticleListing = pathname === "/posts";
+   const isArticleListing = pathname === "/posts";
+   const isArticleDetail = pathname.startsWith("/posts/");
    return (
      <PublicCMS>
        <ScrollToTop />
@@ -79,9 +80,9 @@ function ScrollToTop() {
            <Route path="/nation-building" element={<NationBuildingPage />} />
            <Route path="/media" element={<MediaPage />} />
          </Routes>
-         {!hasArticleListing && <Blogs />}
-         <SiteFAQs />
-         <ContactInsights />
+         {!isArticleListing && !isArticleDetail && <Blogs />}
+         {!isArticleDetail && <SiteFAQs />}
+         {!isArticleDetail && <ContactInsights />}
          <Footer />
        </div>
      </PublicCMS>
