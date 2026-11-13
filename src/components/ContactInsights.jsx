@@ -108,14 +108,14 @@ export default function ContactInsights() {
             </div>
 
             {/* Scrollable video list */}
-            <div className="max-h-[360px] space-y-3 overflow-y-auto pr-2 lg:max-h-[420px] [scrollbar-width:thin] [scrollbar-color:#ff6422_transparent]">
+            <div className="flex snap-x snap-mandatory gap-3 overflow-x-auto pb-2 [scrollbar-width:thin] [scrollbar-color:#ff6422_transparent]">
               {insights.map((insight) => (
                 <button
                   type="button"
                   key={insight.id}
                   onClick={() => setActiveVideo(insight)}
                   aria-label={`Play video: ${insight.title}`}
-                  className="group relative block aspect-video w-full shrink-0 overflow-hidden rounded-xl bg-[#5f2d23] text-left shadow-md"
+                  className="group relative block aspect-video w-full max-w-[440px] shrink-0 snap-start overflow-hidden rounded-xl bg-[#5f2d23] text-left shadow-md"
                 >
                   <img
                     src={`https://i.ytimg.com/vi/${insight.videoId}/hqdefault.jpg`}

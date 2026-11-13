@@ -6,7 +6,7 @@ const articles = [
     key: 'blog-rejection-growing-up',
     slug: 'why-learning-to-handle-rejection-is-an-important-part-of-growing-up',
     title: 'Why Learning to Handle Rejection Is an Important Part of Growing Up',
-    tags: ['Youth', 'Personal growth', 'Resilience'],
+    tags: ['Youth', 'Personal growth', 'Resilience', 'Viksit Bharat'],
     body: `There is a strange feeling that comes with telling people you didn't get selected for something you really wanted. You might laugh it off when a friend asks about the interview. You might tell your parents that it wasn't a big deal. Then, later that night, you find yourself thinking about it all over again.
 
 You had imagined things turning out differently. Maybe you had already pictured yourself at that college, working at that company or finally getting the chance to prove yourself. Now you have to let go of that picture and figure out what comes next.
@@ -47,7 +47,7 @@ One day, you will look back at some of the things that upset you at this age and
     key: 'blog-stable-career-next-generation',
     slug: 'will-a-stable-career-still-mean-the-same-thing-for-the-next-generation',
     title: 'Will a Stable Career Still Mean the Same Thing for the Next Generation?',
-    tags: ['Youth', 'Careers', 'Work'],
+    tags: ['Youth', 'Careers', 'Work', 'Viksit Bharat'],
     body: `For many parents, a stable career meant a regular salary, a secure job and the ability to support a family. You studied hard, found a respectable position and worked your way up. If the income was good and the job was secure, there was little reason to leave.
 
 But ask young people today what they want from their careers, and the answers may be different.
@@ -86,7 +86,7 @@ For today's young adults, a stable career might mean a dependable job, the flexi
     key: 'blog-learning-outside-classroom',
     slug: 'what-students-learn-outside-the-classroom-can-shape-their-future-just-as-much',
     title: 'What Students Learn Outside the Classroom Can Shape Their Future Just as Much',
-    tags: ['Education', 'Youth', 'Life skills'],
+    tags: ['Education', 'Youth', 'Life skills', 'Viksit Bharat'],
     body: `Ask a student what they learnt in college today, and you will probably hear about a lecture, an assignment or an upcoming exam. Ask them about the last time they worked with someone difficult, organised an event or had to figure something out without being told what to do, and you might get a very different answer.
 
 Yet these are often the experiences that stay with us long after we have forgotten what was written on a classroom board.
@@ -127,7 +127,7 @@ Students may not remember every lesson they study, but they often remember the t
     key: 'blog-young-entrepreneurs-community',
     slug: 'can-young-entrepreneurs-help-solve-problems-in-their-own-communities',
     title: 'Can Young Entrepreneurs Help Solve Problems in Their Own Communities?',
-    tags: ['Entrepreneurship', 'Youth', 'Community'],
+    tags: ['Entrepreneurship', 'Youth', 'Community', 'Viksit Bharat'],
     body: `Most young people have ideas about what could be better around them. It could be something at college, a problem people in their neighbourhood deal with every day, or a service they wish was easier to find. We talk about these things with friends, sometimes even joke about how nobody has found a solution yet. Then the conversation moves on.
 
 But have you ever wondered if one of those problems could be the starting point for a business?
@@ -172,7 +172,7 @@ The next time you come across a problem that people keep talking about, don't di
     key: 'blog-passion-profession',
     slug: 'what-happens-when-a-young-persons-passion-does-not-match-their-profession',
     title: "What Happens When a Young Person's Passion Does Not Match Their Profession?",
-    tags: ['Careers', 'Youth', 'Wellbeing'],
+    tags: ['Careers', 'Youth', 'Wellbeing', 'Viksit Bharat'],
     body: `At your job, you spend weekdays attending meetings, completing assignments, or working towards a promotion. You like your job, and you also believe your life is going well. However, when you get a few leisure hours, your mind starts thinking about something completely different.
 
 It might be that you work in finance while photography is your true passion, or you studied engineering but are actually inclined towards writing, music or sports. You enjoy doing these things, but they are not related to the professional career you are pursuing.
@@ -227,7 +227,7 @@ You don't need to turn every interest into an income or abandon a stable career 
     key: 'blog-digital-access-small-towns',
     slug: 'from-small-towns-to-global-opportunities-how-digital-access-is-changing-young-indians-ambitions',
     title: "From Small Towns to Global Opportunities: How Digital Access Is Changing Young Indians' Ambitions",
-    tags: ['Digital access', 'Youth', 'India'],
+    tags: ['Digital access', 'Youth', 'India', 'Viksit Bharat'],
     body: `A student from a small town had predictable decisions to make some time ago – study hard and enter a good university, move to a bigger city and find a steady job. In many families, leaving their place has been the only way to start building a successful career.
 
 Today, however, this trend is changing.
@@ -309,7 +309,20 @@ export async function importInitialBlogPosts() {
   let created = 0;
   for (const article of articles) {
     const existing = await Content.findOne({ key: article.key });
-    if (existing) continue;
+    if (existing) {
+      const publishedTags = [...new Set([...(existing.published?.tags || []), 'Viksit Bharat'])];
+      const draftTags = [...new Set([...(existing.draft?.tags || []), 'Viksit Bharat'])];
+      if (publishedTags.length !== (existing.published?.tags || []).length ||
+          draftTags.length !== (existing.draft?.tags || []).length) {
+        await Content.updateOne({ _id: existing._id }, {
+          $set: {
+            'published.tags': publishedTags,
+            'draft.tags': draftTags
+          }
+        });
+      }
+      continue;
+    }
 
     const firstParagraph = article.body.trim().split(/\n\s*\n/).find(block => !block.startsWith('## '));
     const draft = validateContent('post', article.key, {

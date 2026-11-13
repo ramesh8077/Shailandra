@@ -2,6 +2,7 @@ import { SectionBoundary } from "../cms/PublicCMS";
 import { useSection } from "../cms/contentContext";
 import { Link } from "react-router-dom";
 import PageHero from "../components/PageHero";
+import { PageClosingThoughts } from "../components/EditorialTail";
 export default function EducationPage() {
   const cms = useSection("EducationPage");
   const policyImage = cms("f2");
@@ -74,5 +75,6 @@ export default function EducationPage() {
           <img src={policyImage} alt={cms("f32")} className="aspect-video w-full rounded-xl object-cover shadow-sm" />
         </div>
       </section>
+      <PageClosingThoughts />
     </></SectionBoundary>;
 }

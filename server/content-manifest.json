@@ -489,9 +489,9 @@
           "value": "/sewa"
         },
         "f7": {
-          "label": "roles · label: Nation Builder",
+          "label": "roles · label: Nation builder",
           "type": "text",
-          "value": "Nation Builder"
+          "value": "Nation builder"
         },
         "f8": {
           "label": "roles · path: /",
@@ -510,9 +510,9 @@
         },
       
         "f12": {
-          "label": "Text: I believe that every experience teaches us something, and every meaningful conve",
+          "label": "Text: I believe every experience offers a lesson, and every meaningful conversation brings a fresh perspective.",
           "type": "text",
-          "value": "I believe every experience offers a lesson, and every meaningful conversation brings a fresh perspective. Over the years, my journey in education, entrepreneurship, and leadership has shaped my vision. Through this space, I aim  to share insights, experiences, and ideas on education, innovation, youth empowerment, and issues shaping India's future."
+          "value": "I believe every experience offers a lesson, and every meaningful conversation brings a fresh perspective. Over the years, my journey in education, entrepreneurship, and leadership has shaped my vision. Through this space, I aim to share insights, experiences, and ideas on education, innovation, youth empowerment, and issues shaping India's future."
         },
         "f13": {
           "label": "Image description: Shailendra Bhadauria",
@@ -526,9 +526,9 @@
           "hiValue": ""
         },
         "f15": {
-          "label": "Button: Explore My Perspectives",
+          "label": "Button: Explore my perspectives",
           "type": "text",
-          "value": "Explore My Perspectives",
+          "value": "Explore my perspectives",
           "hiValue": ""
         },
         "f16": {
@@ -680,9 +680,9 @@
           "value": "/nation-building"
         },
         "f14": {
-          "label": "moreLinks · label: Media",
+          "label": "moreLinks · label: Media Centre",
           "type": "text",
-          "value": "Media"
+          "value": "Media Centre"
         },
         "f15": {
           "label": "moreLinks · path: /media",
@@ -720,7 +720,7 @@
           "value": "/sports"
         },
         "f22": {
-          "label": "moreLinks · label: GALLERY",
+          "label": "moreLinks · label: Sewa",
           "type": "text",
           "value": "Sewa"
         },
@@ -897,14 +897,14 @@
           "value": "Baat karni se baat banti hai"
         },
         "f14": {
-          "label": "Text: that's something I genuinely believe. Some of my best conversations start e",
+          "label": "Text: is something I genuinely believe. Some of my best conversations start exactly",
           "type": "text",
-          "value": "that's something I genuinely believe. Some of my best conversations start exactly like this: one honest question leading to another, until you actually get somewhere real."
+          "value": "is something I genuinely believe. Some of my best conversations start exactly like this, one honest question leading to another, until you actually get somewhere real."
         },
         "f15": {
-          "label": "Text: I love connecting with India's youth this way directly, without a filter, w",
+          "label": "Text: I love connecting with our youth directly, without a filter, without someone",
           "type": "text",
-          "value": "I love connecting with India's youth this way directly, without a filter, without someone else answering on my behalf. So ask me anything. I read these myself, and I answer the ones that make me think the hardest."
+          "value": "I love connecting with our youth directly, without a filter, without someone else answering on my behalf. So ask me anything. I read these myself, and I answer the ones that make me think the hardest."
         },
         "f16": {
           "label": "Image description: Youth connecting and having a conversation",
@@ -1409,6 +1409,18 @@
           "label": "FAQs · answer: Encouraging entrepreneurship",
           "type": "text",
           "value": "I've always felt that students should have the freedom to explore their own ideas rather than see employment as their only option. Entrepreneurship teaches young people to identify problems, take initiative, and find solutions. That's why I support Startup Cells within institutions, where students can receive guidance and practical exposure. Even if they don't start a business, the ability to think independently will benefit them throughout their careers.",
+          "hiValue": ""
+        },
+        "f48": {
+          "label": "Heading: My Thoughts on the Future of Education",
+          "type": "text",
+          "value": "My Thoughts on the Future of Education",
+          "hiValue": ""
+        },
+        "f49": {
+          "label": "Text: My Thoughts on the Future of Education",
+          "type": "text",
+          "value": "I share my thoughts on changing education, empowering young minds, and creating learning opportunities that prepare the next generation to think independently, innovate, and lead.",
           "hiValue": ""
         }
       }
@@ -2798,9 +2810,9 @@
           "value": "The following is a proposed synthesis of positions he has already stated publicly, offered here as a strong starting draft not yet confirmed as his official platform."
         },
         "f32": {
-          "label": "Heading: A Question, Answered",
+          "label": "Heading: The Vision, The Questions, The Future",
           "type": "text",
-          "value": "A Question, Answered"
+          "value": "The Vision, The Questions, The Future"
         },
         "f33": {
           "label": "Heading: My Thoughts on India's Road to 2047",

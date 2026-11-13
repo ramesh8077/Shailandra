@@ -87,11 +87,11 @@
   }
 
   .section-space {
-    padding-block: clamp(2rem, 3.5vw, 3.25rem);
+    padding-block: clamp(1.5rem, 2.75vw, 2.5rem);
   }
 
   .public-site section:not(#home):not(.page-hero) {
-    padding-block: clamp(2rem, 3.5vw, 3.25rem) !important;
+    padding-block: clamp(1.5rem, 2.75vw, 2.5rem) !important;
   }
 
   .section-title,

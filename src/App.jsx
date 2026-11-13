@@ -56,7 +56,7 @@ const pageTitles = {
   "/चाय-पै-चर्चा": "Coffee Pe Charcha | Shailendra Bhadauria",
   "/connect": "Connect | Shailendra Bhadauria",
   "/nation-building": "Nation Building | Shailendra Bhadauria",
-  "/media": "Media | Shailendra Bhadauria",
+  "/media": "Media Centre | Shailendra Bhadauria",
   "/posts": "Blogs & Articles | Shailendra Bhadauria"
 };
 
@@ -112,8 +112,8 @@ function PageTitle() {
            <Route path="/media" element={<MediaPage />} />
          </Routes>
          {!isArticleListing && !isArticleDetail && <Blogs />}
-         {!isArticleDetail && <SiteFAQs />}
-         {!isArticleDetail && <ContactInsights />}
+         <SiteFAQs />
+         <ContactInsights />
          <Footer />
        </div>
      </PublicCMS>

@@ -32,6 +32,8 @@ const newFields = {
     f47: textField('FAQs · answer: A successful Viksit Bharat', 'For me, success would mean an India where a child\'s future is not limited by their family\'s income or where they were born. I would like to see quality education, accessible healthcare, meaningful employment, and opportunities reaching every part of the country. If young Indians feel confident about their future and have the means to shape it, I would consider that real progress.')
   },
   EducationPage: {
+    f48: textField('Heading: My Thoughts on the Future of Education', 'My Thoughts on the Future of Education'),
+    f49: textField('Text: My Thoughts on the Future of Education', 'I share my thoughts on changing education, empowering young minds, and creating learning opportunities that prepare the next generation to think independently, innovate, and lead.'),
     f41: textField('FAQs · question: Education system challenge', "What do you think is the biggest challenge facing India's education system today?"),
     f42: textField('FAQs · answer: Education system challenge', 'In my experience, one of the biggest challenges is bridging the gap between classroom learning and the skills required in the real world. We have talented students and dedicated educators, but access to quality learning opportunities remains uneven. I believe we need stronger industry-academia partnerships, greater emphasis on practical training, and institutions that encourage curiosity rather than focusing entirely on examinations.'),
     f43: textField('FAQs · question: Success in education', 'After establishing so many institutions, what does success in education mean to you personally?'),
@@ -80,12 +82,15 @@ const newFields = {
 
 const contentUpdates = {
   Hero: {
-    f12: "I believe every experience offers a lesson, and every meaningful conversation brings a fresh perspective. Over the years, my journey in education, entrepreneurship, and leadership has shaped my vision. Through this space, I aim  to share insights, experiences, and ideas on education, innovation, youth empowerment, and issues shaping India's future"
+    f12: "I believe every experience offers a lesson, and every meaningful conversation brings a fresh perspective. Over the years, my journey in education, entrepreneurship, and leadership has shaped my vision. Through this space, I aim to share insights, experiences, and ideas on education, innovation, youth empowerment, and issues shaping India's future."
   },
   Navbar: {
-    f22: 'GALLERY'
+    f14: 'Media Centre',
+    f22: 'Sewa'
   },
   YouthConnect: {
+    f14: 'is something I genuinely believe. Some of my best conversations start exactly like this, one honest question leading to another, until you actually get somewhere real.',
+    f15: 'I love connecting with our youth directly, without a filter, without someone else answering on my behalf. So ask me anything. I read these myself, and I answer the ones that make me think the hardest.',
     f2: "You've established several educational institutions and ventured into healthcare and sports. What has kept you motivated throughout this journey?",
     f3: "For me, it has never been about how many institutions I could establish. It has always been about the difference they could make. Over the past three decades, I've been fortunate to work with people who share this vision. I've learned that you cannot build something meaningful alone. You need the right people, a shared purpose, and the patience to see your efforts grow. What keeps me going is knowing that there are still so many lives we can positively impact.",
     f4: "What do you think young Indians need today that perhaps wasn't as important a decade ago?",
@@ -97,6 +102,9 @@ const contentUpdates = {
     f10: 'What is one mistake you often see young people make when pursuing their ambitions?',
     f11: "I think one of the biggest mistakes is expecting success too quickly. We live in a time when we see everyone's achievements, but rarely the years of effort behind them.\n\nI often tell young people not to compare the beginning of their journey with someone else's years of experience. Everyone has a different starting point, and that's perfectly fine.\n\nFocus on learning, improving your skills, and doing your work sincerely. There will be setbacks, and some plans may not work out. But I've learned that patience, consistency, and the willingness to keep learning can take you much further than the pressure to succeed overnight.",
     f13: 'Baat karni se baat banti hai'
+  },
+  vision2047: {
+    f32: 'The Vision, The Questions, The Future'
   },
   Footer: {
 
@@ -202,7 +210,7 @@ const contentUpdates = {
     f22: "For me, the purpose of any scholarship or support programme is to make a genuine difference in someone's educational journey. Our scholarship initiatives are intended to help deserving students continue their education by supporting tuition fees and, where applicable, accommodation expenses.\n\nI believe such efforts must be guided by transparency and accountability, ensuring that support reaches the students who need it most. More importantly, I hope these opportunities allow young people to focus on their education, develop their abilities, and work towards a future they can shape for themselves."
   },
   Mediapage: {
-    f61: 'GALLERY'
+    f61: 'Media Centre'
   }
 };
 

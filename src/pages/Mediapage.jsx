@@ -2,6 +2,7 @@ import { SectionBoundary } from "../cms/PublicCMS";
 import { useSection } from "../cms/contentContext";
 import { useState } from "react";
 import PageHero from "../components/PageHero";
+import { PostList } from "../cms/PublicCMS";
 export default function MediaPage() {
   const cms = useSection("Mediapage");
   const pressTimesNow = cms("f23");
@@ -126,6 +127,27 @@ export default function MediaPage() {
         </div>
       </section>
 
+      <PostList
+        type="news"
+        category="Digital Spotlight"
+        title="In the Digital Spotlight"
+        limit={8}
+        layout="rail"
+        outbound
+        hideWhenEmpty
+        emptyMessage="No digital news coverage has been added yet."
+      />
+      <PostList
+        type="news"
+        category="Print Spotlight"
+        title="In the Print Spotlight"
+        limit={8}
+        layout="rail"
+        imageLightbox
+        hideWhenEmpty
+        emptyMessage="No print coverage has been added yet."
+      />
+
       {/* My journey in the spotlight */}
       {(cms("f72") || cms("f73")) && <section className="mx-auto max-w-6xl px-6 pb-12 pt-14 sm:pb-14 sm:pt-20">
         <div className="max-w-5xl">
@@ -139,7 +161,7 @@ export default function MediaPage() {
         <h2 className="mb-8 text-2xl font-bold text-[#ff6422]">{cms("f62")}</h2>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {factSheet.map(fact => <div key={fact.title} className="rounded-md bg-gray-50 p-4">
-              <img src={fact.image} alt={fact.title} className="mb-4 h-32 w-full rounded-md object-cover" />
+              <img src={fact.image} alt={fact.title} className="mb-4 aspect-[3/2] w-full rounded-md bg-slate-100 object-contain" />
               <p className="mb-1 font-bold text-gray-900">{fact.title}</p>
               <p className="text-sm leading-relaxed text-gray-600">{fact.text}</p>
             </div>)}
@@ -199,7 +221,7 @@ export default function MediaPage() {
       <section className="mx-auto max-w-6xl px-6 pb-12">
         <h2 className="mb-8 text-center text-3xl font-extrabold text-[#ff6422]">{cms("f69")}</h2>
         <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
-          {gallery.map(item => <img key={item.alt} src={item.image} alt={item.alt} className="aspect-square w-full rounded-md object-cover" />)}
+          {gallery.map(item => <img key={item.alt} src={item.image} alt={item.alt} className="aspect-square w-full rounded-md bg-slate-100 object-contain" />)}
         </div>
 
         <div className="mt-8 flex items-center justify-center gap-3">

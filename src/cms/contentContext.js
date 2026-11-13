@@ -102,7 +102,7 @@ export function useSection(key) {
   return field => {
     const value = context?.sections[key]?.[context.locale]?.[field] || '';
     const label = definitions[field]?.label || '';
-    const shouldUseSentenceCase = /^(Heading:|Subheading:|Button:|Field label:|Input hint:|FAQs\s*·\s*(question|answer):|(navItems|socialLinks)\s*·\s*name:|(cards|features|caseStudies|themes|factSheet|insights|questions|hosts)\s*·\s*(title|name|q|a):)/i.test(label);
+    const shouldUseSentenceCase = /^(Heading:|Subheading:|Button:|Field label:|Input hint:|FAQs\s*·\s*(question|answer):|(navItems|socialLinks)\s*·\s*name:|roles\s*·\s*label:|(cards|features|caseStudies|themes|factSheet|insights|questions|hosts)\s*·\s*(title|name|q|a):)/i.test(label);
     return shouldUseSentenceCase ? sentenceCase(value) : value;
   };
 }

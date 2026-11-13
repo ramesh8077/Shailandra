@@ -1,6 +1,7 @@
 import { SectionBoundary } from "../cms/PublicCMS";
 import { useSection } from "../cms/contentContext";
 import PageHero from "../components/PageHero";
+import { PageClosingThoughts } from "../components/EditorialTail";
 export default function NationBuildingPage() {
   const cms = useSection("Nationbuildingpage");
   const viksitBharatImage = cms("f2");
@@ -71,6 +72,7 @@ export default function NationBuildingPage() {
           </div>
         </div>
       </section>
+      <PageClosingThoughts />
 
     </></SectionBoundary>;
 }

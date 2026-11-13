@@ -1,6 +1,7 @@
 import { SectionBoundary } from "../cms/PublicCMS";
 import { useSection } from "../cms/contentContext";
 import PageHero from "../components/PageHero";
+import { PageClosingThoughts } from "../components/EditorialTail";
 export default function Vision2047Page() {
   const cms = useSection("vision2047");
   const questionImage = cms("f5");
@@ -53,6 +54,7 @@ export default function Vision2047Page() {
             </div>)}
         </div>
       </section>
+      <PageClosingThoughts />
 
     </></SectionBoundary>;
 }

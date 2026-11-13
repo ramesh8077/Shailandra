@@ -22,7 +22,8 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
+*.Shailendra Bhadauria Website Content .docx
+**.Shailendra Bhadauria Website Feedback .docx
 # Local secrets and generated verification artifacts
 .env
 .env.*

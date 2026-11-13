@@ -195,6 +195,7 @@ export function createApp(config) {
     if (req.query.type) filter['published.type'] = z.enum(['article', 'news', 'video']).parse(req.query.type);
     if (req.query.locale) filter['published.locale'] = z.enum(['en', 'hi']).parse(req.query.locale);
     if (req.query.category) filter['published.category'] = z.string().max(100).parse(req.query.category);
+    if (req.query.tag) filter['published.tags'] = z.string().max(50).parse(req.query.tag);
     if (q) filter['published.title'] = {
       $regex: escapeRegex(q),
       $options: 'i'

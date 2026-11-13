@@ -154,12 +154,14 @@ export function PublicCMS({
 export function PostList({
   type,
   category,
+  tag,
   limit = 6,
   title = 'Latest articles',
   fallbackItems = [],
   layout = 'grid',
   outbound = false,
   imageLightbox = false,
+  hideWhenEmpty = false,
   searchable = true,
   emptyMessage
 }) {
@@ -181,12 +183,13 @@ export function PostList({
   const staticResult = staticPostPage(context?.posts || [], {
     type,
     category,
+    tag,
     locale,
     search,
     page,
     limit
   });
-  const queryKey = JSON.stringify([type, category, locale, search, page, limit]);
+  const queryKey = JSON.stringify([type, category, tag, locale, search, page, limit]);
 
   useEffect(() => {
     setLiveResult(null);
@@ -202,6 +205,7 @@ export function PostList({
     });
     if (type) params.set('type', type);
     if (category) params.set('category', category);
+    if (tag) params.set('tag', tag);
     if (search.trim()) params.set('q', search.trim());
 
     fetch(`${API_BASE}/api/public/posts?${params}`, {
@@ -232,17 +236,18 @@ export function PostList({
       controller.abort();
       window.clearTimeout(timeout);
     };
-  }, [category, limit, locale, page, queryKey, search, staticResult.total, type]);
+  }, [category, limit, locale, page, queryKey, search, staticResult.total, tag, type]);
 
   const livePage = liveResult?.key === queryKey ? liveResult.data : null;
   const result = livePage?.items?.length || staticResult.items.length
     ? livePage || staticResult
-    : context?.snapshotReady && !search.trim() && fallbackItems.length
+    : !search.trim() && fallbackItems.length
       ? { ...staticResult, items: fallbackItems, total: fallbackItems.length }
       : livePage || staticResult;
   const usingSnapshot = !livePage && staticResult.total > 0;
   const waitingForSnapshot = !livePage && !context?.snapshotReady;
   const hasResults = result.items.length > 0;
+  if (hideWhenEmpty && !hasResults) return null;
   const renderCard = post => {
     const card = <article className={`overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm ${layout === 'rail' ? 'w-[min(82vw,340px)] shrink-0 snap-start' : ''}`}>
       {post.cover && (imageLightbox ? <button type="button" onClick={() => setActiveImage(post)} aria-label={`Enlarge ${post.title}`} className="group relative block aspect-[4/3] w-full overflow-hidden bg-slate-100 text-left">
@@ -371,5 +376,5 @@ export function PostDetail({
 
   return <main className="page-wrap section-space"><Link to="/posts" className="mb-8 inline-flex items-center gap-2 font-semibold text-[#f05d25] hover:underline">← All blogs</Link><article className="mx-auto max-w-3xl"><p className="text-sm font-semibold tracking-wide text-[#f05d25]">{sentenceCase(post.category || post.type)}</p><h1 className="mt-3 text-3xl font-extrabold text-[#10283d] md:text-5xl">{sentenceCase(post.title)}</h1>{post.excerpt && <p className="mt-5 text-lg leading-8 text-slate-600">{post.excerpt}</p>}{post.videoUrl && <div className="mt-8 aspect-video overflow-hidden rounded-xl bg-black"><iframe src={post.videoUrl} title={post.title} className="h-full w-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen /></div>}{post.cover && !post.videoUrl && <img className="mt-8 max-h-[32rem] w-full rounded-xl object-cover" src={mediaSrc(post.cover)} alt={mediaAltFor(post.cover, context?.media)} />}<div className="post-body mt-8 leading-8" dangerouslySetInnerHTML={{
       __html: isStaticContentSource ? post.body : post.body.replace(/(["'(])\/api\/media\//g, `$1${API_BASE}/api/media/`)
-    }} /></article></main>;
+    }} /></article>{post.type === 'article' && <PostList type="article" tag="Viksit Bharat" title="Related Reading" limit={3} searchable={false} emptyMessage="No related articles are available yet." />}</main>;
 }

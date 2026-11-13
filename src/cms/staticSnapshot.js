@@ -111,6 +111,7 @@ export function staticSnapshotUrl() {
 export function staticPostPage(posts, {
   type,
   category,
+  tag,
   locale,
   search,
   page,
@@ -121,6 +122,7 @@ export function staticPostPage(posts, {
     post.locale === locale &&
     (!type || post.type === type) &&
     (!category || post.category === category) &&
+    (!tag || post.tags.some(value => value.toLocaleLowerCase() === tag.toLocaleLowerCase())) &&
     (!query || `${post.title} ${post.excerpt} ${post.category} ${post.tags.join(' ')}`.toLocaleLowerCase().includes(query))
   );
   const start = (page - 1) * limit;

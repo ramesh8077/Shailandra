@@ -42,6 +42,12 @@ export default function SiteFAQs() {
     ]
   };
   const pageQuestions = questionsByPage[pathname];
+  const titleByPage = {
+    "/education": education("f33"),
+    "/nation-building": nationBuilding("f29"),
+    "/updevelopment": upDevelopment("f31"),
+    "/vision-2047": vision("f32")
+  };
   const questions = (pageQuestions || [
     [youth("f2"), youth("f3")],
     [youth("f4"), youth("f5")],
@@ -52,7 +58,7 @@ export default function SiteFAQs() {
 
   return <section className="bg-white">
     <div className="page-wrap">
-      <h2 className="mb-6 text-center text-2xl font-extrabold text-[#ff6422] sm:text-3xl">FAQs</h2>
+      <h2 className="mb-6 text-center text-2xl font-extrabold text-[#ff6422] sm:text-3xl">{titleByPage[pathname] || "FAQs"}</h2>
       <div className="mx-auto max-w-5xl space-y-3">
         {questions.map(([question, answer], index) => <article key={question} className="overflow-hidden rounded-md border border-gray-200">
           <button type="button" onClick={() => setOpenIndex(openIndex === index ? -1 : index)} aria-expanded={openIndex === index} className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left text-sm font-semibold text-gray-800 transition-colors hover:bg-gray-50">
