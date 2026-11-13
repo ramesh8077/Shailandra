@@ -39,6 +39,21 @@ export function createApp(config) {
   app.locals.dbReady = false;
   if (config.production) app.set('trust proxy', 1);
   app.use(helmet({
+    contentSecurityPolicy: {
+      directives: {
+        'frame-src': [
+          "'self'",
+          'https://www.youtube-nocookie.com',
+          'https://www.youtube.com',
+          'https://player.vimeo.com'
+        ],
+        'img-src': [
+          "'self'",
+          'data:',
+          'https://i.ytimg.com'
+        ]
+      }
+    },
     crossOriginResourcePolicy: {
       policy: 'same-site'
     }

@@ -2,9 +2,11 @@ import { SectionBoundary } from "../cms/PublicCMS";
 import { useSection } from "../cms/contentContext";
 import { useEffect, useRef, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import fallbackPortrait from "../assets/Home-Images/shalinder.png";
 export default function Navbar() {
   const cms = useSection("Navbar");
-  const ShalinderImg = cms("f1");
+  const cmsPortrait = cms("f1");
+  const [portrait, setPortrait] = useState(cmsPortrait || fallbackPortrait);
   const links = [{
     label: cms("f2"),
     path: cms("f3")
@@ -49,6 +51,9 @@ export default function Navbar() {
   const location = useLocation();
   const moreRef = useRef(null);
   useEffect(() => {
+    setPortrait(cmsPortrait || fallbackPortrait);
+  }, [cmsPortrait]);
+  useEffect(() => {
     const mediaQuery = window.matchMedia("(min-width: 1280px)");
     const updateViewport = event => {
       setIsWideScreen(event.matches);
@@ -91,12 +96,12 @@ export default function Navbar() {
         {/* Logo */}
         <Link to={cms("f24")} aria-label="Shailendra Bhadauria Home" className="flex min-w-0 shrink-0 items-center gap-2 sm:gap-3">
           <div className="flex h-[54px] w-[46px] shrink-0 items-end justify-center overflow-hidden sm:h-[64px] sm:w-[56px] 2xl:h-[76px] 2xl:w-[66px]">
-            <img src={ShalinderImg} alt={cms("f25")} className="h-full w-full object-contain object-bottom rotate-6 -scale-x-100 " />
+          <img src={portrait} onError={() => setPortrait(fallbackPortrait)} alt={cms("f25") || "Shailendra Bhadauria"} className="h-full w-full object-contain object-bottom rotate-6 -scale-x-100 " />
           </div>
 
           <div className="leading-none">
-            <strong className="block text-[15px] font-bold tracking-[-0.02em] text-[#ff6422] sm:text-[18px] 2xl:text-[21px]">{cms("f26")}</strong>
-            <span className="mt-1 block text-[13px] font-medium tracking-[-0.01em] text-[#ff6422] sm:text-[16px] 2xl:text-[18px]">{cms("f27")}</span>
+            <strong className="block text-[15px] font-bold tracking-[-0.02em] text-[#ff6422] sm:text-[18px] 2xl:text-[21px]">{cms("f26") || "Shailendra"}</strong>
+            <span className="mt-1 block text-[13px] font-medium tracking-[-0.01em] text-[#ff6422] sm:text-[16px] 2xl:text-[18px]">{cms("f27") || "Bhadauria"}</span>
           </div>
         </Link>
 

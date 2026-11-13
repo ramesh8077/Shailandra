@@ -1,4 +1,4 @@
-import { PostList, SectionBoundary } from "../cms/PublicCMS";
+import { SectionBoundary } from "../cms/PublicCMS";
 import { useSection } from "../cms/contentContext";
 import { useState } from "react";
 import PageHero from "../components/PageHero";
@@ -145,27 +145,6 @@ export default function MediaPage() {
             </div>)}
         </div>
       </section>
-
-      <PostList
-        type="news"
-        category="Digital Spotlight"
-        title="In the Digital Spotlight"
-        limit={12}
-        layout="rail"
-        outbound
-        searchable={false}
-        emptyMessage="Online news coverage will appear here when a post is published in the Digital Spotlight category with its original link."
-      />
-      <PostList
-        type="news"
-        category="Print Spotlight"
-        title="In the Print Spotlight"
-        limit={12}
-        layout="rail"
-        imageLightbox
-        searchable={false}
-        emptyMessage="Newspaper clippings will appear here when a post is published in the Print Spotlight category with a cover image."
-      />
 
       {/* Quotable Thoughts */}
       <section className="bg-[#ff6422] py-12">

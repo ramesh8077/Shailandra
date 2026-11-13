@@ -41,6 +41,36 @@ function ScrollToTop() {
 
   return null;
 }
+
+const pageTitles = {
+  "/": "Shailendra Bhadauria | Official Website",
+  "/journey": "My Journey | Shailendra Bhadauria",
+  "/education": "Education | Shailendra Bhadauria",
+  "/sewa": "Sewa | Shailendra Bhadauria",
+  "/sports": "Sports | Shailendra Bhadauria",
+  "/vision-2047": "Vision 2047 | Shailendra Bhadauria",
+  "/thought-leadership": "Thought Leadership | Shailendra Bhadauria",
+  "/updevelopment": "UP Development | Shailendra Bhadauria",
+  "/coffe-pai-charcha": "Coffee Pe Charcha | Shailendra Bhadauria",
+  "/coffee-pe-charcha": "Coffee Pe Charcha | Shailendra Bhadauria",
+  "/चाय-पै-चर्चा": "Coffee Pe Charcha | Shailendra Bhadauria",
+  "/connect": "Connect | Shailendra Bhadauria",
+  "/nation-building": "Nation Building | Shailendra Bhadauria",
+  "/media": "Media | Shailendra Bhadauria",
+  "/posts": "Blogs & Articles | Shailendra Bhadauria"
+};
+
+function PageTitle() {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    if (pathname.startsWith("/posts/")) return;
+    document.title = pageTitles[pathname] || "Shailendra Bhadauria | Official Website";
+  }, [pathname]);
+
+  return null;
+}
+
  function HomePage() {
    return (
      <main>
@@ -60,6 +90,7 @@ function ScrollToTop() {
    return (
      <PublicCMS>
        <ScrollToTop />
+       <PageTitle />
        <div className="public-site min-h-screen bg-white text-[#10283d]">
          <Navbar />
          <Routes>
