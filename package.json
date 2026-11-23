@@ -8,7 +8,7 @@
     "dev:client": "vite",
     "server": "node server/src/index.js",
     "build": "npm run build:hostinger",
-    "build:hostinger": "vite build && node scripts/prepare-hostinger-build.mjs && GYP_DEFINES=force_build=1 npm --prefix server ci --omit=dev",
+    "build:hostinger": "vite build && node scripts/prepare-hostinger-build.mjs && npm --prefix server ci --omit=dev",
     "start": "node server/src/index.js",
     "export:static": "node server/scripts/exportStatic.js",
     "lint": "oxlint",
