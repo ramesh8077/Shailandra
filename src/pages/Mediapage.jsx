@@ -4,9 +4,9 @@ import { useState } from "react";
 import PageHero from "../components/PageHero";
 import { PostList } from "../cms/PublicCMS";
 import HighlightedAwards from "../components/HighlightedAwards";
-import nationTodayClipping from "../../uploads/c492c7e2-9135-4318-b253-83004b656253.webp";
-import sundayChronicleClipping from "../../uploads/014f436f-61c8-4aa4-8bb8-5c92d42bf9e5.webp";
-import dailyTimesClipping from "../../uploads/5a8648a5-f87c-41f6-83dd-2183ad09e949.webp";
+import nationTodayClipping from "../assets/media/nation-today.webp";
+import sundayChronicleClipping from "../assets/media/sunday-chronicle.webp";
+import dailyTimesClipping from "../assets/media/daily-times.webp";
 export default function MediaPage() {
   const cms = useSection("Mediapage");
   const pressTimesNow = cms("f23");
