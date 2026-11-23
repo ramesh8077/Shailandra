@@ -1,5 +1,5 @@
 import { SectionBoundary } from "../cms/PublicCMS";
-import { sentenceCase, useSection } from "../cms/contentContext";
+import { useSection } from "../cms/contentContext";
 import { useState } from "react";
 import PageHero from "../components/PageHero";
 export default function UpDevelopmentPage() {
@@ -77,7 +77,7 @@ export default function UpDevelopmentPage() {
 
           {/* Content panel */}
           <div>
-            <h3 className="mb-4 text-xl font-bold text-[#ff6422]">{sentenceCase(category.title)}</h3>
+            <h3 className="mb-4 text-xl font-bold text-[#ff6422]">{category.title}</h3>
 
             {activeCategory === 0 && <img src={medical1} alt={cms("f28")} className="mb-6 h-auto w-full rounded-md object-contain" />}
 

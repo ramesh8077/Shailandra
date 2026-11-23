@@ -61,7 +61,7 @@
         "f5": {
           "label": "Heading: Have a Question? Ask Me Directly",
           "type": "text",
-          "value": "Have a Question? Ask Me Directly"
+          "value": "Have a question? Ask me directly"
         },
         "f6": {
           "label": "Field label: Name *",
@@ -76,7 +76,7 @@
         "f8": {
           "label": "Field label: Age Range *",
           "type": "text",
-          "value": "Age Range *"
+          "value": "Age range *"
         },
         "f9": {
           "label": "option: Please Select",
@@ -146,7 +146,7 @@
         "f22": {
           "label": "Field label: Your Question *",
           "type": "text",
-          "value": "Your Question *"
+          "value": "Your question *"
         },
         "f23": {
           "label": "Input hint: What’s the biggest mistake you see ambitious young people make?",
@@ -161,7 +161,7 @@
         "f25": {
           "label": "Heading: Latest Insights",
           "type": "text",
-          "value": "Latest Insights"
+          "value": "Latest insights"
         },
         "f26": {
           "label": "Text: Thoughts on policy, education and the road to Viksit Bharat.",
@@ -277,7 +277,7 @@
         "f19": {
           "label": "Heading: Latest Features",
           "type": "text",
-          "value": "Latest Features"
+          "value": "Latest features"
         }
       }
     },
@@ -394,7 +394,7 @@
         "f23": {
           "label": "Heading: Subscribe to Our Newsletter",
           "type": "text",
-          "value": "Subscribe to Our Newsletter"
+          "value": "Subscribe to our newsletter"
         },
         "f24": {
           "label": "Input hint: Email address",
@@ -404,7 +404,7 @@
         "f25": {
           "label": "button: Subscribe Now",
           "type": "text",
-          "value": "Subscribe Now"
+          "value": "Subscribe now"
         },
         "f26": {
           "label": "Text: Copyright ©",
@@ -419,7 +419,7 @@
         "f28": {
           "label": "Heading: Learning. Leading. Giving Back.",
           "type": "text",
-          "value": "Learning. Leading. Giving Back.",
+          "value": "Learning. Leading. Giving back.",
           "hiValue": ""
         },
         "f29": {
@@ -431,7 +431,7 @@
         "f30": {
           "label": "Heading: Let's Stay Connected",
           "type": "text",
-          "value": "Let's Stay Connected",
+          "value": "Let's stay connected",
           "hiValue": ""
         },
         "f31": {
@@ -443,7 +443,7 @@
         "f32": {
           "label": "Button: Connect With Me",
           "type": "text",
-          "value": "Connect With Me",
+          "value": "Connect with me",
           "hiValue": ""
         },
         "f33": {
@@ -522,7 +522,7 @@
         "f14": {
           "label": "Heading: Thought Leadership | Ideas, Perspectives & Experiences",
           "type": "text",
-          "value": "Thought Leadership | Ideas, Perspectives & Experiences",
+          "value": "Thought leadership | ideas, perspectives & experiences",
           "hiValue": ""
         },
         "f15": {
@@ -801,9 +801,9 @@
           "value": "12+"
         },
         "f4": {
-          "label": "stats · subText: institutions built",
+          "label": "stats · subText: Institutions built",
           "type": "text",
-          "value": "institutions built"
+          "value": "Institutions built"
         },
         "f5": {
           "label": "stats · mainText: Number\nof states",
@@ -823,7 +823,7 @@
         "f8": {
           "label": "Heading: Three Decades, In Numbers",
           "type": "text",
-          "value": "Three Decades, In Numbers"
+          "value": "Three decades, in numbers"
         }
       }
     },
@@ -889,12 +889,12 @@
         "f12": {
           "label": "Heading: Youth Connect - पूछो बेझिझक",
           "type": "text",
-          "value": "Youth Connect - पूछो बेझिझक"
+          "value": "Youth connect - पूछो बेझिझक"
         },
         "f13": {
-          "label": "Text: Baat karni se baat banti hai",
+          "label": "Text: “Baat Karne Se Baat Banti Hai”",
           "type": "text",
-          "value": "Baat karni se baat banti hai"
+          "value": "“Baat karne se baat banti hai”"
         },
         "f14": {
           "label": "Text: is something I genuinely believe. Some of my best conversations start exactly",
@@ -1035,7 +1035,7 @@
         "f42": {
           "label": "Heading: Meet the Hosts",
           "type": "text",
-          "value": "Meet the Hosts"
+          "value": "Meet the hosts"
         },
         "f43": {
           "label": "Text: (Gen-Z Mascot Characters)",
@@ -1055,7 +1055,7 @@
         "f48": {
           "label": "Field label: Your Name",
           "type": "text",
-          "value": "Your Name"
+          "value": "Your name"
         },
         "f49": {
           "label": "Input hint: Mohan",
@@ -1075,7 +1075,7 @@
         "f52": {
           "label": "button: Send Message",
           "type": "text",
-          "value": "Send Message"
+          "value": "Send message"
         }
       }
     },
@@ -1131,12 +1131,12 @@
         "f10": {
           "label": "Heading: CONNECT",
           "type": "text",
-          "value": "CONNECT"
+          "value": "Connect"
         },
         "f11": {
           "label": "Heading: Get in Touch",
           "type": "text",
-          "value": "Get in Touch"
+          "value": "Get in touch"
         },
         "f12": {
           "label": "Text: Whether you're inviting me to speak, working on a story, or simply want to ",
@@ -1146,12 +1146,12 @@
         "f13": {
           "label": "Heading: Stay Connected",
           "type": "text",
-          "value": "Stay Connected"
+          "value": "Stay connected"
         },
         "f14": {
           "label": "Heading: Speaking & Interview Requests",
           "type": "text",
-          "value": "Speaking & Interview Requests"
+          "value": "Speaking & interview requests"
         },
         "f15": {
           "label": "Text: Fill out the form with your event details, and our office will respond with",
@@ -1181,7 +1181,7 @@
         "f20": {
           "label": "Field label: Topic of Interest *",
           "type": "text",
-          "value": "Topic of Interest *"
+          "value": "Topic of interest *"
         },
         "f21": {
           "label": "Input hint: Sports",
@@ -1191,7 +1191,7 @@
         "f22": {
           "label": "Field label: Your Message *",
           "type": "text",
-          "value": "Your Message *"
+          "value": "Your message *"
         },
         "f23": {
           "label": "Input hint: What's the biggest mistake you see ambitious young people make?",
@@ -1237,7 +1237,7 @@
         "f14": {
           "label": "Heading: EDUCATIONIST",
           "type": "text",
-          "value": "EDUCATIONIST"
+          "value": "Educationist"
         },
         "f15": {
           "label": "Text: I don't think of myself as someone who built one university. I think of mys",
@@ -1247,7 +1247,7 @@
         "f16": {
           "label": "Heading: The Institutional Record",
           "type": "text",
-          "value": "The Institutional Record"
+          "value": "The institutional record"
         },
         "f17": {
           "label": "Text: What began with the establishment of the Maharana Pratap Group of Institutions i",
@@ -1287,7 +1287,7 @@
         "f24": {
           "label": "Heading: My Education Philosophy",
           "type": "text",
-          "value": "My Education Philosophy"
+          "value": "My education philosophy"
         },
         "f25": {
           "label": "Text: Over the years, my understanding of education has evolved, but one belief has re",
@@ -1302,7 +1302,7 @@
         "f27": {
           "label": "Heading: Understanding the System",
           "type": "text",
-          "value": "Understanding the System"
+          "value": "Understanding the system"
         },
         "f28": {
           "label": "Text: Having spent nearly three decades establishing and managing educational institut",
@@ -1317,7 +1317,7 @@
         "f30": {
           "label": "Heading: What Changed, For Whom",
           "type": "text",
-          "value": "What Changed, For Whom"
+          "value": "What changed, for whom"
         },
         "f31": {
           "label": "Text: When I look back at the institutions we have established over the years, I don't",
@@ -1332,12 +1332,12 @@
         "f33": {
           "label": "Heading: Beyond the Classroom: Questions That Matter",
           "type": "text",
-          "value": "Beyond the Classroom: Questions That Matter"
+          "value": "Beyond the classroom: questions that matter"
         },
         "f34": {
           "label": "Heading: Join the Conversation",
           "type": "text",
-          "value": "Join the Conversation"
+          "value": "Join the conversation"
         },
         "f35": {
           "label": "Text: What do you think Viksit Bharat should actually mean by 2047? Leave a thoug",
@@ -1347,7 +1347,7 @@
         "f36": {
           "label": "Field label: Your Name",
           "type": "text",
-          "value": "Your Name"
+          "value": "Your name"
         },
         "f37": {
           "label": "Input hint: Mohan",
@@ -1367,7 +1367,7 @@
         "f40": {
           "label": "button: Send Message",
           "type": "text",
-          "value": "Send Message"
+          "value": "Send message"
         },
         "f41": {
           "label": "FAQs · question: Education system challenge",
@@ -1414,7 +1414,7 @@
         "f48": {
           "label": "Heading: My Thoughts on the Future of Education",
           "type": "text",
-          "value": "My Thoughts on the Future of Education",
+          "value": "My thoughts on the future of education",
           "hiValue": ""
         },
         "f49": {
@@ -1492,12 +1492,12 @@
         "f13": {
           "label": "Heading: JOURNEY",
           "type": "text",
-          "value": "JOURNEY"
+          "value": "Journey"
         },
         "f14": {
           "label": "Heading: The Story",
           "type": "text",
-          "value": "The Story"
+          "value": "The story"
         },
         "f15": {
           "label": "Text: When I started my journey, I never imagined that one day I would be associated w",
@@ -1522,7 +1522,7 @@
         "f19": {
           "label": "Heading: Why Education",
           "type": "text",
-          "value": "Why Education"
+          "value": "Why education"
         },
         "f20": {
           "label": "Text: For me, education has never been just a profession or a field of work. I have al",
@@ -1552,17 +1552,17 @@
         "f25": {
           "label": "Heading: The Timeline",
           "type": "text",
-          "value": "The Timeline"
+          "value": "The timeline"
         },
         "f26": {
           "label": "Heading: What I Believe",
           "type": "text",
-          "value": "What I Believe"
+          "value": "What i believe"
         },
         "f27": {
           "label": "Heading: The Maharana Pratap Ethos",
           "type": "text",
-          "value": "The Maharana Pratap Ethos"
+          "value": "The Maharana Pratap ethos"
         },
         "f28": {
           "label": "Text: The name Maharana Pratap has always held a special meaning for me. His courage, ",
@@ -1572,7 +1572,7 @@
         "f29": {
           "label": "Heading: Family & Roots",
           "type": "text",
-          "value": "Family & Roots"
+          "value": "Family & roots"
         },
         "f30": {
           "label": "Text: My journey has always been closely connected to where I come from. Growing up, I",
@@ -1898,17 +1898,17 @@
         "f61": {
           "label": "Heading: Media Centre",
           "type": "text",
-          "value": "Media Centre"
+          "value": "Media centre"
         },
         "f62": {
           "label": "Heading: Fact Sheet",
           "type": "text",
-          "value": "Fact Sheet"
+          "value": "Fact sheet"
         },
         "f63": {
           "label": "Heading: Quotable Thoughts",
           "type": "text",
-          "value": "Quotable Thoughts"
+          "value": "Quotable thoughts"
         },
         "f64": {
           "label": "Text: The real responsibility of parents is not to choose the path, but to recogn",
@@ -1928,7 +1928,7 @@
         "f67": {
           "label": "Heading: Explore Topics",
           "type": "text",
-          "value": "Explore Topics"
+          "value": "Explore topics"
         },
         "f68": {
           "label": "Image description: Shailendra Bhadauria",
@@ -1938,7 +1938,7 @@
         "f69": {
           "label": "Heading: Photo Gallery",
           "type": "text",
-          "value": "Photo Gallery"
+          "value": "Photo gallery"
         },
         "f70": {
           "label": "Input hint: Ask sir for details",
@@ -1953,7 +1953,7 @@
         "f72": {
           "label": "Heading: My Journey in the Spotlight",
           "type": "text",
-          "value": "My Journey in the Spotlight",
+          "value": "My journey in the spotlight",
           "hiValue": ""
         },
         "f73": {
@@ -1996,12 +1996,12 @@
         "f18": {
           "label": "Heading: NATION BUILDING",
           "type": "text",
-          "value": "NATION BUILDING"
+          "value": "Nation building"
         },
         "f19": {
           "label": "Heading: Where Policy Meets People",
           "type": "text",
-          "value": "Where Policy Meets People"
+          "value": "Where policy meets people"
         },
         "f20": {
           "label": "Text: I believe India's progress depends not only on the policies we introduce but als",
@@ -2021,7 +2021,7 @@
         "f23": {
           "label": "Heading: Viksit Bharat 2047: The Bigger Picture",
           "type": "text",
-          "value": "Viksit Bharat 2047: The Bigger Picture"
+          "value": "Viksit Bharat 2047: the bigger picture"
         },
         "f24": {
           "label": "Text: When I think about Viksit Bharat 2047, I see more than an ambitious national goa",
@@ -2036,12 +2036,12 @@
         "f29": {
           "label": "Heading: Conversations on India's Progress",
           "type": "text",
-          "value": "Conversations on India's Progress"
+          "value": "Conversations on India's progress"
         },
         "f30": {
           "label": "Heading: My Perspectives on Building a Stronger India",
           "type": "text",
-          "value": "My Perspectives on Building a Stronger India"
+          "value": "My perspectives on building a stronger India"
         },
         "f31": {
           "label": "Text: I share my thoughts on India's development, the role of strong institutions, and",
@@ -2051,7 +2051,7 @@
         "f32": {
           "label": "Field label: Your Name",
           "type": "text",
-          "value": "Your Name"
+          "value": "Your name"
         },
         "f33": {
           "label": "Input hint: Mohan",
@@ -2071,7 +2071,7 @@
         "f36": {
           "label": "button: Send Message",
           "type": "text",
-          "value": "Send Message"
+          "value": "Send message"
         },
         "f37": {
           "label": "FAQs · question: Turning policy into results",
@@ -2164,7 +2164,7 @@
         "f9": {
           "label": "Heading: SEWA",
           "type": "text",
-          "value": "SEWA"
+          "value": "Sewa"
         },
         "f10": {
           "label": "Text: I have always believed that serving society is not limited to acts of charity. I",
@@ -2179,7 +2179,7 @@
         "f12": {
           "label": "Heading: The Circle We Are Building",
           "type": "text",
-          "value": "The Circle We Are Building"
+          "value": "The circle we are building"
         },
         "f13": {
           "label": "Text: I believe the true value of education becomes even greater when those who have b",
@@ -2204,7 +2204,7 @@
         "f17": {
           "label": "Heading: Entrepreneurship Support Beyond the Classroom",
           "type": "text",
-          "value": "Entrepreneurship Support Beyond the Classroom"
+          "value": "Entrepreneurship sUPport beyond the classroom"
         },
         "f18": {
           "label": "Text: I have always encouraged young people to think beyond conventional career paths ",
@@ -2214,7 +2214,7 @@
         "f19": {
           "label": "Heading: Startup Cells",
           "type": "text",
-          "value": "Startup Cells"
+          "value": "StartUP cells"
         },
         "f20": {
           "label": "Text: Through Startup Cells in our institutions, we aim to encourage promising student",
@@ -2224,12 +2224,12 @@
         "f21": {
           "label": "Heading: Where the Support Goes",
           "type": "text",
-          "value": "Where the Support Goes"
+          "value": "Where the sUPport goes"
         },
         "f22": {
           "label": "Text: For me, the purpose of any scholarship or support programme is to make a genuine",
           "type": "text",
-          "value": "For me, the purpose of any scholarship or support programme is to make a genuine difference in someone's educational journey. Our scholarship initiatives are intended to help deserving students continue their education by supporting tuition fees and, where applicable, accommodation expenses.\n\nI believe such efforts must be guided by transparency and accountability, ensuring that support reaches the students who need it most. More importantly, I hope these opportunities allow young people to focus on their education, develop their abilities, and work towards a future they can shape for themselves."
+          "value": "For me, the purpose of any scholarship or support programme is to make a genuine difference in someone's educational journey.\n\nOur scholarship initiatives are intended to help deserving students continue their education by supporting tuition fees and, where applicable, accommodation expenses.\n\nI believe such efforts must be guided by transparency and accountability, ensuring that support reaches the students who need it most.\n\nMore importantly, I hope these opportunities allow young people to focus on their education, develop their abilities, and work towards a future they can shape for themselves."
         },
         "f23": {
           "label": "Image description: Where scholarship support goes",
@@ -2270,12 +2270,12 @@
         "f6": {
           "label": "Heading: SPORTS",
           "type": "text",
-          "value": "SPORTS"
+          "value": "Sports"
         },
         "f7": {
           "label": "Heading: Talent Doesn't Check Your Address",
           "type": "text",
-          "value": "Talent Doesn't Check Your Address"
+          "value": "Talent doesn't check your address"
         },
         "f8": {
           "label": "SportCard: I got into sports for the same reason I got into education: because talent ",
@@ -2285,7 +2285,7 @@
         "f9": {
           "label": "Heading: University Sports Facilities & Scholarships",
           "type": "text",
-          "value": "University Sports Facilities & Scholarships"
+          "value": "University sports facilities & scholarships"
         },
         "f10": {
           "label": "SportCard: Pratap University's campus includes dedicated cricket nets, a multi-purpose",
@@ -2295,7 +2295,7 @@
         "f11": {
           "label": "Heading: Sports in Education",
           "type": "text",
-          "value": "Sports in Education"
+          "value": "Sports in education"
         },
         "f12": {
           "label": "SportCard: Indian education still largely treats sport as an extracurricular - somethi",
@@ -2305,7 +2305,7 @@
         "f13": {
           "label": "Heading: Why Uttarakhand, Why Cricket",
           "type": "text",
-          "value": "Why Uttarakhand, Why Cricket"
+          "value": "Why Uttarakhand, why cricket"
         },
         "f14": {
           "label": "SportCard: Uttarakhand doesn't have any of my education institutions, and that was par",
@@ -2315,7 +2315,7 @@
         "f15": {
           "label": "Heading: From Campus to Franchise",
           "type": "text",
-          "value": "From Campus to Franchise"
+          "value": "From campus to franchise"
         },
         "f16": {
           "label": "SportCard: We're actively building the pipeline between our education institutions and",
@@ -2366,7 +2366,7 @@
         "f34": {
           "label": "Heading: Thought Leadership",
           "type": "text",
-          "value": "Thought Leadership"
+          "value": "Thought leadership"
         },
         "f35": {
           "label": "Text: Over the past three decades, my journey through education, entrepreneurship, hea",
@@ -2376,12 +2376,12 @@
         "f36": {
           "label": "Heading: Ideas That Matter to Me",
           "type": "text",
-          "value": "Ideas That Matter to Me"
+          "value": "Ideas that matter to me"
         },
         "f37": {
           "label": "Heading: Letters to Young India",
           "type": "text",
-          "value": "Letters to Young India"
+          "value": "Letters to young India"
         },
         "f38": {
           "label": "Text: A running series of short, direct notes - one question or idea at a time, w",
@@ -2396,13 +2396,13 @@
         "f40": {
           "label": "Heading: Ideas Shaped by Experience",
           "type": "text",
-          "value": "Ideas Shaped by Experience",
+          "value": "Ideas shaped by experience",
           "hiValue": ""
         },
         "f41": {
           "label": "Heading: Lessons from My Journey",
           "type": "text",
-          "value": "Lessons from My Journey",
+          "value": "Lessons from my journey",
           "hiValue": ""
         },
         "f42": {
@@ -2450,7 +2450,7 @@
         "f49": {
           "label": "Heading: My Thoughts on What Matters",
           "type": "text",
-          "value": "My Thoughts on What Matters",
+          "value": "My thoughts on what matters",
           "hiValue": ""
         },
         "f50": {
@@ -2462,7 +2462,7 @@
         "f51": {
           "label": "Button: Explore My Articles",
           "type": "text",
-          "value": "Explore My Articles",
+          "value": "Explore my articles",
           "hiValue": ""
         }
       }
@@ -2559,12 +2559,12 @@
         "f25": {
           "label": "Heading: UP DEVELOPMENT",
           "type": "text",
-          "value": "UP DEVELOPMENT"
+          "value": "UP development"
         },
         "f26": {
           "label": "Heading: A Case Study Worth Understanding",
           "type": "text",
-          "value": "A Case Study Worth Understanding"
+          "value": "A case study worth understanding"
         },
         "f27": {
           "label": "Text: Over the years, I've witnessed significant changes in Uttar Pradesh's approach t",
@@ -2589,12 +2589,12 @@
         "f31": {
           "label": "Heading: Understanding Progress, Exploring Possibilities",
           "type": "text",
-          "value": "Understanding Progress, Exploring Possibilities"
+          "value": "Understanding progress, exploring possibilities"
         },
         "f32": {
           "label": "Heading: Join the Conversation",
           "type": "text",
-          "value": "Join the Conversation"
+          "value": "Join the conversation"
         },
         "f33": {
           "label": "Text: What do you think Viksit Bharat should actually mean by 2047? Leave a thoug",
@@ -2604,7 +2604,7 @@
         "f34": {
           "label": "Field label: Your Name",
           "type": "text",
-          "value": "Your Name"
+          "value": "Your name"
         },
         "f35": {
           "label": "Input hint: Mohan",
@@ -2624,12 +2624,12 @@
         "f38": {
           "label": "button: Send Message",
           "type": "text",
-          "value": "Send Message"
+          "value": "Send message"
         },
         "f39": {
           "label": "FAQs · question: ODOP and startup support",
           "type": "text",
-          "value": "How can initiatives like ODOP and startup support programmes benefit young entrepreneurs?",
+          "value": "How can initiatives like ODOP and startUP sUPport programmes benefit young entrepreneurs?",
           "hiValue": ""
         },
         "f40": {
@@ -2730,9 +2730,9 @@
           "value": "Character and capability, taught together, not treated as competing priorities."
         },
         "f12": {
-          "label": "fourAsks · hindi: हिसाब",
+          "label": "fourAsks · hindi: ज़िम्मेदारी",
           "type": "text",
-          "value": "हिसाब"
+          "value": "ज़िम्मेदारी"
         },
         "f13": {
           "label": "fourAsks · english: ACCOUNTABILITY",
@@ -2777,12 +2777,12 @@
         "f25": {
           "label": "Heading: VISION 2047",
           "type": "text",
-          "value": "VISION 2047"
+          "value": "Vision 2047"
         },
         "f26": {
           "label": "Heading: What India @100 Must Look Like",
           "type": "text",
-          "value": "What India @100 Must Look Like"
+          "value": "What India @100 must look like"
         },
         "f27": {
           "label": "Text: Looking at how far India has come in the last few decades, I feel immense pride ",
@@ -2802,7 +2802,7 @@
         "f30": {
           "label": "Heading: The Four Asks",
           "type": "text",
-          "value": "The Four Asks"
+          "value": "The four asks"
         },
         "f31": {
           "label": "Text: The following is a proposed synthesis of positions he has already stated pu",
@@ -2812,12 +2812,12 @@
         "f32": {
           "label": "Heading: The Vision, The Questions, The Future",
           "type": "text",
-          "value": "The Vision, The Questions, The Future"
+          "value": "The vision, the questions, the future"
         },
         "f33": {
           "label": "Heading: My Thoughts on India's Road to 2047",
           "type": "text",
-          "value": "My Thoughts on India's Road to 2047"
+          "value": "My thoughts on India's road to 2047"
         },
         "f34": {
           "label": "Text: I believe India's future lies in the hands of its youth. Here, I share my though",
@@ -2827,7 +2827,7 @@
         "f35": {
           "label": "Field label: Your Name",
           "type": "text",
-          "value": "Your Name"
+          "value": "Your name"
         },
         "f36": {
           "label": "Input hint: Mohan",
@@ -2847,7 +2847,7 @@
         "f39": {
           "label": "button: Send Message",
           "type": "text",
-          "value": "Send Message"
+          "value": "Send message"
         },
         "f41": {
           "label": "FAQs · answer: Transforming education",

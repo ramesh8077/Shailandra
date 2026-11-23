@@ -3,6 +3,10 @@ import { useSection } from "../cms/contentContext";
 import { useState } from "react";
 import PageHero from "../components/PageHero";
 import { PostList } from "../cms/PublicCMS";
+import HighlightedAwards from "../components/HighlightedAwards";
+import nationTodayClipping from "../../uploads/c492c7e2-9135-4318-b253-83004b656253.webp";
+import sundayChronicleClipping from "../../uploads/014f436f-61c8-4aa4-8bb8-5c92d42bf9e5.webp";
+import dailyTimesClipping from "../../uploads/5a8648a5-f87c-41f6-83dd-2183ad09e949.webp";
 export default function MediaPage() {
   const cms = useSection("Mediapage");
   const pressTimesNow = cms("f23");
@@ -106,8 +110,8 @@ export default function MediaPage() {
   }];
   const [activeLang, setActiveLang] = useState("English");
   const [galleryPage, setGalleryPage] = useState(1);
-  const heroTitle = "Media Centre";
-  return <SectionBoundary name="Mediapage"><>
+  const heroTitle = "Media centre";
+  return <SectionBoundary name="Mediapage"><div className="media-page-headings">
       <PageHero title={heroTitle} image={heroBanner} />
 
       {/* Press logos directly after the banner */}
@@ -130,40 +134,102 @@ export default function MediaPage() {
       <PostList
         type="news"
         category="Digital Spotlight"
-        title="In the Digital Spotlight"
+        title="In the digital spotlight"
         limit={8}
         layout="rail"
         outbound
-        hideWhenEmpty
+        searchable={false}
+        fallbackItems={[
+          {
+            id: 'media-ht-gen-z-viksit-bharat',
+            type: 'news',
+            category: 'Digital Spotlight',
+            title: 'Preparing Gen Z for the Viksit Bharat mission',
+            excerpt: 'Shailendra Bhadauria writes about helping young people build flexible careers and contribute to India’s development.',
+            sourceUrl: 'https://www.hindustantimes.com/ht-insight/governance/preparing-gen-z-for-the-viksit-bharat-mission-101788696841544.html',
+            publication: 'Hindustan Times'
+          },
+          {
+            id: 'media-hans-india-higher-education',
+            type: 'news',
+            category: 'Digital Spotlight',
+            title: 'What students need from higher education today?',
+            excerpt: 'A perspective on combining academic learning with practical experience, adaptability and real-world skills.',
+            sourceUrl: 'https://assets.thehansindia.com/hans/young-hans/what-students-need-from-higher-education-today-1133104',
+            publication: 'The Hans India'
+          },
+          {
+            id: 'media-toi-campus-isolation-wards',
+            type: 'news',
+            category: 'Digital Spotlight',
+            title: 'Kanpur: Educationist offers campuses for setting up isolation wards',
+            excerpt: 'A Times of India report on Maharana Pratap Group offering campus space and facilities during the COVID-19 response.',
+            sourceUrl: 'https://timesofindia.indiatimes.com/city/kanpur/educationist-offers-campuses-for-setting-up-isolation-wards/amp_articleshow/74764515.cms',
+            publication: 'The Times of India'
+          },
+          {
+            id: 'media-business-standard-kanpur-university',
+            type: 'news',
+            category: 'Digital Spotlight',
+            title: 'Kanpur set to get first pvt varsity',
+            excerpt: 'Business Standard reported on the Maharana Pratap Group’s university plans and expansion in Uttar Pradesh.',
+            sourceUrl: 'https://www.business-standard.com/article/economy-policy/kanpur-set-to-get-first-pvt-varsity-109052200030_1.html',
+            publication: 'Business Standard'
+          }
+        ]}
         emptyMessage="No digital news coverage has been added yet."
       />
       <PostList
         type="news"
         category="Print Spotlight"
-        title="In the Print Spotlight"
+        title="In the print spotlight"
         limit={8}
         layout="rail"
         imageLightbox
-        hideWhenEmpty
-        emptyMessage="No print coverage has been added yet."
+        searchable={false}
+        fallbackItems={[
+          {
+            id: 'print-nation-today-stronger-tomorrow',
+            type: 'news',
+            category: 'Print Spotlight',
+            title: 'A Stronger Tomorrow Together',
+            excerpt: 'Nation Today · Development, opportunities and people first.',
+            cover: nationTodayClipping
+          },
+          {
+            id: 'print-sunday-chronicle-people-progress',
+            type: 'news',
+            category: 'Print Spotlight',
+            title: 'People at the Heart of Progress',
+            excerpt: 'The Sunday Chronicle · A conversation on development, opportunities and a stronger society.',
+            cover: sundayChronicleClipping
+          },
+          {
+            id: 'print-daily-times-leadership',
+            type: 'news',
+            category: 'Print Spotlight',
+            title: 'Leadership for a Stronger Tomorrow',
+            excerpt: 'The Daily Times · Vision, commitment and impact.',
+            cover: dailyTimesClipping
+          }
+        ]}
+        emptyMessage="No newspaper clippings have been added yet. Upload print coverage under Print Spotlight in the CMS."
       />
-
-      {/* My journey in the spotlight */}
-      {(cms("f72") || cms("f73")) && <section className="mx-auto max-w-6xl px-6 pb-12 pt-14 sm:pb-14 sm:pt-20">
-        <div className="max-w-5xl">
-          <h2 className="mb-4 text-2xl font-extrabold leading-tight text-[#ff6422] sm:text-3xl">{cms("f72")}</h2>
-          <p className="max-w-4xl whitespace-pre-line text-base leading-7 text-[#10283d] sm:text-lg sm:leading-8">{cms("f73")}</p>
-        </div>
-      </section>}
 
       {/* Fact Sheet */}
       <section className="mx-auto max-w-6xl px-6 py-12">
-        <h2 className="mb-8 text-2xl font-bold text-[#ff6422]">{cms("f62")}</h2>
+        <div className="mb-8 max-w-4xl">
+          <h2 className="mb-3 text-2xl font-bold leading-tight text-[#ff6422] sm:text-3xl">{cms("f62")}</h2>
+          {(cms("f72") || cms("f73")) && <div className="max-w-4xl">
+            {cms("f72") && <h3 className="mb-1 text-sm font-bold leading-6 text-gray-900">{cms("f72")}</h3>}
+            {cms("f73") && <p className="whitespace-pre-line text-sm leading-[1.6] text-gray-900 sm:text-base">{cms("f73")}</p>}
+          </div>}
+        </div>
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {factSheet.map(fact => <div key={fact.title} className="rounded-md bg-gray-50 p-4">
               <img src={fact.image} alt={fact.title} className="mb-4 aspect-[3/2] w-full rounded-md bg-slate-100 object-contain" />
               <p className="mb-1 font-bold text-gray-900">{fact.title}</p>
-              <p className="text-sm leading-relaxed text-gray-600">{fact.text}</p>
+              <p className="text-sm leading-relaxed text-gray-600"><HighlightedAwards text={fact.text} /></p>
             </div>)}
         </div>
       </section>
@@ -212,7 +278,7 @@ export default function MediaPage() {
                   {lang}
                 </button>)}
             </div>
-            <p className="leading-relaxed text-gray-700">{bio[activeLang]}</p>
+            <p className="leading-relaxed text-gray-700"><HighlightedAwards text={bio[activeLang]} /></p>
           </div>
         </div>
       </section>
@@ -259,5 +325,5 @@ export default function MediaPage() {
         </div>
       </section>
 
-    </></SectionBoundary>;
+    </div></SectionBoundary>;
 }

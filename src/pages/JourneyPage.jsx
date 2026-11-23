@@ -2,6 +2,7 @@ import { SectionBoundary } from "../cms/PublicCMS";
 import { useSection, useJourney } from "../cms/contentContext";
 import Photo from "../components/Photo";
 import PageHero from "../components/PageHero";
+import HighlightedAwards from "../components/HighlightedAwards";
 
 // Page images
 
@@ -122,7 +123,7 @@ export default function JourneyPage() {
             </StoryBlock>
 
             <StoryBlock title={cms("f31")}>
-              <p>{cms("f32")}</p>
+              <p><HighlightedAwards text={cms("f32")} /></p>
             </StoryBlock>
           </div>
         </div>

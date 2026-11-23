@@ -2,7 +2,7 @@ import { writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { configFromEnv } from './config.js';
 import { Content } from './models.js';
-import { initializeDatabase, pool } from './mysqlStore.js';
+import { initializeDatabase } from './sqliteStore.js';
 import { manifest, validateContent } from './validation.js';
 
 const textField = (label, value) => ({ label, type: 'text', value, hiValue: '' });
@@ -101,7 +101,7 @@ const contentUpdates = {
     f9: "I don't think there's anything wrong with wanting a secure future. Every young person has different responsibilities, circumstances, and aspirations, and we must respect that.\n\nHowever, I do believe we need to encourage more young Indians to look beyond conventional career paths. Entrepreneurship should not feel like an option reserved for people with financial backing or family businesses.\n\nI want our education system to give students the confidence, practical knowledge, and support to explore their own ideas. A secure job is a respectable ambition, but so is creating something that might one day provide jobs to others.",
     f10: 'What is one mistake you often see young people make when pursuing their ambitions?',
     f11: "I think one of the biggest mistakes is expecting success too quickly. We live in a time when we see everyone's achievements, but rarely the years of effort behind them.\n\nI often tell young people not to compare the beginning of their journey with someone else's years of experience. Everyone has a different starting point, and that's perfectly fine.\n\nFocus on learning, improving your skills, and doing your work sincerely. There will be setbacks, and some plans may not work out. But I've learned that patience, consistency, and the willingness to keep learning can take you much further than the pressure to succeed overnight.",
-    f13: 'Baat karni se baat banti hai'
+    f13: '“Baat Karne Se Baat Banti Hai”'
   },
   vision2047: {
     f32: 'The Vision, The Questions, The Future'
@@ -138,6 +138,7 @@ const contentUpdates = {
     f18: 'What is the one change you believe India needs most to become a developed nation by 2047?',
     f19: "Do you think India's education system is ready to prepare students for the challenges of 2047?",
     f20: "Everyone talks about India's youth being its greatest strength. But are we doing enough to support them?",
+    f12: 'ज़िम्मेदारी',
     f14: 'I believe institutions, including my own, should be judged by their impact, not just their promises.',
     f27: 'Looking at how far India has come in the last few decades, I feel immense pride and optimism about what lies ahead. Our progress in technology and digital infrastructure has shown that we have the ability to find solutions to challenges that once seemed impossible. The success of initiatives like UPI is a reminder that when we think differently and act with determination, we can create solutions that benefit millions.',
     f28: "I believe we need to bring that same ambition and confidence into our education system. Rather than simply following models developed elsewhere, we have an opportunity to build institutions that respond to India's unique strengths, challenges, and aspirations. Our young people deserve an education that prepares them not just for the world as it exists today, but for the possibilities of tomorrow.\n\nAs India approaches 100 years of independence in 2047, I hope to see a generation that looks beyond traditional career paths and has the confidence to create opportunities for itself and others. I want our classrooms to encourage innovation, entrepreneurship, and independent thinking, where students are as excited about starting something of their own as they are about securing a good job.",
@@ -207,7 +208,7 @@ const contentUpdates = {
     f18: 'I have always encouraged young people to think beyond conventional career paths and explore the possibility of creating something of their own.\n\nWhile scholarships can help students access education, aspiring entrepreneurs often need additional guidance and support to turn their ideas into reality.',
     f19: 'Startup Cells',
     f20: 'Through Startup Cells in our institutions, we aim to encourage promising student ventures by providing mentorship, opportunities to connect with experienced professionals, and access to limited seed funding for eligible ideas.\n\nI believe even a small amount of support at the right time can give a young person the confidence to take their first step towards entrepreneurship.',
-    f22: "For me, the purpose of any scholarship or support programme is to make a genuine difference in someone's educational journey. Our scholarship initiatives are intended to help deserving students continue their education by supporting tuition fees and, where applicable, accommodation expenses.\n\nI believe such efforts must be guided by transparency and accountability, ensuring that support reaches the students who need it most. More importantly, I hope these opportunities allow young people to focus on their education, develop their abilities, and work towards a future they can shape for themselves."
+    f22: "For me, the purpose of any scholarship or support programme is to make a genuine difference in someone's educational journey.\n\nOur scholarship initiatives are intended to help deserving students continue their education by supporting tuition fees and, where applicable, accommodation expenses.\n\nI believe such efforts must be guided by transparency and accountability, ensuring that support reaches the students who need it most.\n\nMore importantly, I hope these opportunities allow young people to focus on their education, develop their abilities, and work towards a future they can shape for themselves."
   },
   Mediapage: {
     f61: 'Media Centre'
@@ -243,54 +244,6 @@ function localizedCopy(record, key) {
   return validateContent(manifest.sections[key].kind, key, next);
 }
 
-const blogTitles = [
-  'Why Learning to Handle Rejection Is an Important Part of Growing Up',
-  'Will a Stable Career Still Mean the Same Thing for the Next Generation',
-  'What Students Learn Outside the Classroom Can Shape Their Future Just as Much',
-  'Can Young Entrepreneurs Help Solve Problems in Their Own Communities',
-  "What Happens When a Young Person's Passion Does Not Match Their Profession",
-  "From Small Towns to Global Opportunities: How Digital Access Is Changing Young Indians' Ambitions"
-];
-
-async function addBlogDrafts() {
-  let created = 0;
-  for (const [index, title] of blogTitles.entries()) {
-    const key = `client-blog-${index + 1}`;
-    const slug = title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
-    const existing = await Content.findOne({
-      $or: [{ key }, { 'draft.slug': slug }, { 'published.slug': slug }]
-    }).lean();
-    if (existing) {
-      if (existing.kind === 'post' && (existing.draft?.title === title || existing.published?.title === title)) continue;
-      throw new Error(`Cannot create blog draft because ${key} or slug ${slug} already exists`);
-    }
-    const draft = validateContent('post', key, {
-      type: 'article',
-      title,
-      slug,
-      locale: 'en',
-      excerpt: '',
-      body: '',
-      cover: '',
-      category: 'Thought Leadership',
-      tags: [],
-      author: 'Shailendra Bhadauria',
-      seoTitle: '',
-      seoDescription: '',
-      videoUrl: ''
-    });
-    await Content.create({
-      kind: 'post',
-      key,
-      draft,
-      revision: 0,
-      trashed: false
-    });
-    created += 1;
-  }
-  return created;
-}
-
 const config = configFromEnv();
 try {
   await initializeDatabase();
@@ -312,8 +265,7 @@ try {
   }
   const manifestPath = fileURLToPath(new URL('../content-manifest.json', import.meta.url));
   await writeFile(manifestPath, `${JSON.stringify(manifest, null, 2)}\n`, 'utf8');
-  const draftsCreated = await addBlogDrafts();
-  console.log(`Updated ${updates.length} CMS pages and created ${draftsCreated} article drafts.`);
+  console.log(`Updated ${updates.length} CMS pages.`);
 } finally {
-  await pool.end();
+
 }

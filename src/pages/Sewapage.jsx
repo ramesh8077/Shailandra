@@ -20,6 +20,7 @@ export default function SewaPage() {
     label: cms("f8"),
     image: mentor
   }];
+  const supportParagraphs = cms("f22").split(/(?<=\.)\s+/).filter(Boolean);
   return <SectionBoundary name="Sewapage"><>
       <PageHero title={cms("f9")} image={SupportImg} position="center 38%" />
 
@@ -66,7 +67,9 @@ export default function SewaPage() {
         <div className="grid items-center gap-8 md:grid-cols-2 lg:gap-12">
           <div>
             <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">{cms("f21")}</h2>
-            <p className="whitespace-pre-line leading-relaxed text-gray-700">{cms("f22")}</p>
+            <div className="space-y-4">
+              {supportParagraphs.map((paragraph, index) => <p key={index} className="leading-relaxed text-gray-700">{paragraph}</p>)}
+            </div>
           </div>
           <div className="mx-auto w-full max-w-[420px] overflow-hidden rounded-xl">
             <img src={SupportImg} alt={cms("f23")} className="aspect-[4/5] h-full w-full object-cover object-center" />

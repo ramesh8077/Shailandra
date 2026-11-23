@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
-import { Link, useParams } from 'react-router-dom';
+import { Link, useLocation, useParams } from 'react-router-dom';
 import { API_BASE, api, mediaSrc } from './api';
-import { ContentContext as Context, sentenceCase, staticContent } from './contentContext';
+import { ContentContext as Context, sentenceCase, staticContent, useSection } from './contentContext';
 import {
   isStaticContentSource,
   mediaAltFor,
@@ -23,6 +23,13 @@ async function fetchJson(url, options = {}, timeoutMs = 3500) {
   } finally {
     window.clearTimeout(timeout);
   }
+}
+
+function sentenceCaseHtmlHeadings(markup) {
+  return String(markup || '').replace(/<(h[1-6])\b([^>]*)>([\s\S]*?)<\/\1\s*>/gi, (_, tag, attributes, content) => {
+    const text = content.replace(/(<[^>]+>|[^<]+)/g, part => part.startsWith('<') ? part : sentenceCase(part));
+    return `<${tag}${attributes}>${text}</${tag}>`;
+  });
 }
 
 function validLiveSite(site) {
@@ -163,9 +170,24 @@ export function PostList({
   imageLightbox = false,
   hideWhenEmpty = false,
   searchable = true,
-  emptyMessage
+  emptyMessage,
+  hideTitle = false,
+  compactTop = false
 }) {
   const context = useContext(Context);
+  const { pathname } = useLocation();
+  const educationCopy = useSection('EducationPage');
+  const visionCopy = useSection('vision2047');
+  const nationBuildingCopy = useSection('Nationbuildingpage');
+  const customHeading = pathname === '/education'
+    ? [educationCopy('f48'), educationCopy('f49')]
+    : pathname === '/vision-2047'
+      ? [visionCopy('f33'), visionCopy('f34')]
+      : pathname === '/nation-building'
+        ? [nationBuildingCopy('f30'), nationBuildingCopy('f31')]
+        : null;
+  const heading = customHeading?.[0] || (!hideTitle ? sentenceCase(title) : '');
+  const headingDescription = customHeading?.[1] || '';
   const locale = context?.locale || 'en';
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState('');
@@ -249,17 +271,18 @@ export function PostList({
   const hasResults = result.items.length > 0;
   if (hideWhenEmpty && !hasResults) return null;
   const renderCard = post => {
-    const card = <article className={`overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm ${layout === 'rail' ? 'w-[min(82vw,340px)] shrink-0 snap-start' : ''}`}>
-      {post.cover && (imageLightbox ? <button type="button" onClick={() => setActiveImage(post)} aria-label={`Enlarge ${post.title}`} className="group relative block aspect-[4/3] w-full overflow-hidden bg-slate-100 text-left">
+    const card = <article className={`flex h-full min-w-0 flex-col overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm ${layout === 'rail' ? 'w-[min(82vw,340px)] shrink-0 snap-start' : ''}`}>
+      {post.cover && (imageLightbox ? <button type="button" onClick={() => setActiveImage(post)} aria-label={`Enlarge ${sentenceCase(post.title)}`} className="group relative block aspect-[4/3] w-full overflow-hidden bg-slate-100 text-left">
         <img src={mediaSrc(post.cover)} alt={mediaAltFor(post.cover, context?.media)} loading="lazy" className="h-full w-full object-cover transition duration-300 group-hover:scale-105" />
         <span className="absolute bottom-3 right-3 rounded-full bg-black/70 px-3 py-1 text-xs font-semibold text-white">View image</span>
       </button> : <div className="aspect-[4/3] w-full overflow-hidden bg-slate-100">
         <img src={mediaSrc(post.cover)} alt={mediaAltFor(post.cover, context?.media)} loading="lazy" className="h-full w-full object-cover" />
       </div>)}
-      <div className="p-5">
-        <p className="text-sm font-semibold tracking-wide text-[#f05d25]">{sentenceCase(post.category || post.type)}</p>
-        <h3 className="mt-2 text-lg font-bold text-[#10283d]">{sentenceCase(post.title)}</h3>
-        {post.excerpt && <p className="mt-3 text-sm leading-6 text-slate-600">{post.excerpt}</p>}
+      <div className="flex flex-1 flex-col p-5">
+        {outbound && post.publication && <p className="mb-2 text-xs font-bold uppercase tracking-wide text-slate-500">{post.publication}</p>}
+        <h3 className="post-card-title text-lg font-bold text-[#f05d25]">{sentenceCase(post.title)}</h3>
+        {post.excerpt && <p className="post-card-excerpt mt-3 text-sm leading-6 text-slate-600">{post.excerpt}</p>}
+        {!imageLightbox && <span className="mt-auto pt-4 text-sm font-bold text-[#f05d25]">{outbound ? 'Read original coverage' : 'Read more'} <span aria-hidden="true">→</span></span>}
       </div>
     </article>;
     if (imageLightbox) return <div key={post.id || post.slug}>{card}</div>;
@@ -269,29 +292,51 @@ export function PostList({
     return <Link key={post.id || post.slug} to={`/posts/${post.slug}`} className="block transition hover:-translate-y-0.5">{card}</Link>;
   };
 
-  return <section className="section-space bg-white">
+  return <section className={`section-space bg-white ${compactTop ? 'post-list-compact-top' : ''}`}>
     <div className="page-wrap">
-      <h2 className="section-title text-center">{sentenceCase(title)}</h2>
-      {searchable && <label className="mb-6 block max-w-md text-sm">Search / खोजें<input className="mt-2 w-full rounded border border-slate-300 px-4 py-3" value={search} onChange={event => {
-        setSearch(event.target.value);
-        setPage(1);
-      }} /></label>}
+      {(searchable || heading) && <div className={heading ? 'mb-8 grid gap-5 rounded-2xl border border-slate-200 bg-slate-50/80 p-5 shadow-sm sm:grid-cols-[minmax(0,1fr)_20rem] sm:items-center sm:gap-8 sm:p-7' : 'mb-6 flex justify-end border-b border-slate-200 pb-5'}>
+        {heading && <div className="min-w-0 border-l-4 border-[#ff6422] pl-4">
+          <h2 className="section-title mb-0 text-left text-3xl text-[#10283d] sm:text-4xl">{heading}</h2>
+          {headingDescription && <p className="mt-3 leading-relaxed text-slate-600">{headingDescription}</p>}
+        </div>}
+        {searchable && <label className={`grid w-full gap-2 text-sm font-semibold text-slate-700 ${heading ? '' : 'sm:max-w-xs'}`}>Search / खोजें
+          <span className="relative block">
+            <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" className="pointer-events-none absolute left-3 top-1/2 h-5 w-5 -translate-y-1/2 text-slate-400">
+              <circle cx="10.8" cy="10.8" r="6.8" stroke="currentColor" strokeWidth="1.8" />
+              <path d="m16 16 4.5 4.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+            </svg>
+            <input type="search" className="w-full rounded-xl border border-slate-300 bg-white py-3 pl-10 pr-4 text-sm font-normal shadow-sm outline-none transition placeholder:text-slate-400 focus:border-[#ff6422] focus:ring-4 focus:ring-orange-100" value={search} onChange={event => {
+              setSearch(event.target.value);
+              setPage(1);
+            }} />
+          </span>
+        </label>}
+      </div>}
       {usingSnapshot && liveError && !isStaticContentSource && <p role="status" className="mb-4 text-sm text-slate-600">Showing the latest exported content while the live CMS is unavailable.</p>}
       {waitingForSnapshot && !hasResults ? <p role="status" className="text-slate-600">Loading published articles…</p> : hasResults ? <>
-        <div className={layout === 'rail' ? 'flex snap-x snap-mandatory gap-5 overflow-x-auto pb-4 [scrollbar-width:thin]' : 'grid gap-6 md:grid-cols-2 lg:grid-cols-3'}>
-          {result.items.map(renderCard)}
+        <div
+          className={layout === 'rail'
+            ? 'overflow-x-auto snap-x snap-mandatory [scrollbar-width:thin] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6422]'
+            : layout === 'verticalRail'
+              ? 'grid max-h-[min(75vh,760px)] min-w-0 grid-cols-1 gap-5 overflow-y-auto overflow-x-hidden overscroll-contain pr-2 [scrollbar-width:thin] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#ff6422] sm:grid-cols-2'
+              : 'grid gap-6 md:grid-cols-2 xl:grid-cols-3'}
+          {...(['rail', 'verticalRail'].includes(layout) ? { role: 'region', 'aria-label': `${heading || title} ${layout === 'rail' ? 'horizontal' : 'vertical'} scroller`, tabIndex: 0 } : {})}
+        >
+          {layout === 'rail'
+            ? <div className="flex w-max min-w-full justify-center gap-5 pb-4">{result.items.map(renderCard)}</div>
+            : result.items.map(renderCard)}
         </div>
         <div className="mt-8 flex items-center justify-center gap-5">
           <button type="button" disabled={page <= 1} onClick={() => setPage(value => value - 1)}>Previous</button>
           <span>{page} / {Math.max(1, Math.ceil(result.total / result.limit))}</span>
           <button type="button" disabled={page * result.limit >= result.total} onClick={() => setPage(value => value + 1)}>Next</button>
         </div>
-      </> : <p role="status" className="rounded-xl border border-slate-200 bg-slate-50 px-6 py-8 text-center text-slate-600">{liveError && !context?.posts?.length && !isStaticContentSource ? 'Published articles are temporarily unavailable, and no static snapshot is available.' : emptyMessage || 'No published articles are available yet.'}</p>}
+      </> : <p role="status" className="rounded-xl border border-slate-200 bg-slate-50 px-6 py-8 text-center text-slate-600">{liveError && type !== 'news' && !context?.posts?.length && !isStaticContentSource ? 'Published articles are temporarily unavailable, and no static snapshot is available.' : emptyMessage || 'No published articles are available yet.'}</p>}
       {activeImage && <div role="dialog" aria-modal="true" aria-label={activeImage.title} onClick={event => event.target === event.currentTarget && setActiveImage(null)} className="fixed inset-0 z-50 grid place-items-center bg-black/80 p-4" onKeyDown={event => event.key === 'Escape' && setActiveImage(null)}>
         <div className="relative max-h-full max-w-6xl rounded-xl bg-white p-3 shadow-2xl">
           <button type="button" onClick={() => setActiveImage(null)} aria-label="Close enlarged image" className="absolute right-5 top-5 z-10 grid h-10 w-10 place-items-center rounded-full bg-black/70 text-2xl text-white">×</button>
           <img src={mediaSrc(activeImage.cover)} alt={mediaAltFor(activeImage.cover, context?.media)} className="max-h-[85vh] max-w-full rounded-lg object-contain" />
-          <p className="px-2 py-3 text-sm font-semibold text-[#10283d]">{activeImage.title}</p>
+          <p className="px-2 py-3 text-sm font-semibold text-[#10283d]">{sentenceCase(activeImage.title)}</p>
         </div>
       </div>}
     </div>
@@ -363,7 +408,7 @@ export function PostDetail({
     const previousTitle = document.title;
     const description = document.querySelector('meta[name="description"]');
     const previousDescription = description?.getAttribute('content');
-    document.title = post.seoTitle || post.title || previousTitle;
+    document.title = sentenceCase(post.seoTitle || post.title || previousTitle);
     if (description && post.seoDescription) description.setAttribute('content', post.seoDescription);
     return () => {
       document.title = previousTitle;
@@ -374,7 +419,28 @@ export function PostDetail({
   if (error) return <main className="page-wrap py-20"><p role="alert">{error}</p></main>;
   if (!post) return <main className="page-wrap py-20"><p role="status">Loading article…</p></main>;
 
-  return <main className="page-wrap section-space"><Link to="/posts" className="mb-8 inline-flex items-center gap-2 font-semibold text-[#f05d25] hover:underline">← All blogs</Link><article className="mx-auto max-w-3xl"><p className="text-sm font-semibold tracking-wide text-[#f05d25]">{sentenceCase(post.category || post.type)}</p><h1 className="mt-3 text-3xl font-extrabold text-[#10283d] md:text-5xl">{sentenceCase(post.title)}</h1>{post.excerpt && <p className="mt-5 text-lg leading-8 text-slate-600">{post.excerpt}</p>}{post.videoUrl && <div className="mt-8 aspect-video overflow-hidden rounded-xl bg-black"><iframe src={post.videoUrl} title={post.title} className="h-full w-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen /></div>}{post.cover && !post.videoUrl && <img className="mt-8 max-h-[32rem] w-full rounded-xl object-cover" src={mediaSrc(post.cover)} alt={mediaAltFor(post.cover, context?.media)} />}<div className="post-body mt-8 leading-8" dangerouslySetInnerHTML={{
-      __html: isStaticContentSource ? post.body : post.body.replace(/(["'(])\/api\/media\//g, `$1${API_BASE}/api/media/`)
-    }} /></article>{post.type === 'article' && <PostList type="article" tag="Viksit Bharat" title="Related Reading" limit={3} searchable={false} emptyMessage="No related articles are available yet." />}</main>;
+  const heroImage = post.cover ? mediaSrc(post.cover) : staticContent.sections.Hero.en.f1;
+
+  return <main>
+    <section className="page-hero relative isolate flex min-h-[280px] overflow-hidden bg-[#10283d] sm:min-h-[360px]">
+      <img src={heroImage} alt="" aria-hidden="true" className="absolute inset-0 -z-20 h-full w-full object-cover object-center" />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-gradient-to-r from-[#10283d]/90 via-[#10283d]/60 to-[#10283d]/20" />
+      <div className="page-wrap flex w-full flex-col justify-end py-8 sm:py-10">
+        <Link to="/blogs" className="mb-5 inline-flex w-fit items-center gap-2 rounded-full border border-white/40 bg-black/20 px-4 py-2 text-sm font-semibold text-white backdrop-blur-sm transition hover:bg-white/15">← All blogs</Link>
+        <h1 className="max-w-4xl text-3xl font-extrabold leading-tight tracking-tight text-white sm:text-4xl lg:text-5xl">{sentenceCase(post.title)}</h1>
+      </div>
+    </section>
+
+    <div className="page-wrap py-8 sm:py-12">
+      <article className="mx-auto max-w-4xl">
+        {post.videoUrl && <div className="mb-8 aspect-video overflow-hidden rounded-2xl bg-black shadow-lg"><iframe src={post.videoUrl} title={post.title} className="h-full w-full" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen /></div>}
+        {post.cover && !post.videoUrl && <img className="mb-8 max-h-[36rem] w-full rounded-2xl object-cover shadow-md" src={mediaSrc(post.cover)} alt={mediaAltFor(post.cover, context?.media)} />}
+        <div className="post-body mx-auto max-w-3xl leading-8" dangerouslySetInnerHTML={{
+          __html: sentenceCaseHtmlHeadings(isStaticContentSource ? post.body : post.body.replace(/(["'(])\/api\/media\//g, `$1${API_BASE}/api/media/`))
+        }} />
+      </article>
+    </div>
+
+    {post.type === 'article' && <PostList type="article" tag="Viksit Bharat" title="Related reading" limit={3} searchable={false} emptyMessage="No related articles are available yet." />}
+  </main>;
 }

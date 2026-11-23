@@ -34,10 +34,12 @@ export default function Features() {
     image: VisionYouthImg,
     paragraphs: [cms("f14"), cms("f15"), cms("f16")]
   }, {
-    title: cms("f17"),
+    title: "Thought leadership | ideas, perspectives & experiences",
     image: PublicPolicyImg,
-    paragraphs: [cms("f18")],
-    link: true
+    paragraphs: ["I believe that every experience teaches us something, and every meaningful conversation opens the door to a new perspective. Over the years, my journey across education, entrepreneurship, and social development has shaped the way I think, lead, and learn. Through this space, I hope to share my thoughts, experiences, and ideas on issues that matter, encourage meaningful conversations, and inspire fresh ways of looking at the world around us."],
+    link: true,
+    linkLabel: "Explore my perspectives",
+    linkHref: "/thought-leadership"
   }];
   const mediaRef = useRef(null);
   const scrollMedia = direction => {
@@ -93,8 +95,8 @@ export default function Features() {
                     </p>)}
                 </div>
 
-                {feature.link && <a href="#youth-connect" className="mt-auto inline-flex border-b border-slate-300 pt-5 text-sm font-extrabold text-[#ff6422] transition hover:text-[#df4e13]">
-                    Get to know more.
+                {feature.link && <a href={feature.linkHref} className="mt-auto inline-flex border-b border-slate-300 pt-5 text-sm font-extrabold text-[#ff6422] capitalize transition hover:text-[#df4e13]">
+                    {feature.linkLabel}
                   </a>}
               </div>
             </article>)}

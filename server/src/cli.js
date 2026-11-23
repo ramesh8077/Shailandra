@@ -1,7 +1,7 @@
 import { createInterface } from 'node:readline/promises';
 import { configFromEnv } from './config.js';
 import { User } from './models.js';
-import { initializeDatabase, pool } from './mysqlStore.js';
+import { initializeDatabase } from './sqliteStore.js';
 import { credentials } from './validation.js';
 import { hashPassword } from './security.js';
 import { seed } from './seed.js';
@@ -85,6 +85,4 @@ try {
 } catch (error) {
   console.error(error.message);
   process.exitCode = 1;
-} finally {
-  await pool.end();
 }

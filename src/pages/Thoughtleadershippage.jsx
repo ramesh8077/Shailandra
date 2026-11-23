@@ -62,20 +62,25 @@ export default function ThoughtLeadershipPage() {
       </section>
 
       {/* Letters to Young India */}
-      <section className="mx-auto max-w-6xl px-6 pb-12">
-        <div className="grid items-center gap-10 md:grid-cols-2">
+      <section className="mx-auto max-w-6xl px-6 py-8 sm:py-10">
+        <div className="grid items-center gap-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:gap-10 sm:p-10 md:grid-cols-2">
           <div>
-            <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">{cms("f49") || cms("f37")}</h2>
-            <p className="mb-5 leading-relaxed text-gray-700">{cms("f50") || cms("f38")}</p>
-            {cms("f51") && <a href="/posts?type=article" className="inline-flex rounded-full bg-[#ff6422] px-5 py-3 text-sm font-bold text-white transition hover:bg-[#e95318]">
-              {cms("f51")}
-            </a>}
+            <h2 className="mb-4 text-2xl font-bold text-[#ff6422] sm:text-3xl">{cms("f49") || cms("f37")}</h2>
+            <p className="max-w-xl leading-7 text-gray-700 sm:text-lg sm:leading-8">{cms("f50") || cms("f38")}</p>
           </div>
           <div>
-            <img src={lettersImage} alt={cms("f39")} className="block h-auto w-full rounded-md object-contain" />
+            <img src={lettersImage} alt={cms("f39")} className="block aspect-video w-full rounded-2xl object-cover shadow-sm" />
           </div>
         </div>
       </section>
+
+      {cms("f51") && <section className="article-cta">
+        <div className="page-wrap flex justify-center">
+          <a href="/posts?type=article" className="group inline-flex min-h-14 items-center gap-3 rounded-xl bg-[#ff6422] px-7 py-4 text-base font-extrabold text-white shadow-[0_8px_24px_rgba(255,100,34,0.28)] transition-all duration-200 hover:-translate-y-1 hover:bg-[#e95318] hover:shadow-[0_12px_30px_rgba(255,100,34,0.38)] focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#ff6422]/30">
+            {cms("f51")}<span aria-hidden="true" className="text-lg transition-transform group-hover:translate-x-1">→</span>
+          </a>
+        </div>
+      </section>}
 
       {/* Latest */}
     </></SectionBoundary>;

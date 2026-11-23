@@ -4,7 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
+    "dev": "concurrently -k -p \"[{name}]\" -n \"SERVER,CLIENT\" -c \"cyan.bold,green.bold\" \"npm run server\" \"npm run dev:client\"",
+    "dev:client": "vite",
+    "server": "node server/src/index.js",
     "build": "npm run build:hostinger",
     "build:hostinger": "vite build && node scripts/prepare-hostinger-build.mjs && npm --prefix server ci --omit=dev",
     "start": "node server/src/index.js",
@@ -29,6 +31,7 @@
   "devDependencies": {
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
+    "concurrently": "^10.0.7",
     "oxlint": "^1.79.0"
   }
 }

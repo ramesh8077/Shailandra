@@ -1,9 +1,11 @@
 import { SectionBoundary } from "../cms/PublicCMS";
 import { useSection } from "../cms/contentContext";
 import PageHero from "../components/PageHero";
-import { PageClosingThoughts } from "../components/EditorialTail";
 export default function NationBuildingPage() {
   const cms = useSection("Nationbuildingpage");
+  const closingSentence = "The India we aspire to become in 2047 will depend on the work we are willing to do today.";
+  const nationBuildingThought = cms("f25");
+  const closingSentenceIndex = nationBuildingThought.lastIndexOf(closingSentence);
   const viksitBharatImage = cms("f2");
   const policyMeetsPeopleImage = cms("f1");
   const coffeePeCharchaVideos = [{
@@ -46,7 +48,13 @@ export default function NationBuildingPage() {
             <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">{cms("f23")}</h2>
             <div className="border-l-4 border-[#ff6422] pl-5">
               <p className="mb-4 whitespace-pre-line leading-relaxed text-gray-700">{cms("f24")}</p>
-              <p className="whitespace-pre-line leading-relaxed text-gray-700">{cms("f25")}</p>
+              <p className="whitespace-pre-line leading-relaxed text-gray-700">
+                {closingSentenceIndex === -1 ? nationBuildingThought : <>
+                  {nationBuildingThought.slice(0, closingSentenceIndex)}
+                  <strong className="font-bold">{closingSentence}</strong>
+                  {nationBuildingThought.slice(closingSentenceIndex + closingSentence.length)}
+                </>}
+              </p>
             </div>
           </div>
         </div>
@@ -72,7 +80,6 @@ export default function NationBuildingPage() {
           </div>
         </div>
       </section>
-      <PageClosingThoughts />
 
     </></SectionBoundary>;
 }

@@ -17,23 +17,23 @@ export default function ChaiPeCharchaPage() {
     link: "https://www.youtube.com/shorts/GMydyafcAZE"
   }, {
     image: episode2Image,
-    title: "India's Manufacturing Moment?",
+    title: "India's manufacturing moment?",
     link: "https://www.youtube.com/shorts/ms8W8Foymzo"
   }, {
     image: episode3Image,
-    title: "Degree Se Skills Tak",
+    title: "Degree se skills tak",
     link: "https://www.youtube.com/shorts/4LjDu5481PA"
   }, {
     image: episode4Image,
-    title: "AI: Friend or Foe?",
+    title: "AI: friend or foe?",
     link: "https://www.youtube.com/shorts/JojQiOy0KOc"
   }, {
     image: episode5Image,
-    title: "Clean India, Green India?",
+    title: "Clean India, green India?",
     link: "https://www.youtube.com/shorts/bbCzJ1iaXiw"
   }, {
     image: episode6Image,
-    title: "Bharat in a Multipolar World",
+    title: "Bharat in a multipolar world",
     link: "https://www.youtube.com/shorts/hwM3ahuLfx0"
   }];
   return <SectionBoundary name="ChaiPaiCharchaPage"><>

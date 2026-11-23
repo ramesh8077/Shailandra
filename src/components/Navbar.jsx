@@ -41,6 +41,9 @@ export default function Navbar() {
   }, {
     label: cms("f22"),
     path: cms("f23")
+  }, {
+    label: "Blogs",
+    path: "/blogs"
   }];
   const [open, setOpen] = useState(false);
   const [mobileMoreOpen, setMobileMoreOpen] = useState(false);

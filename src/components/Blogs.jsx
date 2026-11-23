@@ -18,7 +18,7 @@ const fallbackItems = [
     locale: 'en',
     category: 'Youth & Careers',
     tags: ['Youth', 'Careers', 'Work', 'Viksit Bharat'],
-    title: 'Will a Stable Career Still Mean the Same Thing for the Next Generation?',
+    title: 'Will a Stable Career Still Mean the Same Thing for the Next Generation',
     excerpt: 'For many parents, a stable career meant a regular salary, a secure job and the ability to support a family.'
   },
   {
@@ -38,7 +38,7 @@ const fallbackItems = [
     locale: 'en',
     category: 'Youth & Careers',
     tags: ['Entrepreneurship', 'Youth', 'Community', 'Viksit Bharat'],
-    title: 'Can Young Entrepreneurs Help Solve Problems in Their Own Communities?',
+    title: 'Can Young Entrepreneurs Help Solve Problems in Their Own Communities',
     excerpt: 'Most young people have ideas about what could be better around them.'
   },
   {
@@ -48,7 +48,7 @@ const fallbackItems = [
     locale: 'en',
     category: 'Youth & Careers',
     tags: ['Careers', 'Youth', 'Wellbeing', 'Viksit Bharat'],
-    title: "What Happens When a Young Person's Passion Does Not Match Their Profession?",
+    title: "What happens when a young person's passion does not match their profession",
     excerpt: 'At your job, you spend weekdays attending meetings, completing assignments, or working towards a promotion.'
   },
   {
@@ -58,13 +58,13 @@ const fallbackItems = [
     locale: 'en',
     category: 'Youth & Careers',
     tags: ['Digital access', 'Youth', 'India', 'Viksit Bharat'],
-    title: "From Small Towns to Global Opportunities: How Digital Access Is Changing Young Indians' Ambitions",
+    title: "From small towns to global opportunities: how digital access is changing young Indians' ambitions",
     excerpt: 'A student from a small town had predictable decisions to make some time ago – study hard, move to a bigger city and find a steady job.'
   }
 ];
 
-export default function Blogs() {
+export default function Blogs({ hideTitle = false, compactTop = false }) {
   return <>
-    <PostList title="Blogs & Articles" limit={6} fallbackItems={fallbackItems} />
+  <PostList title="Blogs & articles" limit={6} fallbackItems={fallbackItems} hideTitle={hideTitle} compactTop={compactTop} />
   </>;
 }

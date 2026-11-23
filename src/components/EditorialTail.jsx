@@ -15,7 +15,7 @@ export function PageClosingThoughts() {
         : null;
 
   if (!copy?.[0] || !copy?.[1]) return null;
-  return <section className="mx-auto max-w-6xl px-6 py-12">
+  return <section className={`mx-auto max-w-6xl px-6 ${['/vision-2047', '/education', '/nation-building'].includes(pathname) ? 'vision-closing-thoughts' : 'py-12'}`}>
     <h2 className="mb-4 text-2xl font-bold text-[#ff6422]">{copy[0]}</h2>
     <p className="whitespace-pre-line leading-relaxed text-gray-700">{copy[1]}</p>
   </section>;

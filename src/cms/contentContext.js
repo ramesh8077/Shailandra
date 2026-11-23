@@ -52,17 +52,24 @@ const sentenceCasePreserved = new Map([
   ['india', 'India'],
   ['indian', 'Indian'],
   ['instagram', 'Instagram'],
+  ['i', 'I'],
+  ['iti', 'ITI'],
   ['jaipur', 'Jaipur'],
   ['kanpur', 'Kanpur'],
   ['maharana', 'Maharana'],
   ['madhya', 'Madhya'],
   ['mpgi', 'MPGI'],
   ['ndtv', 'NDTV'],
+  ['odop', 'ODOP'],
   ['pe', 'Pe'],
   ['pratap', 'Pratap'],
   ['rajasthan', 'Rajasthan'],
   ['rohini', 'Rohini'],
   ['shailendra', 'Shailendra'],
+  ['seo', 'SEO'],
+  ['pvt', 'Pvt'],
+  ['ltd', 'Ltd'],
+  ['it', 'IT'],
   ['up', 'UP'],
   ['pradesh', 'Pradesh'],
   ['uttar', 'Uttar'],
@@ -102,7 +109,7 @@ export function useSection(key) {
   return field => {
     const value = context?.sections[key]?.[context.locale]?.[field] || '';
     const label = definitions[field]?.label || '';
-    const shouldUseSentenceCase = /^(Heading:|Subheading:|Button:|Field label:|Input hint:|FAQs\s*·\s*(question|answer):|(navItems|socialLinks)\s*·\s*name:|roles\s*·\s*label:|(cards|features|caseStudies|themes|factSheet|insights|questions|hosts)\s*·\s*(title|name|q|a):)/i.test(label);
+    const shouldUseSentenceCase = /^(Heading:|Subheading:|Button:|Field label:|Input hint:|FAQs\s*·\s*(question|answer):|(navItems|socialLinks)\s*·\s*name:|roles\s*·\s*label:|(links|moreLinks)\s*·\s*label:|fourAsks\s*·\s*english:|(beliefs|circleSteps)\s*·\s*label:|(cards|features|caseStudies|themes|factSheet|insights|questions|hosts)\s*·\s*(title|name|role|q|a):)/i.test(label);
     return shouldUseSentenceCase ? sentenceCase(value) : value;
   };
 }

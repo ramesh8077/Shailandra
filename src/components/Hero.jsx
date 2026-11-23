@@ -11,13 +11,9 @@ export default function Hero() {
     path: cms("f4"),
     active: pathname === "/journey"
   }, {
-    label: cms("f5"),
-    path: cms("f6") && cms("f6") !== "#" ? cms("f6") : "/sewa",
-    active: pathname === "/sewa"
-  }, {
     label: cms("f7"),
-    path: cms("f8") && cms("f8") !== "#" ? cms("f8") : "/",
-    active: pathname === "/"
+    path: "/nation-building",
+    active: pathname === "/nation-building"
   }];
   return <SectionBoundary name="Hero"><section id="home" className="relative isolate overflow-hidden bg-[#edf6fb]">
       {/* Background */}
@@ -48,14 +44,14 @@ export default function Hero() {
 
             {/* Buttons */}
             <div className="mt-9 flex flex-wrap items-center gap-3">
+              {cms("f15") && <Link to={cms("f16")} className="inline-flex min-h-10 items-center justify-center rounded-full border border-[#ff6422] px-5 py-2.5 text-xs font-bold text-[#ff6422] capitalize transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#ff6422] hover:text-white sm:px-6 sm:text-sm">
+                {cms("f15")}
+              </Link>}
               {roles.map(role => role.active ? <span key={role.label} aria-current="page" aria-disabled="true" className="inline-flex min-h-10 cursor-not-allowed items-center justify-center rounded-full border border-[#ff6422] bg-[#ff6422] px-5 py-2.5 text-xs font-bold text-white opacity-75 shadow-inner sm:px-6 sm:text-sm">
                   {role.label}
                 </span> : <Link key={role.label} to={role.path} className="inline-flex min-h-10 items-center justify-center rounded-full border border-[#17364d] bg-white/75 px-5 py-2.5 text-xs font-bold text-[#17364d] backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-[#ff6422] hover:text-[#ff6422] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff6422] sm:px-6 sm:text-sm">
                   {role.label}<span aria-hidden="true" className="ml-2">↗</span>
                 </Link>)}
-              {cms("f15") && <Link to={cms("f16")} className="inline-flex min-h-10 items-center justify-center rounded-full border border-[#ff6422] px-5 py-2.5 text-xs font-bold text-[#ff6422] transition-all duration-300 hover:-translate-y-0.5 hover:bg-[#ff6422] hover:text-white sm:px-6 sm:text-sm">
-                {cms("f15")}
-              </Link>}
             </div>
           </div>
         </div>

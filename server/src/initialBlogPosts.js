@@ -46,7 +46,7 @@ One day, you will look back at some of the things that upset you at this age and
   {
     key: 'blog-stable-career-next-generation',
     slug: 'will-a-stable-career-still-mean-the-same-thing-for-the-next-generation',
-    title: 'Will a Stable Career Still Mean the Same Thing for the Next Generation?',
+    title: 'Will a Stable Career Still Mean the Same Thing for the Next Generation',
     tags: ['Youth', 'Careers', 'Work', 'Viksit Bharat'],
     body: `For many parents, a stable career meant a regular salary, a secure job and the ability to support a family. You studied hard, found a respectable position and worked your way up. If the income was good and the job was secure, there was little reason to leave.
 
@@ -126,7 +126,7 @@ Students may not remember every lesson they study, but they often remember the t
   {
     key: 'blog-young-entrepreneurs-community',
     slug: 'can-young-entrepreneurs-help-solve-problems-in-their-own-communities',
-    title: 'Can Young Entrepreneurs Help Solve Problems in Their Own Communities?',
+    title: 'Can Young Entrepreneurs Help Solve Problems in Their Own Communities',
     tags: ['Entrepreneurship', 'Youth', 'Community', 'Viksit Bharat'],
     body: `Most young people have ideas about what could be better around them. It could be something at college, a problem people in their neighbourhood deal with every day, or a service they wish was easier to find. We talk about these things with friends, sometimes even joke about how nobody has found a solution yet. Then the conversation moves on.
 
@@ -171,7 +171,7 @@ The next time you come across a problem that people keep talking about, don't di
   {
     key: 'blog-passion-profession',
     slug: 'what-happens-when-a-young-persons-passion-does-not-match-their-profession',
-    title: "What Happens When a Young Person's Passion Does Not Match Their Profession?",
+    title: "What Happens When a Young Person's Passion Does Not Match Their Profession",
     tags: ['Careers', 'Youth', 'Wellbeing', 'Viksit Bharat'],
     body: `At your job, you spend weekdays attending meetings, completing assignments, or working towards a promotion. You like your job, and you also believe your life is going well. However, when you get a few leisure hours, your mind starts thinking about something completely different.
 

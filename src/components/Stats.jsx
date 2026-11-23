@@ -35,21 +35,19 @@ export default function Stats() {
         <h2 className="mb-8 text-center text-xl font-extrabold sm:text-2xl">{cms("f8")}</h2>
 
         {/* Statistics */}
-        <div className="mx-auto grid max-w-4xl grid-cols-2 gap-x-8 gap-y-8 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-12">
+        <div className="mx-auto grid max-w-6xl grid-cols-2 gap-x-6 gap-y-8 sm:grid-cols-3 lg:grid-cols-5 lg:gap-x-8">
           {stats.map(stat => <div key={stat.id} className="flex min-w-0 flex-col items-center text-center">
               {/* Icon */}
               <span className="mb-3 grid h-14 w-14 place-items-center rounded-lg bg-white/90 text-2xl text-[#ff6422] shadow-sm">
                 <stat.Icon aria-hidden="true" />
               </span>
 
-              {/* Main text */}
-              <strong className="flex min-h-5 items-center justify-center whitespace-pre-line text-base font-extrabold leading-[1.05] text-white">
-                {stat.value}
-              </strong>
-
-              <span className="mt-1 flex min-h-10 items-start justify-center whitespace-pre-line text-xs leading-4 text-orange-50">
-                {stat.label}
-              </span>
+              <div className="mt-2 flex min-h-14 flex-col items-center justify-center">
+                <strong className="flex h-6 items-center justify-center text-xl font-extrabold leading-tight text-white">{stat.value}</strong>
+                <span className="mt-1 max-w-full whitespace-normal text-base font-semibold leading-6 text-white capitalize">
+                  {stat.label.replace(/\s+/g, " ").trim()}
+                </span>
+              </div>
             </div>)}
         </div>
       </div>

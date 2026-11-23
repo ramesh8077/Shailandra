@@ -1,4 +1,4 @@
-import { createBrowserRouter, RouterProvider, Route, Routes, useLocation } from "react-router-dom";
+import { createBrowserRouter, RouterProvider, Route, Routes, Navigate, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "../src/components/Navbar";
 import Hero from "../src/components/Hero";
@@ -21,7 +21,8 @@ import ChaiPaiCharchaPage from "./pages/ChaiPaiCharchaPage";
 import Connectpage from "./pages/ConnectPage";
 import NationBuildingPage from "./pages/Nationbuildingpage";
 import MediaPage from "./pages/Mediapage";
-import { PublicCMS, PostDetail, PostList } from './cms/PublicCMS';
+import BlogsPage from "./pages/BlogsPage";
+import { PublicCMS, PostDetail } from './cms/PublicCMS';
 import Admin from './cms/Admin';
 function ScrollToTop() {
   const { pathname, hash } = useLocation();
@@ -44,20 +45,21 @@ function ScrollToTop() {
 
 const pageTitles = {
   "/": "Shailendra Bhadauria | Official Website",
-  "/journey": "My Journey | Shailendra Bhadauria",
+  "/blogs": "Blogs | Shailendra Bhadauria",
+  "/posts": "Blogs | Shailendra Bhadauria",
+  "/journey": "My journey | Shailendra Bhadauria",
   "/education": "Education | Shailendra Bhadauria",
   "/sewa": "Sewa | Shailendra Bhadauria",
   "/sports": "Sports | Shailendra Bhadauria",
   "/vision-2047": "Vision 2047 | Shailendra Bhadauria",
-  "/thought-leadership": "Thought Leadership | Shailendra Bhadauria",
-  "/updevelopment": "UP Development | Shailendra Bhadauria",
+  "/thought-leadership": "Thought leadership | Shailendra Bhadauria",
+  "/updevelopment": "UP development | Shailendra Bhadauria",
   "/coffe-pai-charcha": "Coffee Pe Charcha | Shailendra Bhadauria",
   "/coffee-pe-charcha": "Coffee Pe Charcha | Shailendra Bhadauria",
   "/चाय-पै-चर्चा": "Coffee Pe Charcha | Shailendra Bhadauria",
   "/connect": "Connect | Shailendra Bhadauria",
-  "/nation-building": "Nation Building | Shailendra Bhadauria",
-  "/media": "Media Centre | Shailendra Bhadauria",
-  "/posts": "Blogs & Articles | Shailendra Bhadauria"
+  "/nation-building": "Nation building | Shailendra Bhadauria",
+  "/media": "Media centre | Shailendra Bhadauria"
 };
 
 function PageTitle() {
@@ -85,7 +87,7 @@ function PageTitle() {
  
  function PublicSite() {
    const { pathname } = useLocation();
-   const isArticleListing = pathname === "/posts";
+   const isArticleListing = pathname === "/posts" || pathname === "/blogs";
    const isArticleDetail = pathname.startsWith("/posts/");
    return (
      <PublicCMS>
@@ -95,7 +97,8 @@ function PageTitle() {
          <Navbar />
          <Routes>
 <Route path="/posts/:slug" element={<PostDetail />} />
-<Route path="/posts" element={<PostList title="Blogs & Articles" />} />
+<Route path="/posts" element={<Navigate to="/blogs" replace />} />
+<Route path="/blogs" element={<BlogsPage />} />
            <Route path="/" element={<HomePage />} />
            <Route path="/journey" element={<JourneyPage />} />
            <Route path="/education" element={<EducationPage />} />
@@ -111,9 +114,10 @@ function PageTitle() {
            <Route path="/nation-building" element={<NationBuildingPage />} />
            <Route path="/media" element={<MediaPage />} />
          </Routes>
-         {!isArticleListing && !isArticleDetail && <Blogs />}
-         <SiteFAQs />
-         <ContactInsights />
+         {!isArticleListing && pathname === "/connect" && <ContactInsights />}
+         {!isArticleListing && !isArticleDetail && <Blogs hideTitle={["/vision-2047", "/education", "/nation-building"].includes(pathname)} compactTop={["/vision-2047", "/education", "/nation-building"].includes(pathname)} />}
+         {!isArticleListing && <SiteFAQs />}
+         {!isArticleListing && pathname !== "/connect" && <ContactInsights />}
          <Footer />
        </div>
      </PublicCMS>

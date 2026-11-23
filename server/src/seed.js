@@ -92,38 +92,5 @@ export async function seed(config) {
       upsert: true
     });
   }
-  // Placeholder article cards had no article bodies. Keep them as reviewable drafts, never invent published stories.
-  for (const [i, title] of ['The Impact of Color Psychology in Design', 'Leadership for a Stronger Tomorrow', 'People at the Heart of Progress'].entries()) {
-    const key = `legacy-blog-${i}`;
-    const draft = validateContent('post', key, {
-      type: 'article',
-      title,
-      slug: title.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
-      locale: 'en',
-      excerpt: '',
-      body: '',
-      cover: assets[`src/assets/Home-Images/blog${i+1}.png`],
-      category: '',
-      tags: [],
-      author: 'Shalinder',
-      seoTitle: '',
-      seoDescription: '',
-      videoUrl: ''
-    });
-    await Content.updateOne({
-      key
-    }, {
-      $setOnInsert: {
-        kind: 'post',
-        key,
-        draft,
-        draftMedia: mediaRefs(draft),
-        revision: 0,
-        trashed: false
-      }
-    }, {
-      upsert: true
-    });
-  }
   console.log('Seed complete. Existing records were left unchanged. Review legacy copy and translate Hindi fields before publication.');
 }

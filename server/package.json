@@ -14,6 +14,7 @@
     "test": "node --test --test-concurrency=1 test/cms.test.js test/static-export.test.js test/database-unavailable.test.js"
   },
   "dependencies": {
+    "better-sqlite3": "^13.2.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
