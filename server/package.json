@@ -3,22 +3,17 @@
   "private": true,
   "type": "module",
   "engines": {
-    "node": ">=22.12"
-  },
-  "allowScripts": {
-    "better-sqlite3": true
+    "node": ">=22.13.0"
   },
   "scripts": {
     "dev": "node --watch src/index.js",
     "start": "node src/index.js",
-    "postinstall": "node scripts/buildSqliteNative.mjs",
     "setup-admin": "node src/cli.js admin",
     "reset-password": "node src/cli.js reset",
     "seed": "node src/cli.js seed",
     "test": "node --test --test-concurrency=1 test/cms.test.js test/static-export.test.js test/database-unavailable.test.js"
   },
   "dependencies": {
-    "better-sqlite3": "^13.2.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.3",
     "express": "^5.1.0",

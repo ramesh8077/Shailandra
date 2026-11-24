@@ -1,4 +1,4 @@
-import Database from 'better-sqlite3';
+import { DatabaseSync } from 'node:sqlite';
 import session from 'express-session';
 import { randomBytes } from 'node:crypto';
 import path from 'node:path';
@@ -18,9 +18,8 @@ export function getDb() {
 export function initializeDatabase(dbPath) {
   if (db) return db;
   const finalPath = dbPath || process.env.SQLITE_DB_PATH || defaultDbPath;
-  db = new Database(finalPath);
-  db.pragma('journal_mode = WAL');
-  db.pragma('foreign_keys = ON');
+  db = new DatabaseSync(finalPath);
+  db.exec('PRAGMA journal_mode = WAL; PRAGMA foreign_keys = ON;');
 
   db.exec(`
     CREATE TABLE IF NOT EXISTS cms_users (
