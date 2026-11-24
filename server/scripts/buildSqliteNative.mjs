@@ -5,8 +5,9 @@ import { fileURLToPath } from 'node:url';
 
 const serverRoot = path.resolve(fileURLToPath(new URL('../', import.meta.url)));
 const npmCommand = process.platform === 'win32' ? 'npm.cmd' : 'npm';
-const build = spawnSync(npmCommand, ['rebuild', 'better-sqlite3'], {
-  cwd: serverRoot,
+const addonRoot = path.join(serverRoot, 'node_modules', 'better-sqlite3');
+const build = spawnSync(npmCommand, ['--prefix', addonRoot, 'run', 'build-release'], {
+  cwd: addonRoot,
   env: {
     ...process.env,
     GYP_DEFINES: [process.env.GYP_DEFINES, 'force_build=1'].filter(Boolean).join(' ')
